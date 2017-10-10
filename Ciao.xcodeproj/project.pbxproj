@@ -10,6 +10,11 @@
 		24E93CE71F8D0E0B009886B6 /* Ciao.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24E93CDD1F8D0E0B009886B6 /* Ciao.framework */; };
 		24E93CEC1F8D0E0B009886B6 /* CiaoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E93CEB1F8D0E0B009886B6 /* CiaoTests.swift */; };
 		24E93CEE1F8D0E0B009886B6 /* Ciao.h in Headers */ = {isa = PBXBuildFile; fileRef = 24E93CE01F8D0E0B009886B6 /* Ciao.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24E93D241F8D3978009886B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E93D231F8D3978009886B6 /* AppDelegate.swift */; };
+		24E93D261F8D3978009886B6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E93D251F8D3978009886B6 /* ViewController.swift */; };
+		24E93D291F8D3978009886B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24E93D271F8D3978009886B6 /* Main.storyboard */; };
+		24E93D2B1F8D3978009886B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24E93D2A1F8D3978009886B6 /* Assets.xcassets */; };
+		24E93D2E1F8D3978009886B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24E93D2C1F8D3978009886B6 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +34,13 @@
 		24E93CE61F8D0E0B009886B6 /* CiaoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CiaoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		24E93CEB1F8D0E0B009886B6 /* CiaoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CiaoTests.swift; sourceTree = "<group>"; };
 		24E93CED1F8D0E0B009886B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		24E93D211F8D3978009886B6 /* CiaoSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CiaoSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		24E93D231F8D3978009886B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		24E93D251F8D3978009886B6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		24E93D281F8D3978009886B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		24E93D2A1F8D3978009886B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		24E93D2D1F8D3978009886B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		24E93D2F1F8D3978009886B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +59,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		24E93D1E1F8D3978009886B6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -55,6 +74,7 @@
 			children = (
 				24E93CDF1F8D0E0B009886B6 /* Ciao */,
 				24E93CEA1F8D0E0B009886B6 /* CiaoTests */,
+				24E93D221F8D3978009886B6 /* CiaoSample */,
 				24E93CDE1F8D0E0B009886B6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -64,6 +84,7 @@
 			children = (
 				24E93CDD1F8D0E0B009886B6 /* Ciao.framework */,
 				24E93CE61F8D0E0B009886B6 /* CiaoTests.xctest */,
+				24E93D211F8D3978009886B6 /* CiaoSample.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -84,6 +105,19 @@
 				24E93CED1F8D0E0B009886B6 /* Info.plist */,
 			);
 			path = CiaoTests;
+			sourceTree = "<group>";
+		};
+		24E93D221F8D3978009886B6 /* CiaoSample */ = {
+			isa = PBXGroup;
+			children = (
+				24E93D231F8D3978009886B6 /* AppDelegate.swift */,
+				24E93D251F8D3978009886B6 /* ViewController.swift */,
+				24E93D271F8D3978009886B6 /* Main.storyboard */,
+				24E93D2A1F8D3978009886B6 /* Assets.xcassets */,
+				24E93D2C1F8D3978009886B6 /* LaunchScreen.storyboard */,
+				24E93D2F1F8D3978009886B6 /* Info.plist */,
+			);
+			path = CiaoSample;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,6 +170,23 @@
 			productReference = 24E93CE61F8D0E0B009886B6 /* CiaoTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		24E93D201F8D3978009886B6 /* CiaoSample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 24E93D321F8D3978009886B6 /* Build configuration list for PBXNativeTarget "CiaoSample" */;
+			buildPhases = (
+				24E93D1D1F8D3978009886B6 /* Sources */,
+				24E93D1E1F8D3978009886B6 /* Frameworks */,
+				24E93D1F1F8D3978009886B6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CiaoSample;
+			productName = CiaoSample;
+			productReference = 24E93D211F8D3978009886B6 /* CiaoSample.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -154,6 +205,10 @@
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
 					};
+					24E93D201F8D3978009886B6 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 24E93CD71F8D0E0B009886B6 /* Build configuration list for PBXProject "Ciao" */;
@@ -162,6 +217,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 24E93CD31F8D0E0B009886B6;
 			productRefGroup = 24E93CDE1F8D0E0B009886B6 /* Products */;
@@ -170,6 +226,7 @@
 			targets = (
 				24E93CDC1F8D0E0B009886B6 /* Ciao */,
 				24E93CE51F8D0E0B009886B6 /* CiaoTests */,
+				24E93D201F8D3978009886B6 /* CiaoSample */,
 			);
 		};
 /* End PBXProject section */
@@ -186,6 +243,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24E93D1F1F8D3978009886B6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24E93D2E1F8D3978009886B6 /* LaunchScreen.storyboard in Resources */,
+				24E93D2B1F8D3978009886B6 /* Assets.xcassets in Resources */,
+				24E93D291F8D3978009886B6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,6 +274,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		24E93D1D1F8D3978009886B6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24E93D261F8D3978009886B6 /* ViewController.swift in Sources */,
+				24E93D241F8D3978009886B6 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -216,6 +292,25 @@
 			targetProxy = 24E93CE81F8D0E0B009886B6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		24E93D271F8D3978009886B6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				24E93D281F8D3978009886B6 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		24E93D2C1F8D3978009886B6 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				24E93D2D1F8D3978009886B6 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		24E93CEF1F8D0E0B009886B6 /* Debug */ = {
@@ -401,6 +496,36 @@
 			};
 			name = Release;
 		};
+		24E93D301F8D3978009886B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y9GCPAGMBN;
+				INFOPLIST_FILE = CiaoSample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tavares.CiaoSample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		24E93D311F8D3978009886B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y9GCPAGMBN;
+				INFOPLIST_FILE = CiaoSample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tavares.CiaoSample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -427,6 +552,15 @@
 			buildConfigurations = (
 				24E93CF51F8D0E0B009886B6 /* Debug */,
 				24E93CF61F8D0E0B009886B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		24E93D321F8D3978009886B6 /* Build configuration list for PBXNativeTarget "CiaoSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				24E93D301F8D3978009886B6 /* Debug */,
+				24E93D311F8D3978009886B6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
