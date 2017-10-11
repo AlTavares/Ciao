@@ -14,13 +14,10 @@ public class CiaoServer {
     public var txtRecord: [String: String]? {
         get {
             guard let data = netService.txtRecordData() else { return nil }
-            return NetService.dictionary(fromTXTRecord: data).mapValues { data in
-                String(data: data, encoding: .utf8) ?? ""
-            }
+            return NetService.dictionary(fromTXTRecord: data)
         }
         set {
-            guard let data = newValue else { return }
-            netService.setTXTRecord(NetService.data(fromTXTRecord: data.mapValues { $0.data(using: .utf8) ?? Data() }))
+            netService.setTXTRecord(dictionary: newValue)
         }
     }
 
