@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     var ciaoServer: CiaoServer!
     var ciaoBrowser: CiaoBrowser!
     let type = "CiaoSample"
+    var count = 0
 
     @IBAction func browse(_ sender: Any) {
         ciaoBrowser = CiaoBrowser()
@@ -24,6 +25,11 @@ class ViewController: UIViewController {
 
     @IBAction func server(_ sender: Any) {
         ciaoServer = CiaoServer(type: type)
-        ciaoServer.txtRecord = ["ovo": "xunda"]
+        updateTxtRecord()
+    }
+
+    @IBAction func updateTxtRecord() {
+        ciaoServer.txtRecord = ["recordKey": "update count: \(count)"]
+        count += 1
     }
 }

@@ -77,9 +77,6 @@ class CiaoResolver: NSObject, NetServiceDelegate {
         Logger.verbose("Service will resolve", sender)
     }
 
-    func netService(_ sender: NetService, didUpdateTXTRecord data: Data) {
-        Logger.verbose("Service did update txt record", sender)
-    }
 }
 
 class CiaoBrowserDelegate: NSObject, NetServiceBrowserDelegate {
