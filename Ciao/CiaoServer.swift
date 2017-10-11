@@ -29,6 +29,13 @@ public class CiaoServer {
         netService.publish(options: NetService.Options.listenForConnections)
     }
 
+    public func stop() {
+        netService.stop()
+    }
+
+    deinit {
+        stop()
+    }
 }
 
 class CiaoServerDelegate: NSObject, NetServiceDelegate {

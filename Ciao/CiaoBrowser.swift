@@ -50,6 +50,15 @@ public class CiaoBrowser {
             resolve(service: serviceToBeResolved)
         }
     }
+
+    public func stop() {
+        netServiceBrowser.stop()
+        resolver?.stop()
+    }
+
+    deinit {
+        stop()
+    }
 }
 
 class CiaoResolver: NSObject, NetServiceDelegate {
@@ -66,6 +75,10 @@ class CiaoResolver: NSObject, NetServiceDelegate {
 
     func netServiceWillResolve(_ sender: NetService) {
         Logger.verbose("Service will resolve", sender)
+    }
+
+    func netService(_ sender: NetService, didUpdateTXTRecord data: Data) {
+        Logger.verbose("Service did update txt record", sender)
     }
 }
 
