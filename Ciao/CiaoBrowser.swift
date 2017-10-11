@@ -15,6 +15,7 @@ public class CiaoBrowser {
     var resolver: NetService?
     var resolverDelegate: CiaoResolver?
     public var services = Set<NetService>()
+    private var servicesToBeResolved = Set<NetService>()
 
     public init() {
         netServiceBrowser = NetServiceBrowser()
@@ -28,6 +29,10 @@ public class CiaoBrowser {
     }
 
     func found(service: NetService) {
+
+    }
+
+    private func resolve(service: NetService) {
         resolver = service
         resolverDelegate = CiaoResolver()
         resolverDelegate?.browser = self
@@ -36,8 +41,9 @@ public class CiaoBrowser {
     }
 
     func resolved(service: NetService) {
+        services.insert(service)
         dump(service)
-        dump(NetService.dictionary(fromTXTRecord: service.txtRecordData()!).mapValues{String.init(data: $0, encoding: .utf8)!})
+        dump(NetService.dictionary(fromTXTRecord: service.txtRecordData()!).mapValues { String(data: $0, encoding: .utf8)! })
     }
 }
 
@@ -45,16 +51,16 @@ class CiaoResolver: NSObject, NetServiceDelegate {
     weak var browser: CiaoBrowser?
 
     func netService(_ sender: NetService, didNotResolve errorDict: [String: NSNumber]) {
-        print("did not resolve")
+        Logger.verbose("Service didn't resolve", sender)
     }
 
     func netServiceDidResolveAddress(_ sender: NetService) {
-        print("didResolve")
         browser?.resolved(service: sender)
+        Logger.verbose("Service resolved", sender)
     }
 
     func netServiceWillResolve(_ sender: NetService) {
-        print("willResolve")
+        Logger.verbose("Service will resolve", sender)
     }
 }
 
@@ -62,22 +68,19 @@ class CiaoBrowserDelegate: NSObject, NetServiceBrowserDelegate {
     weak var browser: CiaoBrowser?
     func netServiceBrowser(_ browser: NetServiceBrowser, didFind service: NetService, moreComing: Bool) {
         self.browser?.found(service: service)
-    }
-
-    func netServiceBrowser(_ browser: NetServiceBrowser, didFindDomain domainString: String, moreComing: Bool) {
-        print(domainString)
+        Logger.verbose("Service found")
     }
 
     func netServiceBrowserWillSearch(_ browser: NetServiceBrowser) {
-        print("will search")
+        Logger.verbose("Browser will search")
     }
 
     func netServiceBrowserDidStopSearch(_ browser: NetServiceBrowser) {
-        print("stopped search")
+        Logger.verbose("Browser stopped search")
     }
 
     func netServiceBrowser(_ browser: NetServiceBrowser, didNotSearch errorDict: [String: NSNumber]) {
-        print("did not search", errorDict)
+        Logger.debug("Browser didn't search", errorDict)
     }
 
 }
