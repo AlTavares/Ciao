@@ -16,6 +16,7 @@ public class CiaoBrowser {
     var resolverDelegate: CiaoResolver?
     public var services = Set<NetService>()
     private var servicesToBeResolved = Set<NetService>()
+    private var serviceFoundHandler: ((NetService) -> Void)!
 
     public init() {
         netServiceBrowser = NetServiceBrowser()
@@ -24,15 +25,16 @@ public class CiaoBrowser {
         netServiceBrowser.delegate = delegate
     }
 
-    public func browse(type: String, domain: String = "") {
+    public func browse(type: String, domain: String = "", serviceFoundHandler: @escaping (NetService) -> Void) {
         netServiceBrowser.searchForServices(ofType: "_\(type)._tcp", inDomain: domain)
+        self.serviceFoundHandler = serviceFoundHandler
     }
 
-    func found(service: NetService) {
-
-    }
-
-    private func resolve(service: NetService) {
+    func resolve(service: NetService) {
+        guard resolver == nil else { // put in a queue to resolve
+            servicesToBeResolved.insert(service)
+            return
+        }
         resolver = service
         resolverDelegate = CiaoResolver()
         resolverDelegate?.browser = self
@@ -41,9 +43,12 @@ public class CiaoBrowser {
     }
 
     func resolved(service: NetService) {
+        resolver = nil
         services.insert(service)
-        dump(service)
-        dump(NetService.dictionary(fromTXTRecord: service.txtRecordData()!).mapValues { String(data: $0, encoding: .utf8)! })
+        serviceFoundHandler(service)
+        if let serviceToBeResolved = servicesToBeResolved.popFirst() {
+            resolve(service: serviceToBeResolved)
+        }
     }
 }
 
@@ -67,7 +72,7 @@ class CiaoResolver: NSObject, NetServiceDelegate {
 class CiaoBrowserDelegate: NSObject, NetServiceBrowserDelegate {
     weak var browser: CiaoBrowser?
     func netServiceBrowser(_ browser: NetServiceBrowser, didFind service: NetService, moreComing: Bool) {
-        self.browser?.found(service: service)
+        self.browser?.resolve(service: service)
         Logger.verbose("Service found")
     }
 

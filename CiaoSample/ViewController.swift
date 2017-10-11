@@ -16,7 +16,10 @@ class ViewController: UIViewController {
 
     @IBAction func browse(_ sender: Any) {
         ciaoBrowser = CiaoBrowser()
-        ciaoBrowser.browse(type: type)
+        ciaoBrowser.browse(type: type) { service in
+            dump(service)
+            dump(NetService.dictionary(fromTXTRecord: service.txtRecordData()!) as [String: String])
+        }
     }
 
     @IBAction func server(_ sender: Any) {
@@ -24,4 +27,3 @@ class ViewController: UIViewController {
         ciaoServer.txtRecord = ["ovo": "xunda"]
     }
 }
-
