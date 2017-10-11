@@ -46,15 +46,16 @@ struct Logger {
         return Logger.dateFormatter.string(from: Date())
     }
 
-    static func log(_ message: Any...,
+    private static func log(_ message: Any...,
                     level: Level,
                     fileName: String = #file,
                     line: Int = #line,
-                    column: Int = #column,
                     funcName: String = #function) {
 
         guard level.rawValue >= self.level.rawValue else { return }
-        print("\(date) [\(level.description)][\(sourceFileName(filePath: fileName))]:\(line) \(column) \(funcName) -> \(message)")
+        var msg = message.description.dropFirst(2)
+        msg = msg.dropLast(2)
+        print("\(date) [\(level.description)][\(sourceFileName(filePath: fileName))]:\(line) \(funcName) -> \(msg)")
     }
 
     private static func sourceFileName(filePath: String) -> String {
@@ -64,20 +65,38 @@ struct Logger {
 }
 
 extension Logger {
-    static func verbose(_ message: Any...) {
-        Logger.log(message, level: .verbose)
+    static func verbose(_ message: Any...,
+                        fileName: String = #file,
+                        line: Int = #line,
+                        funcName: String = #function) {
+        Logger.log(message, level: .verbose, fileName: fileName, line: line, funcName: funcName)
     }
-    static func debug(_ message: Any...) {
-        Logger.log(message, level: .debug)
+
+    static func debug(_ message: Any...,
+                      fileName: String = #file,
+                      line: Int = #line,
+                      funcName: String = #function) {
+        Logger.log(message, level: .debug, fileName: fileName, line: line, funcName: funcName)
     }
-    static func info(_ message: Any...) {
-        Logger.log(message, level: .info)
+
+    static func info(_ message: Any...,
+                     fileName: String = #file,
+                     line: Int = #line,
+                     funcName: String = #function) {
+        Logger.log(message, level: .info, fileName: fileName, line: line, funcName: funcName)
     }
-    static func warning(_ message: Any...) {
-        Logger.log(message, level: .warning)
+
+    static func warning(_ message: Any...,
+                        fileName: String = #file,
+                        line: Int = #line,
+                        funcName: String = #function) {
+        Logger.log(message, level: .warning, fileName: fileName, line: line, funcName: funcName)
     }
-    static func error(_ message: Any...) {
-        Logger.log(message, level: .error)
+
+    static func error(_ message: Any...,
+                      fileName: String = #file,
+                      line: Int = #line,
+                      funcName: String = #function) {
+        Logger.log(message, level: .error, fileName: fileName, line: line, funcName: funcName)
     }
 }
-
