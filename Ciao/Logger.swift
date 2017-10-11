@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Level: Int {
+public enum Level: Int {
     case verbose = 0
     case debug = 1
     case info = 2
@@ -31,8 +31,9 @@ enum Level: Int {
     }
 }
 
+public var CiaoLoggerLevel = Level.verbose
+
 struct Logger {
-    static var level = Level.verbose
     private static var dateFormat = "yyyy-MM-dd hh:mm:ssSSS"
     private static var dateFormatter: DateFormatter {
         let formatter = DateFormatter()
@@ -52,7 +53,7 @@ struct Logger {
                     line: Int = #line,
                     funcName: String = #function) {
 
-        guard level.rawValue >= self.level.rawValue else { return }
+        guard level.rawValue >= CiaoLoggerLevel.rawValue else { return }
         var msg = message.description.dropFirst(2)
         msg = msg.dropLast(2)
         print("\(date) [\(level.description)][\(sourceFileName(filePath: fileName))]:\(line) \(funcName) -> \(msg)")
