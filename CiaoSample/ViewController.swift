@@ -7,19 +7,21 @@
 //
 
 import UIKit
+import Ciao
 
 class ViewController: UIViewController {
+    var ciaoServer: CiaoServer!
+    var ciaoBrowser: CiaoBrowser!
+    let type = "CiaoSample"
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    @IBAction func browse(_ sender: Any) {
+        ciaoBrowser = CiaoBrowser()
+        ciaoBrowser.browse(type: type)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func server(_ sender: Any) {
+        ciaoServer = CiaoServer(type: type)
+        ciaoServer.txtRecord = ["ovo": "xunda"]
     }
-
-
 }
 

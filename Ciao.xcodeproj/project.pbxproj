@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		249785541F8E55A700DC103C /* CiaoBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249785531F8E55A700DC103C /* CiaoBrowser.swift */; };
 		24E93CE71F8D0E0B009886B6 /* Ciao.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24E93CDD1F8D0E0B009886B6 /* Ciao.framework */; };
 		24E93CEC1F8D0E0B009886B6 /* CiaoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E93CEB1F8D0E0B009886B6 /* CiaoTests.swift */; };
 		24E93CEE1F8D0E0B009886B6 /* Ciao.h in Headers */ = {isa = PBXBuildFile; fileRef = 24E93CE01F8D0E0B009886B6 /* Ciao.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -15,6 +16,9 @@
 		24E93D291F8D3978009886B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24E93D271F8D3978009886B6 /* Main.storyboard */; };
 		24E93D2B1F8D3978009886B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24E93D2A1F8D3978009886B6 /* Assets.xcassets */; };
 		24E93D2E1F8D3978009886B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24E93D2C1F8D3978009886B6 /* LaunchScreen.storyboard */; };
+		24E93D341F8D39A6009886B6 /* CiaoServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E93D331F8D39A6009886B6 /* CiaoServer.swift */; };
+		24E93D3C1F8D530E009886B6 /* Ciao.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24E93CDD1F8D0E0B009886B6 /* Ciao.framework */; };
+		24E93D3D1F8D530E009886B6 /* Ciao.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 24E93CDD1F8D0E0B009886B6 /* Ciao.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,9 +29,31 @@
 			remoteGlobalIDString = 24E93CDC1F8D0E0B009886B6;
 			remoteInfo = Ciao;
 		};
+		24E93D3E1F8D530E009886B6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 24E93CD41F8D0E0B009886B6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 24E93CDC1F8D0E0B009886B6;
+			remoteInfo = Ciao;
+		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		24E93D401F8D530E009886B6 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				24E93D3D1F8D530E009886B6 /* Ciao.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		249785531F8E55A700DC103C /* CiaoBrowser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CiaoBrowser.swift; sourceTree = "<group>"; };
 		24E93CDD1F8D0E0B009886B6 /* Ciao.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Ciao.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		24E93CE01F8D0E0B009886B6 /* Ciao.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Ciao.h; sourceTree = "<group>"; };
 		24E93CE11F8D0E0B009886B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -41,6 +67,7 @@
 		24E93D2A1F8D3978009886B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		24E93D2D1F8D3978009886B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		24E93D2F1F8D3978009886B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		24E93D331F8D39A6009886B6 /* CiaoServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CiaoServer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24E93D3C1F8D530E009886B6 /* Ciao.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +104,7 @@
 				24E93CEA1F8D0E0B009886B6 /* CiaoTests */,
 				24E93D221F8D3978009886B6 /* CiaoSample */,
 				24E93CDE1F8D0E0B009886B6 /* Products */,
+				24E93D351F8D44D1009886B6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,6 +123,8 @@
 			children = (
 				24E93CE01F8D0E0B009886B6 /* Ciao.h */,
 				24E93CE11F8D0E0B009886B6 /* Info.plist */,
+				24E93D331F8D39A6009886B6 /* CiaoServer.swift */,
+				249785531F8E55A700DC103C /* CiaoBrowser.swift */,
 			);
 			path = Ciao;
 			sourceTree = "<group>";
@@ -118,6 +149,13 @@
 				24E93D2F1F8D3978009886B6 /* Info.plist */,
 			);
 			path = CiaoSample;
+			sourceTree = "<group>";
+		};
+		24E93D351F8D44D1009886B6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,10 +215,12 @@
 				24E93D1D1F8D3978009886B6 /* Sources */,
 				24E93D1E1F8D3978009886B6 /* Frameworks */,
 				24E93D1F1F8D3978009886B6 /* Resources */,
+				24E93D401F8D530E009886B6 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				24E93D3F1F8D530E009886B6 /* PBXTargetDependency */,
 			);
 			name = CiaoSample;
 			productName = CiaoSample;
@@ -199,6 +239,7 @@
 				TargetAttributes = {
 					24E93CDC1F8D0E0B009886B6 = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 					24E93CE51F8D0E0B009886B6 = {
@@ -263,6 +304,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				249785541F8E55A700DC103C /* CiaoBrowser.swift in Sources */,
+				24E93D341F8D39A6009886B6 /* CiaoServer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,6 +333,11 @@
 			isa = PBXTargetDependency;
 			target = 24E93CDC1F8D0E0B009886B6 /* Ciao */;
 			targetProxy = 24E93CE81F8D0E0B009886B6 /* PBXContainerItemProxy */;
+		};
+		24E93D3F1F8D530E009886B6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 24E93CDC1F8D0E0B009886B6 /* Ciao */;
+			targetProxy = 24E93D3E1F8D530E009886B6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -429,6 +477,7 @@
 		24E93CF21F8D0E0B009886B6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -438,10 +487,12 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Ciao/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tavares.Ciao;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -450,6 +501,7 @@
 		24E93CF31F8D0E0B009886B6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -459,6 +511,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Ciao/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tavares.Ciao;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -471,6 +524,7 @@
 		24E93CF51F8D0E0B009886B6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y9GCPAGMBN;
 				INFOPLIST_FILE = CiaoTests/Info.plist;
@@ -485,6 +539,7 @@
 		24E93CF61F8D0E0B009886B6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y9GCPAGMBN;
 				INFOPLIST_FILE = CiaoTests/Info.plist;
@@ -499,10 +554,12 @@
 		24E93D301F8D3978009886B6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y9GCPAGMBN;
 				INFOPLIST_FILE = CiaoSample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tavares.CiaoSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -514,10 +571,12 @@
 		24E93D311F8D3978009886B6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y9GCPAGMBN;
 				INFOPLIST_FILE = CiaoSample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tavares.CiaoSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
