@@ -38,6 +38,10 @@ public class CiaoServer {
     }
 
     public func start(success: ((Bool) -> Void)? = nil) {
+        if started {
+            success?(true)
+            return
+        }
         netService.schedule(in: RunLoop.current, forMode: RunLoopMode.commonModes)
         netService.publish(options: NetService.Options.listenForConnections)
         successCallback = success
