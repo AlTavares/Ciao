@@ -25,8 +25,12 @@ public class CiaoBrowser {
         netServiceBrowser.delegate = delegate
     }
 
+    public func browse(type: ServiceType, domain: String = "", serviceFoundHandler: @escaping (NetService) -> Void) {
+        browse(type: type.description, serviceFoundHandler: serviceFoundHandler)
+    }
+
     public func browse(type: String, domain: String = "", serviceFoundHandler: @escaping (NetService) -> Void) {
-        netServiceBrowser.searchForServices(ofType: "_\(type)._tcp", inDomain: domain)
+        netServiceBrowser.searchForServices(ofType: type, inDomain: domain)
         self.serviceFoundHandler = serviceFoundHandler
     }
 

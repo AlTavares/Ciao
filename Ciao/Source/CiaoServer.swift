@@ -27,8 +27,12 @@ public class CiaoServer {
         }
     }
 
+    public convenience init(type: ServiceType, domain: String = "", name: String = "") {
+        self.init(type: type.description, domain: domain, name: name)
+    }
+
     public init(type: String, domain: String = "", name: String = "") {
-        netService = NetService(domain: domain, type: "_\(type)._tcp", name: name)
+        netService = NetService(domain: domain, type: type, name: name)
         delegate = CiaoServerDelegate()
         netService.delegate = delegate
     }
@@ -56,7 +60,7 @@ class CiaoServerDelegate: NSObject, NetServiceDelegate {
         Logger.verbose("CiaoServer Started")
     }
 
-    func netService(_ sender: NetService, didNotPublish errorDict: [String : NSNumber]) {
+    func netService(_ sender: NetService, didNotPublish errorDict: [String: NSNumber]) {
         server?.started = false
         Logger.error("CiaoServer did not publish", errorDict)
     }
