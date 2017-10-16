@@ -106,7 +106,7 @@
 		24E93CD31F8D0E0B009886B6 = {
 			isa = PBXGroup;
 			children = (
-				24E93CDF1F8D0E0B009886B6 /* Ciao */,
+				24E93CDF1F8D0E0B009886B6 /* Source */,
 				24E93CEA1F8D0E0B009886B6 /* CiaoTests */,
 				24E93D221F8D3978009886B6 /* CiaoSample */,
 				24E93CDE1F8D0E0B009886B6 /* Products */,
@@ -124,14 +124,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		24E93CDF1F8D0E0B009886B6 /* Ciao */ = {
+		24E93CDF1F8D0E0B009886B6 /* Source */ = {
 			isa = PBXGroup;
 			children = (
 				24E93CE01F8D0E0B009886B6 /* Ciao.h */,
 				24E93CE11F8D0E0B009886B6 /* Info.plist */,
-				24F75BF31F950AB20097F457 /* Source */,
+				24F75BF31F950AB20097F457 /* Ciao */,
 			);
-			path = Ciao;
+			path = Source;
 			sourceTree = "<group>";
 		};
 		24E93CEA1F8D0E0B009886B6 /* CiaoTests */ = {
@@ -163,7 +163,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		24F75BF31F950AB20097F457 /* Source */ = {
+		24F75BF31F950AB20097F457 /* Ciao */ = {
 			isa = PBXGroup;
 			children = (
 				24E93D331F8D39A6009886B6 /* CiaoServer.swift */,
@@ -172,7 +172,7 @@
 				249785571F8E982200DC103C /* NetServiceExtension.swift */,
 				24F75BF41F950ACD0097F457 /* ServiceType.swift */,
 			);
-			path = Source;
+			path = Ciao;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
