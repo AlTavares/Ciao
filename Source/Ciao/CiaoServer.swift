@@ -20,8 +20,7 @@ public class CiaoServer {
     }
     public var txtRecord: [String: String]? {
         get {
-            guard let data = netService.txtRecordData() else { return nil }
-            return NetService.dictionary(fromTXTRecord: data)
+            return netService.txtRecordDictionary
         }
         set {
             netService.setTXTRecord(dictionary: newValue)

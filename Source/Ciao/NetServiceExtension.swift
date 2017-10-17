@@ -26,4 +26,9 @@ extension NetService {
         }
         self.setTXTRecord(NetService.data(fromTXTRecord: dictionary))
     }
+
+    public var txtRecordDictionary: [String: String]? {
+        guard let data = self.txtRecordData() else { return nil }
+        return NetService.dictionary(fromTXTRecord: data)
+    }
 }
