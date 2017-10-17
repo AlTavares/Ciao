@@ -15,6 +15,7 @@ public class CiaoServer {
     var started = false {
         didSet {
             successCallback?(started)
+            successCallback = nil
         }
     }
     public var txtRecord: [String: String]? {
@@ -43,9 +44,9 @@ public class CiaoServer {
             success?(true)
             return
         }
+        successCallback = success
         netService.schedule(in: RunLoop.current, forMode: RunLoopMode.commonModes)
         netService.publish(options: NetService.Options.listenForConnections)
-        successCallback = success
     }
 
     public func stop() {
