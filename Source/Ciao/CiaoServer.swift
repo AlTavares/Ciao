@@ -34,6 +34,7 @@ public class CiaoServer {
     public init(type: String, domain: String = "", name: String = "") {
         netService = NetService(domain: domain, type: type, name: name)
         delegate = CiaoServerDelegate()
+        delegate?.server = self
         netService.delegate = delegate
     }
 
