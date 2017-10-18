@@ -24,6 +24,7 @@ public class CiaoServer {
         }
         set {
             netService.setTXTRecord(dictionary: newValue)
+            Logger.verbose("TXT Record updated", newValue)
         }
     }
 
