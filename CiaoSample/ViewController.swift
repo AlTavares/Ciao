@@ -12,19 +12,22 @@ import Ciao
 class ViewController: UIViewController {
     var ciaoServer: CiaoServer!
     var ciaoBrowser: CiaoBrowser!
-    let type = "CiaoSample"
+    let type = ServiceType.tcp("CiaoSample")
     var count = 0
 
     @IBAction func browse(_ sender: Any) {
         ciaoBrowser = CiaoBrowser()
         ciaoBrowser.browse(type: type) { service in
             dump(service)
-            dump(NetService.dictionary(fromTXTRecord: service.txtRecordData()!) as [String: String])
+            dump(service.txtRecordDictionary)
         }
     }
 
     @IBAction func server(_ sender: Any) {
         ciaoServer = CiaoServer(type: type)
+        ciaoServer.start { (success) in
+            print("Server started:", success)
+        }
         updateTxtRecord()
     }
 

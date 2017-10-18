@@ -63,6 +63,9 @@ class CiaoServerTests: TestWithExpectation {
             self.done()
         }
         waitUntilDone(timeout: 5)
+        XCTAssertNotNil(server.delegate)
+        XCTAssertNotNil(server.netService.delegate)
+        XCTAssertNotNil(delegate.server)
         XCTAssertEqual(server.started, valid)
         XCTAssertEqual(delegate.didPublishCalled, valid)
         XCTAssertEqual(delegate.didNotPublishCalled, !valid)
