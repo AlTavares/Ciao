@@ -47,7 +47,7 @@ struct Logger {
         return Logger.dateFormatter.string(from: Date())
     }
 
-    private static func log(_ message: Any...,
+    fileprivate static func log(_ message: Any...,
                     level: Level,
                     fileName: String = #file,
                     line: Int = #line,
