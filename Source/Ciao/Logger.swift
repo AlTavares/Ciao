@@ -31,7 +31,7 @@ public enum Level: Int {
     }
 }
 
-public var CiaoLoggerLevel = Level.verbose
+public var LoggerLevel = Level.verbose
 
 struct Logger {
     private static var dateFormat = "yyyy-MM-dd hh:mm:ssSSS"
@@ -53,7 +53,7 @@ struct Logger {
                     line: Int = #line,
                     funcName: String = #function) {
 
-        guard level.rawValue >= CiaoLoggerLevel.rawValue else { return }
+        guard level.rawValue >= LoggerLevel.rawValue else { return }
         var msg = message.description.dropFirst(2)
         msg = msg.dropLast(2)
         print("\(date) [\(level.description)][\(sourceFileName(filePath: fileName))]:\(line) \(funcName) -> \(msg)")
