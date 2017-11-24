@@ -22,6 +22,8 @@
 		24E93D3C1F8D530E009886B6 /* Ciao.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24E93CDD1F8D0E0B009886B6 /* Ciao.framework */; };
 		24E93D3D1F8D530E009886B6 /* Ciao.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 24E93CDD1F8D0E0B009886B6 /* Ciao.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		24F75BF51F950ACD0097F457 /* ServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F75BF41F950ACD0097F457 /* ServiceType.swift */; };
+		DA2E61211FC24499002C684B /* CiaoBrowserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2E61201FC24499002C684B /* CiaoBrowserTests.swift */; };
+		DA2E61231FC244DF002C684B /* TestWithExpectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2E61221FC244DF002C684B /* TestWithExpectation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +83,8 @@
 		24E93D2F1F8D3978009886B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		24E93D331F8D39A6009886B6 /* CiaoServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CiaoServer.swift; sourceTree = "<group>"; };
 		24F75BF41F950ACD0097F457 /* ServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceType.swift; sourceTree = "<group>"; };
+		DA2E61201FC24499002C684B /* CiaoBrowserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CiaoBrowserTests.swift; sourceTree = "<group>"; };
+		DA2E61221FC244DF002C684B /* TestWithExpectation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestWithExpectation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,8 +147,10 @@
 		24E93CEA1F8D0E0B009886B6 /* CiaoTests */ = {
 			isa = PBXGroup;
 			children = (
-				24E93CEB1F8D0E0B009886B6 /* CiaoServerTests.swift */,
 				24E93CED1F8D0E0B009886B6 /* Info.plist */,
+				24E93CEB1F8D0E0B009886B6 /* CiaoServerTests.swift */,
+				DA2E61201FC24499002C684B /* CiaoBrowserTests.swift */,
+				DA2E61221FC244DF002C684B /* TestWithExpectation.swift */,
 			);
 			path = CiaoTests;
 			sourceTree = "<group>";
@@ -333,6 +339,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA2E61211FC24499002C684B /* CiaoBrowserTests.swift in Sources */,
+				DA2E61231FC244DF002C684B /* TestWithExpectation.swift in Sources */,
 				24E93CEC1F8D0E0B009886B6 /* CiaoServerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
