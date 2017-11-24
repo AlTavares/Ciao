@@ -2,11 +2,11 @@
 //  Ciao.h
 //  Ciao
 //
-//  Created by Alexandre Tavares on 10/10/17.
-//  Copyright © 2017 Tavares. All rights reserved.
+//  Created by Alexandre Mantovani Tavares on 04/10/16.
+//  Copyright © 2017 AlTavares. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 //! Project version number for Ciao.
 FOUNDATION_EXPORT double CiaoVersionNumber;
@@ -15,5 +15,3 @@ FOUNDATION_EXPORT double CiaoVersionNumber;
 FOUNDATION_EXPORT const unsigned char CiaoVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <Ciao/PublicHeader.h>
-
-

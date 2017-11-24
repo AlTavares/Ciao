@@ -3,61 +3,117 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		249785541F8E55A700DC103C /* CiaoBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249785531F8E55A700DC103C /* CiaoBrowser.swift */; };
-		249785561F8E8E1B00DC103C /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249785551F8E8E1B00DC103C /* Logger.swift */; };
-		249785581F8E982200DC103C /* NetServiceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249785571F8E982200DC103C /* NetServiceExtension.swift */; };
-		24E93CE71F8D0E0B009886B6 /* Ciao.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24E93CDD1F8D0E0B009886B6 /* Ciao.framework */; };
-		24E93CEC1F8D0E0B009886B6 /* CiaoServerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E93CEB1F8D0E0B009886B6 /* CiaoServerTests.swift */; };
-		24E93CEE1F8D0E0B009886B6 /* Ciao.h in Headers */ = {isa = PBXBuildFile; fileRef = 24E93CE01F8D0E0B009886B6 /* Ciao.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		24E93D241F8D3978009886B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E93D231F8D3978009886B6 /* AppDelegate.swift */; };
-		24E93D261F8D3978009886B6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E93D251F8D3978009886B6 /* ViewController.swift */; };
-		24E93D291F8D3978009886B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24E93D271F8D3978009886B6 /* Main.storyboard */; };
-		24E93D2B1F8D3978009886B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24E93D2A1F8D3978009886B6 /* Assets.xcassets */; };
-		24E93D2E1F8D3978009886B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24E93D2C1F8D3978009886B6 /* LaunchScreen.storyboard */; };
-		24E93D341F8D39A6009886B6 /* CiaoServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E93D331F8D39A6009886B6 /* CiaoServer.swift */; };
-		24E93D3C1F8D530E009886B6 /* Ciao.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24E93CDD1F8D0E0B009886B6 /* Ciao.framework */; };
-		24E93D3D1F8D530E009886B6 /* Ciao.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 24E93CDD1F8D0E0B009886B6 /* Ciao.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		24F75BF51F950ACD0097F457 /* ServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F75BF41F950ACD0097F457 /* ServiceType.swift */; };
-		DA2E61211FC24499002C684B /* CiaoBrowserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2E61201FC24499002C684B /* CiaoBrowserTests.swift */; };
-		DA2E61231FC244DF002C684B /* TestWithExpectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2E61221FC244DF002C684B /* TestWithExpectation.swift */; };
+		3549BB501DA38A2000C63030 /* Ciao.h in Headers */ = {isa = PBXBuildFile; fileRef = 3549BB181DA3890B00C63030 /* Ciao.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3549BB511DA38A2000C63030 /* Ciao.h in Headers */ = {isa = PBXBuildFile; fileRef = 3549BB181DA3890B00C63030 /* Ciao.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3549BB521DA38A2100C63030 /* Ciao.h in Headers */ = {isa = PBXBuildFile; fileRef = 3549BB181DA3890B00C63030 /* Ciao.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3549BB531DA38A2200C63030 /* Ciao.h in Headers */ = {isa = PBXBuildFile; fileRef = 3549BB181DA3890B00C63030 /* Ciao.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3549BB661DA38ADB00C63030 /* Ciao.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3549BB211DA389CD00C63030 /* Ciao.framework */; };
+		3549BB751DA38AEF00C63030 /* Ciao.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3549BB481DA389F300C63030 /* Ciao.framework */; };
+		3549BB841DA38B0000C63030 /* Ciao.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3549BB3B1DA389E800C63030 /* Ciao.framework */; };
+		354AD5861F8A659800B18FAE /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 354AD5841F8A659800B18FAE /* Quick.framework */; };
+		354AD5871F8A659800B18FAE /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 354AD5851F8A659800B18FAE /* Nimble.framework */; };
+		354AD5881F8A65B500B18FAE /* Nimble.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 354AD5851F8A659800B18FAE /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		354AD5891F8A65B500B18FAE /* Quick.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 354AD5841F8A659800B18FAE /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		35B7422F1F82A5E000829B21 /* Nimble.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 35B7422D1F82A5DF00829B21 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		35B742301F82A5E000829B21 /* Quick.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 35B7422E1F82A5E000829B21 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		35B742311F82A5EC00829B21 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35B7422D1F82A5DF00829B21 /* Nimble.framework */; };
+		35B742321F82A5EC00829B21 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35B7422E1F82A5E000829B21 /* Quick.framework */; };
+		35B742361F82A61E00829B21 /* Nimble.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 35B742341F82A61D00829B21 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		35B742371F82A61E00829B21 /* Quick.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 35B742351F82A61E00829B21 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		35B742381F82A62900829B21 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35B742341F82A61D00829B21 /* Nimble.framework */; };
+		35B742391F82A62900829B21 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35B742351F82A61E00829B21 /* Quick.framework */; };
+		DA2E61271FC7B8E3002C684B /* CiaoBrowserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2E61241FC7B8E3002C684B /* CiaoBrowserTests.swift */; };
+		DA2E61281FC7B8E3002C684B /* CiaoBrowserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2E61241FC7B8E3002C684B /* CiaoBrowserTests.swift */; };
+		DA2E61291FC7B8E3002C684B /* CiaoBrowserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2E61241FC7B8E3002C684B /* CiaoBrowserTests.swift */; };
+		DA2E612A1FC7B8E3002C684B /* CiaoServerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2E61251FC7B8E3002C684B /* CiaoServerTests.swift */; };
+		DA2E612B1FC7B8E3002C684B /* CiaoServerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2E61251FC7B8E3002C684B /* CiaoServerTests.swift */; };
+		DA2E612C1FC7B8E3002C684B /* CiaoServerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2E61251FC7B8E3002C684B /* CiaoServerTests.swift */; };
+		DA2E612D1FC7B8E3002C684B /* TestWithExpectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2E61261FC7B8E3002C684B /* TestWithExpectation.swift */; };
+		DA2E612E1FC7B8E3002C684B /* TestWithExpectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2E61261FC7B8E3002C684B /* TestWithExpectation.swift */; };
+		DA2E612F1FC7B8E3002C684B /* TestWithExpectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2E61261FC7B8E3002C684B /* TestWithExpectation.swift */; };
+		DA2E61351FC7B90F002C684B /* NetServiceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2E61301FC7B90E002C684B /* NetServiceExtension.swift */; };
+		DA2E61361FC7B90F002C684B /* NetServiceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2E61301FC7B90E002C684B /* NetServiceExtension.swift */; };
+		DA2E61371FC7B90F002C684B /* NetServiceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2E61301FC7B90E002C684B /* NetServiceExtension.swift */; };
+		DA2E61381FC7B90F002C684B /* NetServiceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2E61301FC7B90E002C684B /* NetServiceExtension.swift */; };
+		DA2E61391FC7B90F002C684B /* ServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2E61311FC7B90E002C684B /* ServiceType.swift */; };
+		DA2E613A1FC7B90F002C684B /* ServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2E61311FC7B90E002C684B /* ServiceType.swift */; };
+		DA2E613B1FC7B90F002C684B /* ServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2E61311FC7B90E002C684B /* ServiceType.swift */; };
+		DA2E613C1FC7B90F002C684B /* ServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2E61311FC7B90E002C684B /* ServiceType.swift */; };
+		DA2E613D1FC7B90F002C684B /* CiaoServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2E61321FC7B90E002C684B /* CiaoServer.swift */; };
+		DA2E613E1FC7B90F002C684B /* CiaoServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2E61321FC7B90E002C684B /* CiaoServer.swift */; };
+		DA2E613F1FC7B90F002C684B /* CiaoServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2E61321FC7B90E002C684B /* CiaoServer.swift */; };
+		DA2E61401FC7B90F002C684B /* CiaoServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2E61321FC7B90E002C684B /* CiaoServer.swift */; };
+		DA2E61411FC7B90F002C684B /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2E61331FC7B90F002C684B /* Logger.swift */; };
+		DA2E61421FC7B90F002C684B /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2E61331FC7B90F002C684B /* Logger.swift */; };
+		DA2E61431FC7B90F002C684B /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2E61331FC7B90F002C684B /* Logger.swift */; };
+		DA2E61441FC7B90F002C684B /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2E61331FC7B90F002C684B /* Logger.swift */; };
+		DA2E61451FC7B90F002C684B /* CiaoBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2E61341FC7B90F002C684B /* CiaoBrowser.swift */; };
+		DA2E61461FC7B90F002C684B /* CiaoBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2E61341FC7B90F002C684B /* CiaoBrowser.swift */; };
+		DA2E61471FC7B90F002C684B /* CiaoBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2E61341FC7B90F002C684B /* CiaoBrowser.swift */; };
+		DA2E61481FC7B90F002C684B /* CiaoBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2E61341FC7B90F002C684B /* CiaoBrowser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		249EC6691F96352300D8D97F /* PBXContainerItemProxy */ = {
+		3549BB671DA38ADB00C63030 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 24E93CD41F8D0E0B009886B6 /* Project object */;
+			containerPortal = 3549BAFC1DA387DB00C63030 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 24E93D201F8D3978009886B6;
-			remoteInfo = CiaoSample;
+			remoteGlobalIDString = 3549BB201DA389CD00C63030;
+			remoteInfo = "Ciao-iOS";
 		};
-		24E93CE81F8D0E0B009886B6 /* PBXContainerItemProxy */ = {
+		3549BB761DA38AEF00C63030 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 24E93CD41F8D0E0B009886B6 /* Project object */;
+			containerPortal = 3549BAFC1DA387DB00C63030 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 24E93CDC1F8D0E0B009886B6;
-			remoteInfo = Ciao;
+			remoteGlobalIDString = 3549BB471DA389F300C63030;
+			remoteInfo = "Ciao-tvOS";
 		};
-		24E93D3E1F8D530E009886B6 /* PBXContainerItemProxy */ = {
+		3549BB851DA38B0000C63030 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 24E93CD41F8D0E0B009886B6 /* Project object */;
+			containerPortal = 3549BAFC1DA387DB00C63030 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 24E93CDC1F8D0E0B009886B6;
-			remoteInfo = Ciao;
+			remoteGlobalIDString = 3549BB3A1DA389E800C63030;
+			remoteInfo = "Ciao-macOS";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		24E93D401F8D530E009886B6 /* Embed Frameworks */ = {
+		35B7422C1F82A2C700829B21 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				24E93D3D1F8D530E009886B6 /* Ciao.framework in Embed Frameworks */,
+				35B7422F1F82A5E000829B21 /* Nimble.framework in Embed Frameworks */,
+				35B742301F82A5E000829B21 /* Quick.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		35B742331F82A60600829B21 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				35B742361F82A61E00829B21 /* Nimble.framework in Embed Frameworks */,
+				35B742371F82A61E00829B21 /* Quick.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		35B7423A1F82A63600829B21 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				354AD5881F8A65B500B18FAE /* Nimble.framework in Embed Frameworks */,
+				354AD5891F8A65B500B18FAE /* Quick.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -65,342 +121,579 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		249785531F8E55A700DC103C /* CiaoBrowser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CiaoBrowser.swift; sourceTree = "<group>"; };
-		249785551F8E8E1B00DC103C /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
-		249785571F8E982200DC103C /* NetServiceExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetServiceExtension.swift; sourceTree = "<group>"; };
-		24E93CDD1F8D0E0B009886B6 /* Ciao.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Ciao.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		24E93CE01F8D0E0B009886B6 /* Ciao.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Ciao.h; sourceTree = "<group>"; };
-		24E93CE11F8D0E0B009886B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		24E93CE61F8D0E0B009886B6 /* CiaoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CiaoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		24E93CEB1F8D0E0B009886B6 /* CiaoServerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CiaoServerTests.swift; sourceTree = "<group>"; };
-		24E93CED1F8D0E0B009886B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		24E93D211F8D3978009886B6 /* CiaoSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CiaoSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		24E93D231F8D3978009886B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		24E93D251F8D3978009886B6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		24E93D281F8D3978009886B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		24E93D2A1F8D3978009886B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		24E93D2D1F8D3978009886B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		24E93D2F1F8D3978009886B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		24E93D331F8D39A6009886B6 /* CiaoServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CiaoServer.swift; sourceTree = "<group>"; };
-		24F75BF41F950ACD0097F457 /* ServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceType.swift; sourceTree = "<group>"; };
-		DA2E61201FC24499002C684B /* CiaoBrowserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CiaoBrowserTests.swift; sourceTree = "<group>"; };
-		DA2E61221FC244DF002C684B /* TestWithExpectation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestWithExpectation.swift; sourceTree = "<group>"; };
+		3549BB171DA3890B00C63030 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3549BB181DA3890B00C63030 /* Ciao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ciao.h; sourceTree = "<group>"; };
+		3549BB211DA389CD00C63030 /* Ciao.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Ciao.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3549BB2E1DA389DB00C63030 /* Ciao.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Ciao.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3549BB3B1DA389E800C63030 /* Ciao.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Ciao.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3549BB481DA389F300C63030 /* Ciao.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Ciao.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3549BB551DA38A5E00C63030 /* Info-tvOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-tvOS.plist"; sourceTree = "<group>"; };
+		3549BB571DA38A8800C63030 /* Info-tvOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-tvOS.plist"; sourceTree = "<group>"; };
+		3549BB581DA38A8800C63030 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3549BB611DA38ADB00C63030 /* CiaoTests-iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CiaoTests-iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3549BB701DA38AEF00C63030 /* CiaoTests-tvOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CiaoTests-tvOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3549BB7F1DA38B0000C63030 /* CiaoTests-macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CiaoTests-macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		354AD5841F8A659800B18FAE /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/tvOS/Quick.framework; sourceTree = "<group>"; };
+		354AD5851F8A659800B18FAE /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/tvOS/Nimble.framework; sourceTree = "<group>"; };
+		35B7422D1F82A5DF00829B21 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		35B7422E1F82A5E000829B21 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
+		35B742341F82A61D00829B21 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/Mac/Nimble.framework; sourceTree = "<group>"; };
+		35B742351F82A61E00829B21 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/Mac/Quick.framework; sourceTree = "<group>"; };
+		DA2E61241FC7B8E3002C684B /* CiaoBrowserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CiaoBrowserTests.swift; sourceTree = "<group>"; };
+		DA2E61251FC7B8E3002C684B /* CiaoServerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CiaoServerTests.swift; sourceTree = "<group>"; };
+		DA2E61261FC7B8E3002C684B /* TestWithExpectation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestWithExpectation.swift; sourceTree = "<group>"; };
+		DA2E61301FC7B90E002C684B /* NetServiceExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetServiceExtension.swift; sourceTree = "<group>"; };
+		DA2E61311FC7B90E002C684B /* ServiceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceType.swift; sourceTree = "<group>"; };
+		DA2E61321FC7B90E002C684B /* CiaoServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CiaoServer.swift; sourceTree = "<group>"; };
+		DA2E61331FC7B90F002C684B /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		DA2E61341FC7B90F002C684B /* CiaoBrowser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CiaoBrowser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		24E93CD91F8D0E0B009886B6 /* Frameworks */ = {
+		3549BB1D1DA389CD00C63030 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		24E93CE31F8D0E0B009886B6 /* Frameworks */ = {
+		3549BB2A1DA389DB00C63030 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				24E93CE71F8D0E0B009886B6 /* Ciao.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		24E93D1E1F8D3978009886B6 /* Frameworks */ = {
+		3549BB371DA389E800C63030 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				24E93D3C1F8D530E009886B6 /* Ciao.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3549BB441DA389F300C63030 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3549BB5E1DA38ADB00C63030 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35B742311F82A5EC00829B21 /* Nimble.framework in Frameworks */,
+				35B742321F82A5EC00829B21 /* Quick.framework in Frameworks */,
+				3549BB661DA38ADB00C63030 /* Ciao.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3549BB6D1DA38AEF00C63030 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				354AD5861F8A659800B18FAE /* Quick.framework in Frameworks */,
+				354AD5871F8A659800B18FAE /* Nimble.framework in Frameworks */,
+				3549BB751DA38AEF00C63030 /* Ciao.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3549BB7C1DA38B0000C63030 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35B742381F82A62900829B21 /* Nimble.framework in Frameworks */,
+				35B742391F82A62900829B21 /* Quick.framework in Frameworks */,
+				3549BB841DA38B0000C63030 /* Ciao.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		24E93CD31F8D0E0B009886B6 = {
+		3549BAFB1DA387DB00C63030 = {
 			isa = PBXGroup;
 			children = (
-				24E93CDF1F8D0E0B009886B6 /* Source */,
-				24E93CEA1F8D0E0B009886B6 /* CiaoTests */,
-				24E93D221F8D3978009886B6 /* CiaoSample */,
-				24E93CDE1F8D0E0B009886B6 /* Products */,
+				3549BB161DA3890B00C63030 /* Sources */,
+				3549BB191DA3890B00C63030 /* Tests */,
+				3549BB061DA387DB00C63030 /* Products */,
+				357D954B1DA3F2B400AEC55F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		24E93CDE1F8D0E0B009886B6 /* Products */ = {
+		3549BB061DA387DB00C63030 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				24E93CDD1F8D0E0B009886B6 /* Ciao.framework */,
-				24E93CE61F8D0E0B009886B6 /* CiaoTests.xctest */,
-				24E93D211F8D3978009886B6 /* CiaoSample.app */,
+				3549BB211DA389CD00C63030 /* Ciao.framework */,
+				3549BB2E1DA389DB00C63030 /* Ciao.framework */,
+				3549BB3B1DA389E800C63030 /* Ciao.framework */,
+				3549BB481DA389F300C63030 /* Ciao.framework */,
+				3549BB611DA38ADB00C63030 /* CiaoTests-iOS.xctest */,
+				3549BB701DA38AEF00C63030 /* CiaoTests-tvOS.xctest */,
+				3549BB7F1DA38B0000C63030 /* CiaoTests-macOS.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		24E93CDF1F8D0E0B009886B6 /* Source */ = {
+		3549BB161DA3890B00C63030 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				24E93CE01F8D0E0B009886B6 /* Ciao.h */,
-				24E93CE11F8D0E0B009886B6 /* Info.plist */,
-				24F75BF31F950AB20097F457 /* Ciao */,
+				359649011FB18CBF00FC7ADC /* Core */,
+				3549BB541DA38A4000C63030 /* Supporting Files */,
 			);
-			path = Source;
+			path = Sources;
 			sourceTree = "<group>";
 		};
-		24E93CEA1F8D0E0B009886B6 /* CiaoTests */ = {
+		3549BB191DA3890B00C63030 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				24E93CED1F8D0E0B009886B6 /* Info.plist */,
-				24E93CEB1F8D0E0B009886B6 /* CiaoServerTests.swift */,
-				DA2E61201FC24499002C684B /* CiaoBrowserTests.swift */,
-				DA2E61221FC244DF002C684B /* TestWithExpectation.swift */,
+				DA2E61241FC7B8E3002C684B /* CiaoBrowserTests.swift */,
+				DA2E61251FC7B8E3002C684B /* CiaoServerTests.swift */,
+				DA2E61261FC7B8E3002C684B /* TestWithExpectation.swift */,
+				3549BB5B1DA38A8C00C63030 /* Supporting Files */,
 			);
-			path = CiaoTests;
+			path = Tests;
 			sourceTree = "<group>";
 		};
-		24E93D221F8D3978009886B6 /* CiaoSample */ = {
+		3549BB541DA38A4000C63030 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				24E93D231F8D3978009886B6 /* AppDelegate.swift */,
-				24E93D251F8D3978009886B6 /* ViewController.swift */,
-				24E93D271F8D3978009886B6 /* Main.storyboard */,
-				24E93D2A1F8D3978009886B6 /* Assets.xcassets */,
-				24E93D2C1F8D3978009886B6 /* LaunchScreen.storyboard */,
-				24E93D2F1F8D3978009886B6 /* Info.plist */,
+				3549BB181DA3890B00C63030 /* Ciao.h */,
+				3549BB171DA3890B00C63030 /* Info.plist */,
+				3549BB551DA38A5E00C63030 /* Info-tvOS.plist */,
 			);
-			path = CiaoSample;
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		24F75BF31F950AB20097F457 /* Ciao */ = {
+		3549BB5B1DA38A8C00C63030 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				24E93D331F8D39A6009886B6 /* CiaoServer.swift */,
-				249785531F8E55A700DC103C /* CiaoBrowser.swift */,
-				249785551F8E8E1B00DC103C /* Logger.swift */,
-				249785571F8E982200DC103C /* NetServiceExtension.swift */,
-				24F75BF41F950ACD0097F457 /* ServiceType.swift */,
+				3549BB581DA38A8800C63030 /* Info.plist */,
+				3549BB571DA38A8800C63030 /* Info-tvOS.plist */,
 			);
-			path = Ciao;
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		357D954B1DA3F2B400AEC55F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				35B742341F82A61D00829B21 /* Nimble.framework */,
+				35B742351F82A61E00829B21 /* Quick.framework */,
+				35B7422D1F82A5DF00829B21 /* Nimble.framework */,
+				35B7422E1F82A5E000829B21 /* Quick.framework */,
+				354AD5851F8A659800B18FAE /* Nimble.framework */,
+				354AD5841F8A659800B18FAE /* Quick.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		359649011FB18CBF00FC7ADC /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				DA2E61341FC7B90F002C684B /* CiaoBrowser.swift */,
+				DA2E61321FC7B90E002C684B /* CiaoServer.swift */,
+				DA2E61331FC7B90F002C684B /* Logger.swift */,
+				DA2E61301FC7B90E002C684B /* NetServiceExtension.swift */,
+				DA2E61311FC7B90E002C684B /* ServiceType.swift */,
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		24E93CDA1F8D0E0B009886B6 /* Headers */ = {
+		3549BB1E1DA389CD00C63030 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				24E93CEE1F8D0E0B009886B6 /* Ciao.h in Headers */,
+				3549BB501DA38A2000C63030 /* Ciao.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3549BB2B1DA389DB00C63030 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3549BB521DA38A2100C63030 /* Ciao.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3549BB381DA389E800C63030 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3549BB531DA38A2200C63030 /* Ciao.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3549BB451DA389F300C63030 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3549BB511DA38A2000C63030 /* Ciao.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		24E93CDC1F8D0E0B009886B6 /* Ciao */ = {
+		3549BB201DA389CD00C63030 /* Ciao-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 24E93CF11F8D0E0B009886B6 /* Build configuration list for PBXNativeTarget "Ciao" */;
+			buildConfigurationList = 3549BB261DA389CD00C63030 /* Build configuration list for PBXNativeTarget "Ciao-iOS" */;
 			buildPhases = (
-				24E93CD81F8D0E0B009886B6 /* Sources */,
-				24E93CD91F8D0E0B009886B6 /* Frameworks */,
-				24E93CDA1F8D0E0B009886B6 /* Headers */,
-				24E93CDB1F8D0E0B009886B6 /* Resources */,
+				3549BB1C1DA389CD00C63030 /* Sources */,
+				3549BB1D1DA389CD00C63030 /* Frameworks */,
+				3549BB1E1DA389CD00C63030 /* Headers */,
+				3549BB1F1DA389CD00C63030 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Ciao;
-			productName = Ciao;
-			productReference = 24E93CDD1F8D0E0B009886B6 /* Ciao.framework */;
+			name = "Ciao-iOS";
+			productName = "Ciao-iOS";
+			productReference = 3549BB211DA389CD00C63030 /* Ciao.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		24E93CE51F8D0E0B009886B6 /* CiaoTests */ = {
+		3549BB2D1DA389DB00C63030 /* Ciao-watchOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 24E93CF41F8D0E0B009886B6 /* Build configuration list for PBXNativeTarget "CiaoTests" */;
+			buildConfigurationList = 3549BB331DA389DB00C63030 /* Build configuration list for PBXNativeTarget "Ciao-watchOS" */;
 			buildPhases = (
-				24E93CE21F8D0E0B009886B6 /* Sources */,
-				24E93CE31F8D0E0B009886B6 /* Frameworks */,
-				24E93CE41F8D0E0B009886B6 /* Resources */,
+				3549BB291DA389DB00C63030 /* Sources */,
+				3549BB2A1DA389DB00C63030 /* Frameworks */,
+				3549BB2B1DA389DB00C63030 /* Headers */,
+				3549BB2C1DA389DB00C63030 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				24E93CE91F8D0E0B009886B6 /* PBXTargetDependency */,
-				249EC66A1F96352300D8D97F /* PBXTargetDependency */,
 			);
-			name = CiaoTests;
-			productName = CiaoTests;
-			productReference = 24E93CE61F8D0E0B009886B6 /* CiaoTests.xctest */;
+			name = "Ciao-watchOS";
+			productName = "Ciao-watchOS";
+			productReference = 3549BB2E1DA389DB00C63030 /* Ciao.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		3549BB3A1DA389E800C63030 /* Ciao-macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3549BB401DA389E800C63030 /* Build configuration list for PBXNativeTarget "Ciao-macOS" */;
+			buildPhases = (
+				3549BB361DA389E800C63030 /* Sources */,
+				3549BB371DA389E800C63030 /* Frameworks */,
+				3549BB381DA389E800C63030 /* Headers */,
+				3549BB391DA389E800C63030 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Ciao-macOS";
+			productName = "Ciao-macOS";
+			productReference = 3549BB3B1DA389E800C63030 /* Ciao.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		3549BB471DA389F300C63030 /* Ciao-tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3549BB4D1DA389F300C63030 /* Build configuration list for PBXNativeTarget "Ciao-tvOS" */;
+			buildPhases = (
+				3549BB431DA389F300C63030 /* Sources */,
+				3549BB441DA389F300C63030 /* Frameworks */,
+				3549BB451DA389F300C63030 /* Headers */,
+				3549BB461DA389F300C63030 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Ciao-tvOS";
+			productName = "Ciao-tvOS";
+			productReference = 3549BB481DA389F300C63030 /* Ciao.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		3549BB601DA38ADB00C63030 /* CiaoTests-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3549BB691DA38ADB00C63030 /* Build configuration list for PBXNativeTarget "CiaoTests-iOS" */;
+			buildPhases = (
+				3549BB5D1DA38ADB00C63030 /* Sources */,
+				3549BB5E1DA38ADB00C63030 /* Frameworks */,
+				3549BB5F1DA38ADB00C63030 /* Resources */,
+				35B7422C1F82A2C700829B21 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3549BB681DA38ADB00C63030 /* PBXTargetDependency */,
+			);
+			name = "CiaoTests-iOS";
+			productName = "CiaoTests-iOS";
+			productReference = 3549BB611DA38ADB00C63030 /* CiaoTests-iOS.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		24E93D201F8D3978009886B6 /* CiaoSample */ = {
+		3549BB6F1DA38AEF00C63030 /* CiaoTests-tvOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 24E93D321F8D3978009886B6 /* Build configuration list for PBXNativeTarget "CiaoSample" */;
+			buildConfigurationList = 3549BB781DA38AEF00C63030 /* Build configuration list for PBXNativeTarget "CiaoTests-tvOS" */;
 			buildPhases = (
-				24E93D1D1F8D3978009886B6 /* Sources */,
-				24E93D1E1F8D3978009886B6 /* Frameworks */,
-				24E93D1F1F8D3978009886B6 /* Resources */,
-				24E93D401F8D530E009886B6 /* Embed Frameworks */,
+				3549BB6C1DA38AEF00C63030 /* Sources */,
+				3549BB6D1DA38AEF00C63030 /* Frameworks */,
+				3549BB6E1DA38AEF00C63030 /* Resources */,
+				35B7423A1F82A63600829B21 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				24E93D3F1F8D530E009886B6 /* PBXTargetDependency */,
+				3549BB771DA38AEF00C63030 /* PBXTargetDependency */,
 			);
-			name = CiaoSample;
-			productName = CiaoSample;
-			productReference = 24E93D211F8D3978009886B6 /* CiaoSample.app */;
-			productType = "com.apple.product-type.application";
+			name = "CiaoTests-tvOS";
+			productName = "CiaoTests-tvOS";
+			productReference = 3549BB701DA38AEF00C63030 /* CiaoTests-tvOS.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3549BB7E1DA38B0000C63030 /* CiaoTests-macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3549BB871DA38B0000C63030 /* Build configuration list for PBXNativeTarget "CiaoTests-macOS" */;
+			buildPhases = (
+				3549BB7B1DA38B0000C63030 /* Sources */,
+				3549BB7C1DA38B0000C63030 /* Frameworks */,
+				3549BB7D1DA38B0000C63030 /* Resources */,
+				35B742331F82A60600829B21 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3549BB861DA38B0000C63030 /* PBXTargetDependency */,
+			);
+			name = "CiaoTests-macOS";
+			productName = "CiaoTests-macOS";
+			productReference = 3549BB7F1DA38B0000C63030 /* CiaoTests-macOS.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		24E93CD41F8D0E0B009886B6 /* Project object */ = {
+		3549BAFC1DA387DB00C63030 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0900;
-				LastUpgradeCheck = 0900;
-				ORGANIZATIONNAME = Tavares;
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0910;
+				ORGANIZATIONNAME = AlTavares;
 				TargetAttributes = {
-					24E93CDC1F8D0E0B009886B6 = {
-						CreatedOnToolsVersion = 9.0;
+					3549BB201DA389CD00C63030 = {
+						CreatedOnToolsVersion = 8.0;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
-					24E93CE51F8D0E0B009886B6 = {
-						CreatedOnToolsVersion = 9.0;
+					3549BB2D1DA389DB00C63030 = {
+						CreatedOnToolsVersion = 8.0;
+						LastSwiftMigration = "";
 						ProvisioningStyle = Automatic;
 					};
-					24E93D201F8D3978009886B6 = {
-						CreatedOnToolsVersion = 9.0;
+					3549BB3A1DA389E800C63030 = {
+						CreatedOnToolsVersion = 8.0;
+						LastSwiftMigration = 0900;
+						ProvisioningStyle = Automatic;
+					};
+					3549BB471DA389F300C63030 = {
+						CreatedOnToolsVersion = 8.0;
+						LastSwiftMigration = 0900;
+						ProvisioningStyle = Automatic;
+					};
+					3549BB601DA38ADB00C63030 = {
+						CreatedOnToolsVersion = 8.0;
+						LastSwiftMigration = 0900;
+						ProvisioningStyle = Automatic;
+					};
+					3549BB6F1DA38AEF00C63030 = {
+						CreatedOnToolsVersion = 8.0;
+						LastSwiftMigration = 0900;
+						ProvisioningStyle = Automatic;
+					};
+					3549BB7E1DA38B0000C63030 = {
+						CreatedOnToolsVersion = 8.0;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = 24E93CD71F8D0E0B009886B6 /* Build configuration list for PBXProject "Ciao" */;
-			compatibilityVersion = "Xcode 8.0";
-			developmentRegion = en;
+			buildConfigurationList = 3549BAFF1DA387DB00C63030 /* Build configuration list for PBXProject "Ciao" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
 			);
-			mainGroup = 24E93CD31F8D0E0B009886B6;
-			productRefGroup = 24E93CDE1F8D0E0B009886B6 /* Products */;
+			mainGroup = 3549BAFB1DA387DB00C63030;
+			productRefGroup = 3549BB061DA387DB00C63030 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				24E93CDC1F8D0E0B009886B6 /* Ciao */,
-				24E93CE51F8D0E0B009886B6 /* CiaoTests */,
-				24E93D201F8D3978009886B6 /* CiaoSample */,
+				3549BB201DA389CD00C63030 /* Ciao-iOS */,
+				3549BB601DA38ADB00C63030 /* CiaoTests-iOS */,
+				3549BB3A1DA389E800C63030 /* Ciao-macOS */,
+				3549BB7E1DA38B0000C63030 /* CiaoTests-macOS */,
+				3549BB471DA389F300C63030 /* Ciao-tvOS */,
+				3549BB6F1DA38AEF00C63030 /* CiaoTests-tvOS */,
+				3549BB2D1DA389DB00C63030 /* Ciao-watchOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		24E93CDB1F8D0E0B009886B6 /* Resources */ = {
+		3549BB1F1DA389CD00C63030 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		24E93CE41F8D0E0B009886B6 /* Resources */ = {
+		3549BB2C1DA389DB00C63030 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		24E93D1F1F8D3978009886B6 /* Resources */ = {
+		3549BB391DA389E800C63030 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				24E93D2E1F8D3978009886B6 /* LaunchScreen.storyboard in Resources */,
-				24E93D2B1F8D3978009886B6 /* Assets.xcassets in Resources */,
-				24E93D291F8D3978009886B6 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3549BB461DA389F300C63030 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3549BB5F1DA38ADB00C63030 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3549BB6E1DA38AEF00C63030 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3549BB7D1DA38B0000C63030 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		24E93CD81F8D0E0B009886B6 /* Sources */ = {
+		3549BB1C1DA389CD00C63030 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				24F75BF51F950ACD0097F457 /* ServiceType.swift in Sources */,
-				249785541F8E55A700DC103C /* CiaoBrowser.swift in Sources */,
-				249785581F8E982200DC103C /* NetServiceExtension.swift in Sources */,
-				249785561F8E8E1B00DC103C /* Logger.swift in Sources */,
-				24E93D341F8D39A6009886B6 /* CiaoServer.swift in Sources */,
+				DA2E61411FC7B90F002C684B /* Logger.swift in Sources */,
+				DA2E61351FC7B90F002C684B /* NetServiceExtension.swift in Sources */,
+				DA2E613D1FC7B90F002C684B /* CiaoServer.swift in Sources */,
+				DA2E61451FC7B90F002C684B /* CiaoBrowser.swift in Sources */,
+				DA2E61391FC7B90F002C684B /* ServiceType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		24E93CE21F8D0E0B009886B6 /* Sources */ = {
+		3549BB291DA389DB00C63030 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA2E61211FC24499002C684B /* CiaoBrowserTests.swift in Sources */,
-				DA2E61231FC244DF002C684B /* TestWithExpectation.swift in Sources */,
-				24E93CEC1F8D0E0B009886B6 /* CiaoServerTests.swift in Sources */,
+				DA2E61441FC7B90F002C684B /* Logger.swift in Sources */,
+				DA2E61381FC7B90F002C684B /* NetServiceExtension.swift in Sources */,
+				DA2E61401FC7B90F002C684B /* CiaoServer.swift in Sources */,
+				DA2E61481FC7B90F002C684B /* CiaoBrowser.swift in Sources */,
+				DA2E613C1FC7B90F002C684B /* ServiceType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		24E93D1D1F8D3978009886B6 /* Sources */ = {
+		3549BB361DA389E800C63030 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				24E93D261F8D3978009886B6 /* ViewController.swift in Sources */,
-				24E93D241F8D3978009886B6 /* AppDelegate.swift in Sources */,
+				DA2E61421FC7B90F002C684B /* Logger.swift in Sources */,
+				DA2E61361FC7B90F002C684B /* NetServiceExtension.swift in Sources */,
+				DA2E613E1FC7B90F002C684B /* CiaoServer.swift in Sources */,
+				DA2E61461FC7B90F002C684B /* CiaoBrowser.swift in Sources */,
+				DA2E613A1FC7B90F002C684B /* ServiceType.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3549BB431DA389F300C63030 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA2E61431FC7B90F002C684B /* Logger.swift in Sources */,
+				DA2E61371FC7B90F002C684B /* NetServiceExtension.swift in Sources */,
+				DA2E613F1FC7B90F002C684B /* CiaoServer.swift in Sources */,
+				DA2E61471FC7B90F002C684B /* CiaoBrowser.swift in Sources */,
+				DA2E613B1FC7B90F002C684B /* ServiceType.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3549BB5D1DA38ADB00C63030 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA2E612D1FC7B8E3002C684B /* TestWithExpectation.swift in Sources */,
+				DA2E61271FC7B8E3002C684B /* CiaoBrowserTests.swift in Sources */,
+				DA2E612A1FC7B8E3002C684B /* CiaoServerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3549BB6C1DA38AEF00C63030 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA2E612F1FC7B8E3002C684B /* TestWithExpectation.swift in Sources */,
+				DA2E61291FC7B8E3002C684B /* CiaoBrowserTests.swift in Sources */,
+				DA2E612C1FC7B8E3002C684B /* CiaoServerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3549BB7B1DA38B0000C63030 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA2E612E1FC7B8E3002C684B /* TestWithExpectation.swift in Sources */,
+				DA2E61281FC7B8E3002C684B /* CiaoBrowserTests.swift in Sources */,
+				DA2E612B1FC7B8E3002C684B /* CiaoServerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		249EC66A1F96352300D8D97F /* PBXTargetDependency */ = {
+		3549BB681DA38ADB00C63030 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 24E93D201F8D3978009886B6 /* CiaoSample */;
-			targetProxy = 249EC6691F96352300D8D97F /* PBXContainerItemProxy */;
+			target = 3549BB201DA389CD00C63030 /* Ciao-iOS */;
+			targetProxy = 3549BB671DA38ADB00C63030 /* PBXContainerItemProxy */;
 		};
-		24E93CE91F8D0E0B009886B6 /* PBXTargetDependency */ = {
+		3549BB771DA38AEF00C63030 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 24E93CDC1F8D0E0B009886B6 /* Ciao */;
-			targetProxy = 24E93CE81F8D0E0B009886B6 /* PBXContainerItemProxy */;
+			target = 3549BB471DA389F300C63030 /* Ciao-tvOS */;
+			targetProxy = 3549BB761DA38AEF00C63030 /* PBXContainerItemProxy */;
 		};
-		24E93D3F1F8D530E009886B6 /* PBXTargetDependency */ = {
+		3549BB861DA38B0000C63030 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 24E93CDC1F8D0E0B009886B6 /* Ciao */;
-			targetProxy = 24E93D3E1F8D530E009886B6 /* PBXContainerItemProxy */;
+			target = 3549BB3A1DA389E800C63030 /* Ciao-macOS */;
+			targetProxy = 3549BB851DA38B0000C63030 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
-/* Begin PBXVariantGroup section */
-		24E93D271F8D3978009886B6 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				24E93D281F8D3978009886B6 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		24E93D2C1F8D3978009886B6 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				24E93D2D1F8D3978009886B6 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
-		24E93CEF1F8D0E0B009886B6 /* Debug */ = {
+		3549BB0B1DA387DB00C63030 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -420,16 +713,15 @@
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -443,24 +735,27 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		24E93CF01F8D0E0B009886B6 /* Release */ = {
+		3549BB0C1DA387DB00C63030 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -480,16 +775,15 @@
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -497,167 +791,377 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
-		24E93CF21F8D0E0B009886B6 /* Debug */ = {
+		3549BB271DA389CD00C63030 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/Source/Info.plist";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tavares.Ciao;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = xyz.tavares.ciao.Ciao;
+				PRODUCT_NAME = Ciao;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 			};
 			name = Debug;
 		};
-		24E93CF31F8D0E0B009886B6 /* Release */ = {
+		3549BB281DA389CD00C63030 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/Source/Info.plist";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tavares.Ciao;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = xyz.tavares.ciao.Ciao;
+				PRODUCT_NAME = Ciao;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 			};
 			name = Release;
 		};
-		24E93CF51F8D0E0B009886B6 /* Debug */ = {
+		3549BB341DA389DB00C63030 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Y9GCPAGMBN;
-				INFOPLIST_FILE = CiaoTests/Info.plist;
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Sources/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tavares.CiaoTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				PRODUCT_BUNDLE_IDENTIFIER = xyz.tavares.ciao.Ciao;
+				PRODUCT_NAME = Ciao;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Debug;
 		};
-		24E93CF61F8D0E0B009886B6 /* Release */ = {
+		3549BB351DA389DB00C63030 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Y9GCPAGMBN;
-				INFOPLIST_FILE = CiaoTests/Info.plist;
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Sources/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tavares.CiaoTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				PRODUCT_BUNDLE_IDENTIFIER = xyz.tavares.ciao.Ciao;
+				PRODUCT_NAME = Ciao;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
 		};
-		24E93D301F8D3978009886B6 /* Debug */ = {
+		3549BB411DA389E800C63030 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Y9GCPAGMBN;
-				INFOPLIST_FILE = CiaoSample/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tavares.CiaoSample;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = Sources/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = xyz.tavares.ciao.Ciao;
+				PRODUCT_NAME = Ciao;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		24E93D311F8D3978009886B6 /* Release */ = {
+		3549BB421DA389E800C63030 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = Sources/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = xyz.tavares.ciao.Ciao;
+				PRODUCT_NAME = Ciao;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		3549BB4E1DA389F300C63030 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Sources/Info-tvOS.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = xyz.tavares.ciao.Ciao;
+				PRODUCT_NAME = Ciao;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Debug;
+		};
+		3549BB4F1DA389F300C63030 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Sources/Info-tvOS.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = xyz.tavares.ciao.Ciao;
+				PRODUCT_NAME = Ciao;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Release;
+		};
+		3549BB6A1DA38ADB00C63030 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Y9GCPAGMBN;
-				INFOPLIST_FILE = CiaoSample/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tavares.CiaoSample;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = xyz.tavares.ciao.CiaoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+			};
+			name = Debug;
+		};
+		3549BB6B1DA38ADB00C63030 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = xyz.tavares.ciao.CiaoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+			};
+			name = Release;
+		};
+		3549BB791DA38AEF00C63030 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/tvOS",
+				);
+				INFOPLIST_FILE = "Tests/Info-tvOS.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = xyz.tavares.ciao.CiaoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Debug;
+		};
+		3549BB7A1DA38AEF00C63030 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/tvOS",
+				);
+				INFOPLIST_FILE = "Tests/Info-tvOS.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = xyz.tavares.ciao.CiaoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Release;
+		};
+		3549BB881DA38B0000C63030 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = xyz.tavares.ciao.CiaoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3549BB891DA38B0000C63030 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = xyz.tavares.ciao.CiaoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		24E93CD71F8D0E0B009886B6 /* Build configuration list for PBXProject "Ciao" */ = {
+		3549BAFF1DA387DB00C63030 /* Build configuration list for PBXProject "Ciao" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				24E93CEF1F8D0E0B009886B6 /* Debug */,
-				24E93CF01F8D0E0B009886B6 /* Release */,
+				3549BB0B1DA387DB00C63030 /* Debug */,
+				3549BB0C1DA387DB00C63030 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		24E93CF11F8D0E0B009886B6 /* Build configuration list for PBXNativeTarget "Ciao" */ = {
+		3549BB261DA389CD00C63030 /* Build configuration list for PBXNativeTarget "Ciao-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				24E93CF21F8D0E0B009886B6 /* Debug */,
-				24E93CF31F8D0E0B009886B6 /* Release */,
+				3549BB271DA389CD00C63030 /* Debug */,
+				3549BB281DA389CD00C63030 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		24E93CF41F8D0E0B009886B6 /* Build configuration list for PBXNativeTarget "CiaoTests" */ = {
+		3549BB331DA389DB00C63030 /* Build configuration list for PBXNativeTarget "Ciao-watchOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				24E93CF51F8D0E0B009886B6 /* Debug */,
-				24E93CF61F8D0E0B009886B6 /* Release */,
+				3549BB341DA389DB00C63030 /* Debug */,
+				3549BB351DA389DB00C63030 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		24E93D321F8D3978009886B6 /* Build configuration list for PBXNativeTarget "CiaoSample" */ = {
+		3549BB401DA389E800C63030 /* Build configuration list for PBXNativeTarget "Ciao-macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				24E93D301F8D3978009886B6 /* Debug */,
-				24E93D311F8D3978009886B6 /* Release */,
+				3549BB411DA389E800C63030 /* Debug */,
+				3549BB421DA389E800C63030 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3549BB4D1DA389F300C63030 /* Build configuration list for PBXNativeTarget "Ciao-tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3549BB4E1DA389F300C63030 /* Debug */,
+				3549BB4F1DA389F300C63030 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3549BB691DA38ADB00C63030 /* Build configuration list for PBXNativeTarget "CiaoTests-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3549BB6A1DA38ADB00C63030 /* Debug */,
+				3549BB6B1DA38ADB00C63030 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3549BB781DA38AEF00C63030 /* Build configuration list for PBXNativeTarget "CiaoTests-tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3549BB791DA38AEF00C63030 /* Debug */,
+				3549BB7A1DA38AEF00C63030 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3549BB871DA38B0000C63030 /* Build configuration list for PBXNativeTarget "CiaoTests-macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3549BB881DA38B0000C63030 /* Debug */,
+				3549BB891DA38B0000C63030 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 24E93CD41F8D0E0B009886B6 /* Project object */;
+	rootObject = 3549BAFC1DA387DB00C63030 /* Project object */;
 }
