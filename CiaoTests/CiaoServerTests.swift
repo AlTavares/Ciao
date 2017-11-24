@@ -11,26 +11,37 @@ import XCTest
 
 class CiaoServerTests: TestWithExpectation {
     var delegate: DummyServerDelegate!
+    let serverName = "ciaoserver"
 
     override func setUp() {
         super.setUp()
         delegate = DummyServerDelegate()
     }
 
+    func testTXTRecord() {
+        let server = CiaoServer(type: ServiceType.tcp(serverName))
+        let dict = [
+            "key1": "value1",
+            "key2": "value2",
+        ]
+        server.txtRecord = dict
+        XCTAssertEqual(dict, server.txtRecord!)
+    }
+    
     func testInitWithValidInfo() {
-        testServer(type: ServiceType.tcp("ciaoserver").description, domain: "local.", name: "Ciao", valid: true)
+        testServer(type: ServiceType.tcp(serverName).description, domain: "local.", name: "Ciao", valid: true)
     }
 
     func testInitWithValidInfoEmptyDomainAndName() {
-        testServer(type: ServiceType.tcp("ciaoserver").description, domain: "", name: "", valid: true)
+        testServer(type: ServiceType.tcp(serverName).description, domain: "", name: "", valid: true)
     }
 
     func testInitWithInvalidInfo() {
-        testServer(type: "ciaoserver", domain: "local", name: "Ciao", valid: false)
+        testServer(type: serverName, domain: "local", name: "Ciao", valid: false)
     }
 
     func testInitWithInvalidInfoEmptyDomainAndName() {
-        testServer(type: "ciaoserver", domain: "", name: "", valid: false)
+        testServer(type: serverName, domain: "", name: "", valid: false)
     }
 
     func testServer(type: String, domain: String, name: String, valid: Bool) {
