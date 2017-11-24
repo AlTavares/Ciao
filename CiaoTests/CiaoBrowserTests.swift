@@ -7,9 +7,9 @@
 //
 
 import XCTest
+@testable import Ciao
 
 class CiaoBrowserTests: TestWithExpectation {
-    
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -20,16 +20,38 @@ class CiaoBrowserTests: TestWithExpectation {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testIfBrowserCanFindServers() {
+        createExpectation()
+        let serviceType = ServiceType.tcp("ciaoserver")
+        let browser = CiaoBrowser()
+        var serversFound = 0
+        browser.browse(type: serviceType) { netService in
+            serversFound += 1
+            var expectedValue = ""
+            switch netService.name {
+            case "server1":
+                expectedValue = "first"
+            case "server2":
+                expectedValue = "second"
+            default:
+                XCTFail("Unexpected server")
+            }
+            XCTAssertNotNil(netService.txtRecordDictionary)
+            XCTAssertEqual(netService.txtRecordDictionary!["server"], expectedValue)
+            if serversFound == 2 {
+                XCTAssertEqual(browser.services.count, 2)
+                self.done()
+            }
+        }
+        let server1 = CiaoServer(type: serviceType, name: "server1")
+        let server2 = CiaoServer(type: serviceType, name: "server2")
+        server1.txtRecord = ["server": "first"]
+        server2.txtRecord = ["server": "second"]
+        server1.start()
+        server2.start()
+        waitUntilDone(timeout: 5)
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
     
 }
+
