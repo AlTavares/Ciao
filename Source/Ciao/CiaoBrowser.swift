@@ -50,6 +50,7 @@ public class CiaoBrowser {
         resolver = nil
         services.insert(service)
         serviceFoundHandler(service)
+        Logger.debug("Services to be resolved: \(servicesToBeResolved.count)")
         if let serviceToBeResolved = servicesToBeResolved.popFirst() {
             resolve(service: serviceToBeResolved)
         }
