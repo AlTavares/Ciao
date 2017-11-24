@@ -69,7 +69,7 @@ class CiaoResolver: NSObject, NetServiceDelegate {
     weak var browser: CiaoBrowser?
 
     func netService(_ sender: NetService, didNotResolve errorDict: [String: NSNumber]) {
-        Logger.info("Service didn't resolve", sender)
+        Logger.error("Service didn't resolve", sender)
     }
 
     func netServiceDidResolveAddress(_ sender: NetService) {
