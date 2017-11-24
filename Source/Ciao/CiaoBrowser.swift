@@ -69,16 +69,16 @@ class CiaoResolver: NSObject, NetServiceDelegate {
     weak var browser: CiaoBrowser?
 
     func netService(_ sender: NetService, didNotResolve errorDict: [String: NSNumber]) {
-        Logger.verbose("Service didn't resolve", sender)
+        Logger.info("Service didn't resolve", sender)
     }
 
     func netServiceDidResolveAddress(_ sender: NetService) {
         browser?.resolved(service: sender)
-        Logger.verbose("Service resolved", sender)
+        Logger.info("Service resolved", sender)
     }
 
     func netServiceWillResolve(_ sender: NetService) {
-        Logger.verbose("Service will resolve", sender)
+        Logger.info("Service will resolve", sender)
     }
 
 }
@@ -87,15 +87,15 @@ class CiaoBrowserDelegate: NSObject, NetServiceBrowserDelegate {
     weak var browser: CiaoBrowser?
     func netServiceBrowser(_ browser: NetServiceBrowser, didFind service: NetService, moreComing: Bool) {
         self.browser?.resolve(service: service)
-        Logger.verbose("Service found")
+        Logger.info("Service found")
     }
 
     func netServiceBrowserWillSearch(_ browser: NetServiceBrowser) {
-        Logger.verbose("Browser will search")
+        Logger.info("Browser will search")
     }
 
     func netServiceBrowserDidStopSearch(_ browser: NetServiceBrowser) {
-        Logger.verbose("Browser stopped search")
+        Logger.info("Browser stopped search")
     }
 
     func netServiceBrowser(_ browser: NetServiceBrowser, didNotSearch errorDict: [String: NSNumber]) {

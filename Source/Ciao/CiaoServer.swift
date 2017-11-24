@@ -24,7 +24,7 @@ public class CiaoServer {
         }
         set {
             netService.setTXTRecord(dictionary: newValue)
-            Logger.verbose("TXT Record updated", newValue)
+            Logger.info("TXT Record updated", newValue as Any)
         }
     }
 
@@ -63,7 +63,7 @@ class CiaoServerDelegate: NSObject, NetServiceDelegate {
 
     func netServiceDidPublish(_ sender: NetService) {
         server?.started = true
-        Logger.verbose("CiaoServer Started")
+        Logger.info("CiaoServer Started")
     }
 
     func netService(_ sender: NetService, didNotPublish errorDict: [String: NSNumber]) {
@@ -73,6 +73,6 @@ class CiaoServerDelegate: NSObject, NetServiceDelegate {
 
     func netServiceDidStop(_ sender: NetService) {
         server?.started = false
-        Logger.verbose("CiaoServer Stoped")
+        Logger.info("CiaoServer Stoped")
     }
 }
