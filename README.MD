@@ -131,8 +131,8 @@ $ git submodule update --init --recursive
 
 ```swift
 let ciaoServer = CiaoServer(type: ServiceType.tcp("ciaoserver"))
-ciaoServer.start { (success) in
-print("Server started:", success)
+    ciaoServer.start { (success) in
+    print("Server started:", success)
 }
 ciaoServer.txtRecord = ["someKey": "someValue"]
 ```
@@ -142,8 +142,8 @@ ciaoServer.txtRecord = ["someKey": "someValue"]
 ```swift
 let ciaoBrowser = CiaoBrowser()
 ciaoBrowser.browse(type: type) { service in
-print(service)
-print(service.txtRecordDictionary)
+    print(service)
+    print(service.txtRecordDictionary)
 }
 ```
 
