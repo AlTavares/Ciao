@@ -29,7 +29,26 @@
       language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "24E93CE51F8D0E0B009886B6"
+               BuildableName = "CiaoTests.xctest"
+               BlueprintName = "CiaoTests"
+               ReferencedContainer = "container:Ciao.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "24E93CDC1F8D0E0B009886B6"
+            BuildableName = "Ciao.framework"
+            BlueprintName = "Ciao"
+            ReferencedContainer = "container:Ciao.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
