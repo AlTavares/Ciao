@@ -1,5 +1,10 @@
 language: objective-c
-osx_image: xcode9
+osx_image: xcode9.1
+
+cache:
+  directories:
+  - Carthage
+
 before_install:
   - gem install cocoapods --no-rdoc --no-ri --no-document --quiet
   - brew update
@@ -13,19 +18,19 @@ env:
   - IOS_FRAMEWORK_SCHEME="Ciao-iOS"
   - OSX_FRAMEWORK_SCHEME="Ciao-macOS"
   - TVOS_FRAMEWORK_SCHEME="Ciao-tvOS"
-  - WATCHOS_FRAMEWORK_SCHEME="Ciao-watchOS"
+
   matrix:
-    - DESTINATION="OS=11.0,name=iPhone X"                   SCHEME="$IOS_FRAMEWORK_SCHEME"     RUN_TESTS="YES"
-    - DESTINATION="OS=10.3.1,name=iPhone 7 Plus"            SCHEME="$IOS_FRAMEWORK_SCHEME"     RUN_TESTS="YES"
-    - DESTINATION="OS=9.0,name=iPhone 6"                    SCHEME="$IOS_FRAMEWORK_SCHEME"     RUN_TESTS="YES"
-    - DESTINATION="OS=8.1,name=iPhone 4s"                   SCHEME="$IOS_FRAMEWORK_SCHEME"     RUN_TESTS="YES"
-    - DESTINATION="arch=x86_64"                             SCHEME="$OSX_FRAMEWORK_SCHEME"     RUN_TESTS="YES"
-    - DESTINATION="OS=11.0,name=Apple TV 1080p"             SCHEME="$TVOS_FRAMEWORK_SCHEME"    RUN_TESTS="YES"
-    - DESTINATION="OS=10.2,name=Apple TV 1080p"             SCHEME="$TVOS_FRAMEWORK_SCHEME"    RUN_TESTS="YES"
-    - DESTINATION="OS=9.0,name=Apple TV 1080p"              SCHEME="$TVOS_FRAMEWORK_SCHEME"    RUN_TESTS="YES"
+    - DESTINATION="OS=11.0,name=iPhone X"                   SCHEME="$IOS_FRAMEWORK_SCHEME"     RUN_TESTS="YES" PLATFORM="iOS" 
+    - DESTINATION="OS=10.3.1,name=iPhone 7 Plus"            SCHEME="$IOS_FRAMEWORK_SCHEME"     RUN_TESTS="YES" PLATFORM="iOS"
+    - DESTINATION="OS=9.0,name=iPhone 6"                    SCHEME="$IOS_FRAMEWORK_SCHEME"     RUN_TESTS="YES" PLATFORM="iOS"
+    - DESTINATION="OS=8.1,name=iPhone 4s"                   SCHEME="$IOS_FRAMEWORK_SCHEME"     RUN_TESTS="YES" PLATFORM="iOS"
+    - DESTINATION="arch=x86_64"                             SCHEME="$OSX_FRAMEWORK_SCHEME"     RUN_TESTS="YES" PLATFORM="macOS"
+    - DESTINATION="OS=11.0,name=Apple TV 1080p"             SCHEME="$TVOS_FRAMEWORK_SCHEME"    RUN_TESTS="YES" PLATFORM="tvOS"
+    - DESTINATION="OS=10.2,name=Apple TV 1080p"             SCHEME="$TVOS_FRAMEWORK_SCHEME"    RUN_TESTS="YES" PLATFORM="tvOS"
+    - DESTINATION="OS=9.0,name=Apple TV 1080p"              SCHEME="$TVOS_FRAMEWORK_SCHEME"    RUN_TESTS="YES" PLATFORM="tvOS"
 
 before_script:
-  - sh scripts/bootstrap
+  - carthage bootstrap --verbose --no-use-binaries --cache-builds --platform $PLATFORM
 
 script:
   - set -o pipefail
