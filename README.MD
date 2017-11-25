@@ -8,7 +8,7 @@
 [![CocoaPods compatible](https://img.shields.io/cocoapods/v/Ciao.svg)](https://cocoapods.org/pods/Ciao)
 
 [![Travis](https://img.shields.io/travis/AlTavares/Ciao/master.svg)](https://travis-ci.org/AlTavares/Ciao/branches)
-[![JetpackSwift](https://img.shields.io/badge/JetpackSwift-framework-red.svg)](http://github.com/JetpackSwift/Framework)
+[![JetpackSwift](https://img.shields.io/badge/JetpackSwift-framework-red.svg)](https://github.com/JetpackSwift/FrameworkTemplate)
 
 Lib to publish and find services using mDNS
 
