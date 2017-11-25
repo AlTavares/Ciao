@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		3549BB501DA38A2000C63030 /* Ciao.h in Headers */ = {isa = PBXBuildFile; fileRef = 3549BB181DA3890B00C63030 /* Ciao.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3549BB511DA38A2000C63030 /* Ciao.h in Headers */ = {isa = PBXBuildFile; fileRef = 3549BB181DA3890B00C63030 /* Ciao.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3549BB521DA38A2100C63030 /* Ciao.h in Headers */ = {isa = PBXBuildFile; fileRef = 3549BB181DA3890B00C63030 /* Ciao.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3549BB531DA38A2200C63030 /* Ciao.h in Headers */ = {isa = PBXBuildFile; fileRef = 3549BB181DA3890B00C63030 /* Ciao.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3549BB661DA38ADB00C63030 /* Ciao.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3549BB211DA389CD00C63030 /* Ciao.framework */; };
 		3549BB751DA38AEF00C63030 /* Ciao.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3549BB481DA389F300C63030 /* Ciao.framework */; };
@@ -38,23 +37,18 @@
 		DA2E61351FC7B90F002C684B /* NetServiceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2E61301FC7B90E002C684B /* NetServiceExtension.swift */; };
 		DA2E61361FC7B90F002C684B /* NetServiceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2E61301FC7B90E002C684B /* NetServiceExtension.swift */; };
 		DA2E61371FC7B90F002C684B /* NetServiceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2E61301FC7B90E002C684B /* NetServiceExtension.swift */; };
-		DA2E61381FC7B90F002C684B /* NetServiceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2E61301FC7B90E002C684B /* NetServiceExtension.swift */; };
 		DA2E61391FC7B90F002C684B /* ServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2E61311FC7B90E002C684B /* ServiceType.swift */; };
 		DA2E613A1FC7B90F002C684B /* ServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2E61311FC7B90E002C684B /* ServiceType.swift */; };
 		DA2E613B1FC7B90F002C684B /* ServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2E61311FC7B90E002C684B /* ServiceType.swift */; };
-		DA2E613C1FC7B90F002C684B /* ServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2E61311FC7B90E002C684B /* ServiceType.swift */; };
 		DA2E613D1FC7B90F002C684B /* CiaoServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2E61321FC7B90E002C684B /* CiaoServer.swift */; };
 		DA2E613E1FC7B90F002C684B /* CiaoServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2E61321FC7B90E002C684B /* CiaoServer.swift */; };
 		DA2E613F1FC7B90F002C684B /* CiaoServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2E61321FC7B90E002C684B /* CiaoServer.swift */; };
-		DA2E61401FC7B90F002C684B /* CiaoServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2E61321FC7B90E002C684B /* CiaoServer.swift */; };
 		DA2E61411FC7B90F002C684B /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2E61331FC7B90F002C684B /* Logger.swift */; };
 		DA2E61421FC7B90F002C684B /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2E61331FC7B90F002C684B /* Logger.swift */; };
 		DA2E61431FC7B90F002C684B /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2E61331FC7B90F002C684B /* Logger.swift */; };
-		DA2E61441FC7B90F002C684B /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2E61331FC7B90F002C684B /* Logger.swift */; };
 		DA2E61451FC7B90F002C684B /* CiaoBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2E61341FC7B90F002C684B /* CiaoBrowser.swift */; };
 		DA2E61461FC7B90F002C684B /* CiaoBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2E61341FC7B90F002C684B /* CiaoBrowser.swift */; };
 		DA2E61471FC7B90F002C684B /* CiaoBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2E61341FC7B90F002C684B /* CiaoBrowser.swift */; };
-		DA2E61481FC7B90F002C684B /* CiaoBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2E61341FC7B90F002C684B /* CiaoBrowser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,7 +118,6 @@
 		3549BB171DA3890B00C63030 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3549BB181DA3890B00C63030 /* Ciao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ciao.h; sourceTree = "<group>"; };
 		3549BB211DA389CD00C63030 /* Ciao.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Ciao.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3549BB2E1DA389DB00C63030 /* Ciao.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Ciao.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3549BB3B1DA389E800C63030 /* Ciao.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Ciao.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3549BB481DA389F300C63030 /* Ciao.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Ciao.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3549BB551DA38A5E00C63030 /* Info-tvOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-tvOS.plist"; sourceTree = "<group>"; };
@@ -151,13 +144,6 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		3549BB1D1DA389CD00C63030 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3549BB2A1DA389DB00C63030 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -225,7 +211,6 @@
 			isa = PBXGroup;
 			children = (
 				3549BB211DA389CD00C63030 /* Ciao.framework */,
-				3549BB2E1DA389DB00C63030 /* Ciao.framework */,
 				3549BB3B1DA389E800C63030 /* Ciao.framework */,
 				3549BB481DA389F300C63030 /* Ciao.framework */,
 				3549BB611DA38ADB00C63030 /* CiaoTests-iOS.xctest */,
@@ -310,14 +295,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3549BB2B1DA389DB00C63030 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3549BB521DA38A2100C63030 /* Ciao.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		3549BB381DA389E800C63030 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -353,24 +330,6 @@
 			name = "Ciao-iOS";
 			productName = "Ciao-iOS";
 			productReference = 3549BB211DA389CD00C63030 /* Ciao.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		3549BB2D1DA389DB00C63030 /* Ciao-watchOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 3549BB331DA389DB00C63030 /* Build configuration list for PBXNativeTarget "Ciao-watchOS" */;
-			buildPhases = (
-				3549BB291DA389DB00C63030 /* Sources */,
-				3549BB2A1DA389DB00C63030 /* Frameworks */,
-				3549BB2B1DA389DB00C63030 /* Headers */,
-				3549BB2C1DA389DB00C63030 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Ciao-watchOS";
-			productName = "Ciao-watchOS";
-			productReference = 3549BB2E1DA389DB00C63030 /* Ciao.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		3549BB3A1DA389E800C63030 /* Ciao-macOS */ = {
@@ -481,11 +440,6 @@
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
-					3549BB2D1DA389DB00C63030 = {
-						CreatedOnToolsVersion = 8.0;
-						LastSwiftMigration = "";
-						ProvisioningStyle = Automatic;
-					};
 					3549BB3A1DA389E800C63030 = {
 						CreatedOnToolsVersion = 8.0;
 						LastSwiftMigration = 0900;
@@ -531,20 +485,12 @@
 				3549BB7E1DA38B0000C63030 /* CiaoTests-macOS */,
 				3549BB471DA389F300C63030 /* Ciao-tvOS */,
 				3549BB6F1DA38AEF00C63030 /* CiaoTests-tvOS */,
-				3549BB2D1DA389DB00C63030 /* Ciao-watchOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		3549BB1F1DA389CD00C63030 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3549BB2C1DA389DB00C63030 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -598,18 +544,6 @@
 				DA2E613D1FC7B90F002C684B /* CiaoServer.swift in Sources */,
 				DA2E61451FC7B90F002C684B /* CiaoBrowser.swift in Sources */,
 				DA2E61391FC7B90F002C684B /* ServiceType.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3549BB291DA389DB00C63030 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DA2E61441FC7B90F002C684B /* Logger.swift in Sources */,
-				DA2E61381FC7B90F002C684B /* NetServiceExtension.swift in Sources */,
-				DA2E61401FC7B90F002C684B /* CiaoServer.swift in Sources */,
-				DA2E61481FC7B90F002C684B /* CiaoBrowser.swift in Sources */,
-				DA2E613C1FC7B90F002C684B /* ServiceType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -844,51 +778,6 @@
 			};
 			name = Release;
 		};
-		3549BB341DA389DB00C63030 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CLANG_ENABLE_MODULES = YES;
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Sources/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = xyz.tavares.ciao.Ciao;
-				PRODUCT_NAME = Ciao;
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.0;
-			};
-			name = Debug;
-		};
-		3549BB351DA389DB00C63030 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CLANG_ENABLE_MODULES = YES;
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Sources/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = xyz.tavares.ciao.Ciao;
-				PRODUCT_NAME = Ciao;
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.0;
-			};
-			name = Release;
-		};
 		3549BB411DA389E800C63030 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1103,15 +992,6 @@
 			buildConfigurations = (
 				3549BB271DA389CD00C63030 /* Debug */,
 				3549BB281DA389CD00C63030 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		3549BB331DA389DB00C63030 /* Build configuration list for PBXNativeTarget "Ciao-watchOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3549BB341DA389DB00C63030 /* Debug */,
-				3549BB351DA389DB00C63030 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
