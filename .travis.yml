@@ -7,6 +7,7 @@ before_install:
 - gem install cocoapods --no-rdoc --no-ri --no-document --quiet
 - brew update
 - brew outdated carthage || brew upgrade carthage
+- carthage bootstrap --verbose --no-use-binaries --cache-builds --platform $PLATFORM
 env:
   global:
   - LC_CTYPE=en_US.UTF-8
@@ -24,8 +25,7 @@ env:
   - DESTINATION="OS=11.0,name=Apple TV 1080p"    SCHEME="$TVOS_FRAMEWORK_SCHEME"   RUN_TESTS="YES"    PLATFORM="tvOS"
   - DESTINATION="OS=10.2,name=Apple TV 1080p"    SCHEME="$TVOS_FRAMEWORK_SCHEME"   RUN_TESTS="YES"    PLATFORM="tvOS"
   - DESTINATION="OS=9.0,name=Apple TV 1080p"     SCHEME="$TVOS_FRAMEWORK_SCHEME"   RUN_TESTS="YES"    PLATFORM="tvOS"
-before_script:
-- carthage bootstrap --verbose --no-use-binaries --cache-builds --platform $PLATFORM
+
 script:
   - set -o pipefail
   - xcodebuild -version
