@@ -4,7 +4,7 @@ Pod::Spec.new do |s|
  s.license = { :type => "MIT", :file => "LICENSE" }
  s.summary = 'Lib to publish and find services using mDNS'
  s.authors = { "Alexandre Mantovani Tavares" => "alexandre@live.in" }
- s.source = { :git => "https://github.com/AlTavares/Ciao.git", :tag => "v"+s.version.to_s }
+ s.source = { :git => "https://github.com/AlTavares/Ciao.git", :tag => s.version.to_s }
  s.homepage = "https://github.com/AlTavares/Ciao"
  s.platforms = { :ios => "8.0", :osx => "10.10", :tvos => "9.0" }
  s.requires_arc = true
