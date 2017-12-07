@@ -17,6 +17,11 @@ public class CiaoBrowser {
     public var services = Set<NetService>()
     private var servicesToBeResolved = Set<NetService>()
     private var serviceFoundHandler: ((NetService) -> Void)!
+    public var isSearching = false {
+        didSet {
+            Logger.info(isSearching)
+        }
+    }
 
     public init() {
         netServiceBrowser = NetServiceBrowser()
@@ -30,6 +35,9 @@ public class CiaoBrowser {
     }
 
     public func browse(type: String, domain: String = "", serviceFoundHandler: @escaping (NetService) -> Void) {
+        if isSearching {
+            stop()
+        }
         netServiceBrowser.searchForServices(ofType: type, inDomain: domain)
         self.serviceFoundHandler = serviceFoundHandler
     }
@@ -93,14 +101,17 @@ class CiaoBrowserDelegate: NSObject, NetServiceBrowserDelegate {
 
     func netServiceBrowserWillSearch(_ browser: NetServiceBrowser) {
         Logger.info("Browser will search")
+        self.browser?.isSearching = true
     }
 
     func netServiceBrowserDidStopSearch(_ browser: NetServiceBrowser) {
         Logger.info("Browser stopped search")
+        self.browser?.isSearching = false
     }
 
     func netServiceBrowser(_ browser: NetServiceBrowser, didNotSearch errorDict: [String: NSNumber]) {
         Logger.debug("Browser didn't search", errorDict)
+        self.browser?.isSearching = false
     }
 
 }
