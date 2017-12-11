@@ -39,7 +39,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '8.0'
 use_frameworks!
 
-pod 'Ciao', '~> 1.0.0'
+pod 'Ciao', '~> 1.0.1'
 ```
 
 Then, run the following command:
@@ -62,7 +62,7 @@ $ brew install carthage
 To integrate Ciao into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "Ciao/Ciao" ~> 1.0.0
+github "Ciao/Ciao" ~> 1.0.1
 ```
 ### Swift Package Manager
 
@@ -74,7 +74,7 @@ import PackageDescription
 let package = Package(
     name: "HelloCiao",
     dependencies: [
-        .Package(url: "https://github.com/AlTavares/Ciao.git", "1.0.0")
+        .Package(url: "https://github.com/AlTavares/Ciao.git", "1.0.1")
     ]
 )
 ```
