@@ -12,7 +12,7 @@ public class CiaoServer {
     var netService: NetService
     var delegate: CiaoServerDelegate?
     var successCallback: ((Bool) -> Void)?
-    var started = false {
+    public fileprivate(set) var started = false {
         didSet {
             successCallback?(started)
             successCallback = nil

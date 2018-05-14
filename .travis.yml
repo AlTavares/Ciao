@@ -1,13 +1,15 @@
 language: objective-c
-osx_image: xcode9.1
+osx_image: xcode9.3
 cache:
   directories:
+  - $HOME/Library/Caches/org.carthage.CarthageKit/dependencies
   - Carthage
 before_install:
 - gem install cocoapods --no-rdoc --no-ri --no-document --quiet
 - brew update
 - brew outdated carthage || brew upgrade carthage
 - carthage bootstrap --verbose --no-use-binaries --cache-builds --platform $PLATFORM
+
 env:
   global:
   - LC_CTYPE=en_US.UTF-8
@@ -16,15 +18,19 @@ env:
   - IOS_FRAMEWORK_SCHEME="Ciao-iOS"
   - OSX_FRAMEWORK_SCHEME="Ciao-macOS"
   - TVOS_FRAMEWORK_SCHEME="Ciao-tvOS"
+
   matrix:
-  - DESTINATION="OS=11.1,name=iPhone X"          SCHEME="$IOS_FRAMEWORK_SCHEME"    RUN_TESTS="YES"    PLATFORM="iOS"
+  - DESTINATION="OS=11.3,name=iPhone X"          SCHEME="$IOS_FRAMEWORK_SCHEME"    RUN_TESTS="YES"    PLATFORM="iOS"
   - DESTINATION="OS=10.3.1,name=iPhone 7 Plus"   SCHEME="$IOS_FRAMEWORK_SCHEME"    RUN_TESTS="YES"    PLATFORM="iOS"
   - DESTINATION="OS=9.0,name=iPhone 6"           SCHEME="$IOS_FRAMEWORK_SCHEME"    RUN_TESTS="YES"    PLATFORM="iOS"
-  - DESTINATION="OS=8.1,name=iPhone 4s"          SCHEME="$IOS_FRAMEWORK_SCHEME"    RUN_TESTS="YES"    PLATFORM="iOS"
+  # - DESTINATION="OS=8.1,name=iPhone 5s"          SCHEME="$IOS_FRAMEWORK_SCHEME"    RUN_TESTS="YES"    PLATFORM="iOS"
   - DESTINATION="arch=x86_64"                    SCHEME="$OSX_FRAMEWORK_SCHEME"    RUN_TESTS="YES"    PLATFORM="macOS"
-  - DESTINATION="OS=11.0,name=Apple TV 1080p"    SCHEME="$TVOS_FRAMEWORK_SCHEME"   RUN_TESTS="YES"    PLATFORM="tvOS"
+  - DESTINATION="OS=11.3,name=Apple TV 4K"    SCHEME="$TVOS_FRAMEWORK_SCHEME"   RUN_TESTS="YES"    PLATFORM="tvOS"
   - DESTINATION="OS=10.2,name=Apple TV 1080p"    SCHEME="$TVOS_FRAMEWORK_SCHEME"   RUN_TESTS="YES"    PLATFORM="tvOS"
   - DESTINATION="OS=9.0,name=Apple TV 1080p"     SCHEME="$TVOS_FRAMEWORK_SCHEME"   RUN_TESTS="YES"    PLATFORM="tvOS"
+
+
+
 
 script:
   - set -o pipefail
@@ -47,21 +53,29 @@ script:
 
 jobs:
   include:
-  - script: pod lib lint --verbose --allow-warnings
-  - stage: deploy
-    before_deploy: carthage build --no-skip-current --cache-builds && carthage archive Ciao
-    deploy:
-    - provider: releases
-      api_key:
-        secure: PPheV5sFlmiIZ2Xwqv4bqyJJTz5/R4LARTtgMbh1oNkUO+A0qmnPdzaGk0A+T5xSd0+lQ0BVCyMvj7xlOr7EzYSCYq6vo/GSCnaDBB6A5I4GP1CTlB+oWEo2DzDfAqzNEHv0WGNVZ7B3IGvfUwsfipi820iexjkpevxanqtwUvST+ZiK+JgyhM9W4V3/wKZhLefH6ySQybb51HvQEIIk7THcm4N5Bk2Rp3cTkRJmyd2hqH8HR5TJr/Pieutdx3OCo4Dd94l6ZIt7g2O4P/kvkKRNd3vs3yTEQTzcuxb+wC0AbIwX5EfatScksBH0drE1oxECgIAA6VVsYRAOkM6YVzBxXte4mLgp5kEQoFxIe9kMd7qL/LU0vM81UxmyfWd7UR1KoZGSazPlExT7Lrk4cTo17ozfwV+dwIAtnVROqfWzSATXmkKoN2fDERL8dMQLWjcI8qmwherO8RUqvZE/E+FeiwT3Potycdl3ySqKD0KBoNKTbKYeiSGjzb5XOWUlIRKVQuCmvgvAGIqOOIaWrTnzVmDR4tM8QGD513wUzKv3SNZE8nBG5qIvsyeqQov1Xzcsyxz+LYoFazt8OgENGJuv2oNCx8zYvFRcK/Iaaj2ZTjfb6s27xJbt3heRrUsTv8RAvGyle+xaEASP54Sb6OBl9XCKjpBUjUMvO013vEo=
-      file:
-      - Ciao.framework.zip
-      skip_cleanup: true
-      overwrite: true
-      on:
-        repo: AlTavares/Ciao
-        tags: true
-    - provider: script
-      script: pod trunk push
-      on:
-        tags: true
+    - stage: Pod lib lint
+      script: pod lib lint --verbose --allow-warnings
+    - stage: Deploy Github
+      script: skip
+      before_deploy:
+        - carthage build --no-skip-current --cache-builds
+        - carthage archive Ciao
+      deploy:
+        - provider: releases
+          api_key:
+            secure: PPheV5sFlmiIZ2Xwqv4bqyJJTz5/R4LARTtgMbh1oNkUO+A0qmnPdzaGk0A+T5xSd0+lQ0BVCyMvj7xlOr7EzYSCYq6vo/GSCnaDBB6A5I4GP1CTlB+oWEo2DzDfAqzNEHv0WGNVZ7B3IGvfUwsfipi820iexjkpevxanqtwUvST+ZiK+JgyhM9W4V3/wKZhLefH6ySQybb51HvQEIIk7THcm4N5Bk2Rp3cTkRJmyd2hqH8HR5TJr/Pieutdx3OCo4Dd94l6ZIt7g2O4P/kvkKRNd3vs3yTEQTzcuxb+wC0AbIwX5EfatScksBH0drE1oxECgIAA6VVsYRAOkM6YVzBxXte4mLgp5kEQoFxIe9kMd7qL/LU0vM81UxmyfWd7UR1KoZGSazPlExT7Lrk4cTo17ozfwV+dwIAtnVROqfWzSATXmkKoN2fDERL8dMQLWjcI8qmwherO8RUqvZE/E+FeiwT3Potycdl3ySqKD0KBoNKTbKYeiSGjzb5XOWUlIRKVQuCmvgvAGIqOOIaWrTnzVmDR4tM8QGD513wUzKv3SNZE8nBG5qIvsyeqQov1Xzcsyxz+LYoFazt8OgENGJuv2oNCx8zYvFRcK/Iaaj2ZTjfb6s27xJbt3heRrUsTv8RAvGyle+xaEASP54Sb6OBl9XCKjpBUjUMvO013vEo=
+          file:
+            - Ciao.framework.zip
+          skip_cleanup: true
+          overwrite: true
+          on:
+            repo: AlTavares/Ciao
+            tags: true
+    - stage: Deploy Cocoapods
+      script: skip
+      deploy:
+        - provider: script
+          script: pod trunk push
+          skip_cleanup: true
+          on:
+            tags: true
