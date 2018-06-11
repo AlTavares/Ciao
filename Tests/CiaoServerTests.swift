@@ -74,6 +74,17 @@ class CiaoServerTests: TestWithExpectation {
         XCTAssertTrue(delegate.didStopCalled)
         XCTAssertFalse(server.started)
     }
+
+    func testRetain() {
+        var parent: CiaoServerParent? = CiaoServerParent(CiaoServer(type: ServiceType.tcp("test"), name: "server1"))
+        weak var server = parent?.server
+        weak var netService = server?.netService
+        XCTAssertNotNil(server)
+        XCTAssertNotNil(netService)
+        parent = nil
+        XCTAssertNil(server)
+        XCTAssertNil(netService)
+    }
 }
 
 class DummyServerDelegate: CiaoServerDelegate {
@@ -94,5 +105,12 @@ class DummyServerDelegate: CiaoServerDelegate {
     override func netServiceDidStop(_ sender: NetService) {
         super.netServiceDidStop(sender)
         didStopCalled = true
+    }
+}
+
+private class CiaoServerParent {
+    var server: CiaoServer
+    init(_ server: CiaoServer) {
+        self.server = server
     }
 }
