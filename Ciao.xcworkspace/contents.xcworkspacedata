@@ -5,18 +5,6 @@
       location = "group:Ciao.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:scripts">
-   </FileRef>
-   <FileRef
-      location = "group:Cartfile">
-   </FileRef>
-   <FileRef
-      location = "group:Cartfile.private">
-   </FileRef>
-   <FileRef
-      location = "group:Cartfile.resolved">
-   </FileRef>
-   <FileRef
       location = "group:Ciao.podspec">
    </FileRef>
    <FileRef
