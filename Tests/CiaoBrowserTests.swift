@@ -23,6 +23,12 @@ class CiaoBrowserTests: TestWithExpectation {
     func testIfBrowserCanFindServers() {
         createExpectation()
         let serviceType = ServiceType.tcp("ciaoserver")
+        let server1 = CiaoServer(type: serviceType, name: "server1")
+        let server2 = CiaoServer(type: serviceType, name: "server2")
+        server1.txtRecord = ["server": "first"]
+        server2.txtRecord = ["server": "second"]
+        server1.start()
+        server2.start()
         let browser = CiaoBrowser()
         var serversFound = 0
         browser.browse(type: serviceType) { netService in
@@ -43,12 +49,6 @@ class CiaoBrowserTests: TestWithExpectation {
                 self.done()
             }
         }
-        let server1 = CiaoServer(type: serviceType, name: "server1")
-        let server2 = CiaoServer(type: serviceType, name: "server2")
-        server1.txtRecord = ["server": "first"]
-        server2.txtRecord = ["server": "second"]
-        server1.start()
-        server2.start()
         waitUntilDone(timeout: 5)
     }
     

@@ -10,7 +10,7 @@ import Foundation
 
 public class CiaoServer {
     var netService: NetService
-    var delegate: CiaoServerDelegate?
+    var delegate: CiaoServerDelegate
     var successCallback: ((Bool) -> Void)?
     public fileprivate(set) var started = false {
         didSet {
@@ -35,7 +35,7 @@ public class CiaoServer {
     public init(type: String, domain: String = "", name: String = "") {
         netService = NetService(domain: domain, type: type, name: name)
         delegate = CiaoServerDelegate()
-        delegate?.server = self
+        delegate.server = self
         netService.delegate = delegate
     }
 
