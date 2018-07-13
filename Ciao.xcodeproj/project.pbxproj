@@ -173,6 +173,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		244AE2CB20F93A9A00BF278D /* CiaoTests */ = {
+			isa = PBXGroup;
+			children = (
+				DA2E61241FC7B8E3002C684B /* CiaoBrowserTests.swift */,
+				DA2E61251FC7B8E3002C684B /* CiaoServerTests.swift */,
+				DA2E61261FC7B8E3002C684B /* TestWithExpectation.swift */,
+			);
+			name = CiaoTests;
+			sourceTree = "<group>";
+		};
 		3549BAFB1DA387DB00C63030 = {
 			isa = PBXGroup;
 			children = (
@@ -199,7 +209,7 @@
 		3549BB161DA3890B00C63030 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				359649011FB18CBF00FC7ADC /* Core */,
+				359649011FB18CBF00FC7ADC /* Ciao */,
 				3549BB541DA38A4000C63030 /* Supporting Files */,
 			);
 			path = Sources;
@@ -208,9 +218,7 @@
 		3549BB191DA3890B00C63030 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				DA2E61241FC7B8E3002C684B /* CiaoBrowserTests.swift */,
-				DA2E61251FC7B8E3002C684B /* CiaoServerTests.swift */,
-				DA2E61261FC7B8E3002C684B /* TestWithExpectation.swift */,
+				244AE2CB20F93A9A00BF278D /* CiaoTests */,
 				3549BB5B1DA38A8C00C63030 /* Supporting Files */,
 			);
 			path = Tests;
@@ -248,7 +256,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		359649011FB18CBF00FC7ADC /* Core */ = {
+		359649011FB18CBF00FC7ADC /* Ciao */ = {
 			isa = PBXGroup;
 			children = (
 				DA2E61341FC7B90F002C684B /* CiaoBrowser.swift */,
@@ -257,7 +265,7 @@
 				DA2E61301FC7B90E002C684B /* NetServiceExtension.swift */,
 				DA2E61311FC7B90E002C684B /* ServiceType.swift */,
 			);
-			path = Core;
+			path = Ciao;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
