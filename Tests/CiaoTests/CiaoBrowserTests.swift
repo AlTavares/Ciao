@@ -11,7 +11,20 @@ import XCTest
 
 class CiaoBrowserTests: TestWithExpectation {
     let serviceType = ServiceType.tcp("ciaoserver")
-    
+
+    func testIfBrowsers() {
+        createExpectation()
+        let browser = CiaoBrowser()
+        let service = ServiceType.udp("services._dns-sd")
+        browser.browse(type: service) { service in
+            print(service)
+            print(service.txtRecordDictionary)
+            print(service.hostName)
+            self.done()
+        }
+        waitUntilDone(timeout: 5)
+    }
+
     func testIfBrowserCanFindServers() {
         createExpectation()
         let browser = CiaoBrowser()
@@ -58,7 +71,6 @@ class CiaoBrowserTests: TestWithExpectation {
     }
 
 }
-
 
 private class CiaoBrowserParent {
     var browser: CiaoBrowser
