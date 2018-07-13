@@ -46,12 +46,14 @@ public class CiaoBrowser {
 
     func resolve(service: NetService) {
         Logger.debug("Resolving:", service)
+        Logger.debug("Current resolver:", resolver ?? "nil")
         guard resolver == nil else { // put in a queue to resolve
             servicesToBeResolved.insert(service)
             return
         }
         resolver = service
         resolver?.delegate = resolverDelegate
+        resolver?.stop()
         resolver?.resolve(withTimeout: 0.0)
     }
 
@@ -60,6 +62,18 @@ public class CiaoBrowser {
         services.insert(service)
         serviceFoundHandler(service)
         Logger.debug("Services to be resolved: \(servicesToBeResolved.count)")
+        resolveNext()
+    }
+
+    func resolverError(service: NetService) {
+        resolver?.delegate = nil
+        resolver = nil
+        dump(servicesToBeResolved)
+        servicesToBeResolved.remove(service)
+        resolveNext()
+    }
+
+    private func resolveNext() {
         if let serviceToBeResolved = servicesToBeResolved.popFirst() {
             resolve(service: serviceToBeResolved)
         }
@@ -72,6 +86,8 @@ public class CiaoBrowser {
 
     deinit {
         stop()
+        resolver?.delegate = nil
+        resolver = nil
     }
 }
 
@@ -80,6 +96,7 @@ class CiaoResolver: NSObject, NetServiceDelegate {
 
     func netService(_ sender: NetService, didNotResolve errorDict: [String: NSNumber]) {
         Logger.error("Service didn't resolve", sender, errorDict)
+        browser?.resolverError(service: sender)
     }
 
     func netServiceDidResolveAddress(_ sender: NetService) {
