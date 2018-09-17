@@ -8,6 +8,7 @@ Pod::Spec.new do |s|
  s.homepage = "https://github.com/AlTavares/Ciao"
  s.platforms = { :ios => "8.0", :osx => "10.10", :tvos => "9.0" }
  s.requires_arc = true
+ s.swift_version = '4.0'
 
  s.default_subspec = "Core"
  s.subspec "Core" do |ss|
