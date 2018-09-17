@@ -62,7 +62,7 @@ $ brew install carthage
 To integrate Ciao into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "Ciao/Ciao" ~> 1.0.1
+github "AlTavares/Ciao" ~> 1.0.1
 ```
 ### Swift Package Manager
 
