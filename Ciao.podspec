@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
  s.name = 'Ciao'
- s.version = '1.0.2'
+ s.version = '1.0.3'
  s.license = { :type => "MIT", :file => "LICENSE" }
  s.summary = 'Lib to publish and find services using mDNS'
  s.authors = { "Alexandre Mantovani Tavares" => "alexandre@live.in" }
