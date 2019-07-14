@@ -10,13 +10,13 @@ targets:
     sources: Sources/Ciao
     scheme:
       testTargets:
-        - CiaoTests_$platform
+        - CiaoTests_${platform}
   CiaoTests:
     type: bundle.unit-test
     platform: [iOS, tvOS]
     sources: Tests/CiaoTests
     dependencies:
-      - target: Ciao_$platform
+      - target: Ciao_${platform}
   CiaoTests_macOS:
     type: bundle.unit-test
     platform: macOS
