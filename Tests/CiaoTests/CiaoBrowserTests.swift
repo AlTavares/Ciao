@@ -12,28 +12,15 @@ import XCTest
 class CiaoBrowserTests: TestWithExpectation {
     let serviceType = ServiceType.tcp("ciaoserver")
 
-    func testIfBrowsers() {
-        createExpectation()
-        let browser = CiaoBrowser()
-        let service = ServiceType.udp("services._dns-sd")
-        browser.browse(type: service) { service in
-            print(service)
-            print(service.txtRecordDictionary)
-            print(service.hostName)
-            self.done()
-        }
-        waitUntilDone(timeout: 5)
-    }
-
     func testIfBrowserCanFindServers() {
         createExpectation()
         let browser = CiaoBrowser()
         var serversFound = 0
         let server1 = CiaoServer(type: serviceType, name: "server1")
-        let server2 = CiaoServer(type: serviceType, name: "server2")
+        let server2 = CiaoServer(type: serviceType, name: "server2", port: 3000)
         server1.txtRecord = ["server": "first"]
         server2.txtRecord = ["server": "second"]
-        server1.start()
+        server1.start(options: .listenForConnections)
         server2.start()
         browser.browse(type: serviceType) { netService in
             serversFound += 1
