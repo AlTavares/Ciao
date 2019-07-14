@@ -1,54 +1,53 @@
-language: objective-c
-osx_image: xcode9.3
+language: swift
+osx_image: xcode11
 cache:
   directories:
   - $HOME/Library/Caches/org.carthage.CarthageKit/dependencies
   - Carthage
 before_install:
-- gem install cocoapods --no-rdoc --no-ri --no-document --quiet
+- gem install cocoapods --quiet
 - brew update
 - brew outdated carthage || brew upgrade carthage
-- carthage bootstrap --verbose --no-use-binaries --cache-builds --platform $PLATFORM
+- brew install xcodegen
+- xcodegen
 
 env:
   global:
   - LC_CTYPE=en_US.UTF-8
   - LANG=en_US.UTF-8
-  - WORKSPACE=Ciao.xcworkspace
-  - IOS_FRAMEWORK_SCHEME="Ciao-iOS"
-  - OSX_FRAMEWORK_SCHEME="Ciao-macOS"
-  - TVOS_FRAMEWORK_SCHEME="Ciao-tvOS"
+  - IOS_FRAMEWORK_SCHEME="Ciao_iOS"
+  - OSX_FRAMEWORK_SCHEME="Ciao_macOS"
+  - TVOS_FRAMEWORK_SCHEME="Ciao_tvOS"
 
   matrix:
+  - DESTINATION="OS=13.0,name=iPhone Xs"         SCHEME="$IOS_FRAMEWORK_SCHEME"    RUN_TESTS="YES"    PLATFORM="iOS"
+  - DESTINATION="OS=12.1,name=iPhone Xs"         SCHEME="$IOS_FRAMEWORK_SCHEME"    RUN_TESTS="YES"    PLATFORM="iOS"
   - DESTINATION="OS=11.3,name=iPhone X"          SCHEME="$IOS_FRAMEWORK_SCHEME"    RUN_TESTS="YES"    PLATFORM="iOS"
   - DESTINATION="OS=10.3.1,name=iPhone 7 Plus"   SCHEME="$IOS_FRAMEWORK_SCHEME"    RUN_TESTS="YES"    PLATFORM="iOS"
-  - DESTINATION="OS=9.0,name=iPhone 6"           SCHEME="$IOS_FRAMEWORK_SCHEME"    RUN_TESTS="YES"    PLATFORM="iOS"
-  # - DESTINATION="OS=8.1,name=iPhone 5s"          SCHEME="$IOS_FRAMEWORK_SCHEME"    RUN_TESTS="YES"    PLATFORM="iOS"
   - DESTINATION="arch=x86_64"                    SCHEME="$OSX_FRAMEWORK_SCHEME"    RUN_TESTS="YES"    PLATFORM="macOS"
-  - DESTINATION="OS=11.3,name=Apple TV 4K"    SCHEME="$TVOS_FRAMEWORK_SCHEME"   RUN_TESTS="YES"    PLATFORM="tvOS"
+  - DESTINATION="OS=11.3,name=Apple TV 4K"       SCHEME="$TVOS_FRAMEWORK_SCHEME"   RUN_TESTS="YES"    PLATFORM="tvOS"
   - DESTINATION="OS=10.2,name=Apple TV 1080p"    SCHEME="$TVOS_FRAMEWORK_SCHEME"   RUN_TESTS="YES"    PLATFORM="tvOS"
   - DESTINATION="OS=9.0,name=Apple TV 1080p"     SCHEME="$TVOS_FRAMEWORK_SCHEME"   RUN_TESTS="YES"    PLATFORM="tvOS"
-
-
 
 
 script:
   - set -o pipefail
   - xcodebuild -version
   - xcodebuild -showsdks
+  - xcodebuild clean
 
   # Build Framework in Debug and Run Tests if specified
   - if [ $RUN_TESTS == "YES" ]; then
-      xcodebuild -workspace "$WORKSPACE" -scheme "$SCHEME" -destination "$DESTINATION" -configuration Debug ONLY_ACTIVE_ARCH=NO ENABLE_TESTABILITY=YES test | xcpretty -c;
+      xcodebuild -scheme "$SCHEME" -destination "$DESTINATION" -configuration Debug ONLY_ACTIVE_ARCH=NO ENABLE_TESTABILITY=YES test | xcpretty -c;
     else
-      xcodebuild -workspace "$WORKSPACE" -scheme "$SCHEME" -destination "$DESTINATION" -configuration Debug ONLY_ACTIVE_ARCH=NO build | xcpretty -c;
+      xcodebuild -scheme "$SCHEME" -destination "$DESTINATION" -configuration Debug ONLY_ACTIVE_ARCH=NO build | xcpretty -c;
     fi
 
   # Build Framework in Release and Run Tests if specified
   - if [ $RUN_TESTS == "YES" ]; then
-      xcodebuild -workspace "$WORKSPACE" -scheme "$SCHEME" -destination "$DESTINATION" -configuration Release ONLY_ACTIVE_ARCH=NO ENABLE_TESTABILITY=YES test | xcpretty -c;
+      xcodebuild -scheme "$SCHEME" -destination "$DESTINATION" -configuration Release ONLY_ACTIVE_ARCH=NO ENABLE_TESTABILITY=YES test | xcpretty -c;
     else
-      xcodebuild -workspace "$WORKSPACE" -scheme "$SCHEME" -destination "$DESTINATION" -configuration Release ONLY_ACTIVE_ARCH=NO build | xcpretty -c;
+      xcodebuild -scheme "$SCHEME" -destination "$DESTINATION" -configuration Release ONLY_ACTIVE_ARCH=NO build | xcpretty -c;
     fi
 
 jobs:
@@ -58,7 +57,6 @@ jobs:
     - stage: Deploy Github
       script: skip
       before_deploy:
-        - carthage build --no-skip-current --cache-builds
         - carthage archive Ciao
       deploy:
         - provider: releases

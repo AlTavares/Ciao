@@ -28,25 +28,25 @@ public class CiaoServer {
         }
     }
 
-    public convenience init(type: ServiceType, domain: String = "", name: String = "") {
-        self.init(type: type.description, domain: domain, name: name)
+    public convenience init(type: ServiceType, domain: String = "", name: String = "", port: Int32 = 0) {
+        self.init(type: type.description, domain: domain, name: name, port: port)
     }
 
-    public init(type: String, domain: String = "", name: String = "") {
-        netService = NetService(domain: domain, type: type, name: name)
+    public init(type: String, domain: String = "", name: String = "", port: Int32 = 0) {
+        netService = NetService(domain: domain, type: type, name: name, port: port)
         delegate = CiaoServerDelegate()
         delegate?.server = self
         netService.delegate = delegate
     }
 
-    public func start(success: ((Bool) -> Void)? = nil) {
+    public func start(options: NetService.Options = [], success: ((Bool) -> Void)? = nil) {
         if started {
             success?(true)
             return
         }
         successCallback = success
-        netService.schedule(in: RunLoop.current, forMode: RunLoopMode.commonModes)
-        netService.publish(options: NetService.Options.listenForConnections)
+        netService.schedule(in: RunLoop.current, forMode: RunLoop.Mode.common)
+        netService.publish(options: options)
     }
 
     public func stop() {
@@ -55,6 +55,8 @@ public class CiaoServer {
 
     deinit {
         stop()
+        netService.delegate = nil
+        delegate = nil
     }
 }
 

@@ -47,15 +47,13 @@ struct Logger {
         return Logger.dateFormatter.string(from: Date())
     }
 
-    fileprivate static func log(_ message: Any...,
-                    level: Level,
-                    fileName: String = #file,
-                    line: Int = #line,
-                    funcName: String = #function) {
-
+    private static func log(_ message: [Any],
+                            level: Level,
+                            fileName: String = #file,
+                            line: Int = #line,
+                            funcName: String = #function) {
         guard level.rawValue >= LoggerLevel.rawValue else { return }
-        var msg = message.description.dropFirst(2)
-        msg = msg.dropLast(2)
+        let msg = message.map { String(describing: $0) }.joined(separator: ", ")
         print("\(date) [\(level.description)][\(sourceFileName(filePath: fileName))]:\(line) \(funcName) -> \(msg)")
     }
 

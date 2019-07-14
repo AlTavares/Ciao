@@ -1,0 +1,28 @@
+name: Ciao
+targets:
+  Ciao:
+    type: framework
+    platform: [iOS, tvOS, macOS]
+    deploymentTarget: "9.0"
+    settings:
+      ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES: YES
+      MACOSX_DEPLOYMENT_TARGET: 10.13
+    sources: Sources/Ciao
+    scheme:
+      testTargets:
+        - CiaoTests_${platform}
+  CiaoTests:
+    type: bundle.unit-test
+    platform: [iOS, tvOS]
+    sources: Tests/CiaoTests
+    dependencies:
+      - target: Ciao_${platform}
+  CiaoTests_macOS:
+    type: bundle.unit-test
+    platform: macOS
+    sources: Tests/CiaoTests
+    dependencies:
+      - target: Ciao_macOS
+    settings:
+      LD_RUNPATH_SEARCH_PATHS: "@executable_path/../Frameworks @loader_path/../Frameworks"
+
