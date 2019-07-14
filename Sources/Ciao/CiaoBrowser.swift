@@ -9,14 +9,12 @@
 import Foundation
 
 public class CiaoBrowser {
-
     var netServiceBrowser: NetServiceBrowser
     var delegate: CiaoBrowserDelegate
-    var resolver: NetService?
-    var resolverDelegate: CiaoResolver
+
     public var services = Set<NetService>()
-    private var servicesToBeResolved = Set<NetService>()
-    private var serviceFoundHandler: ((NetService) -> Void)!
+    public var serviceFoundHandler: ((NetService) -> Void)?
+    public var serviceResolvedHandler: ((Result<NetService, ErrorDictionary>) -> Void)?
     public var isSearching = false {
         didSet {
             Logger.info(isSearching)
@@ -27,94 +25,46 @@ public class CiaoBrowser {
         netServiceBrowser = NetServiceBrowser()
         delegate = CiaoBrowserDelegate()
         netServiceBrowser.delegate = delegate
-        resolverDelegate = CiaoResolver()
-        resolverDelegate.browser = self
         delegate.browser = self
     }
 
-    public func browse(type: ServiceType, domain: String = "", serviceFoundHandler: @escaping (NetService) -> Void) {
-        browse(type: type.description, serviceFoundHandler: serviceFoundHandler)
+    public func browse(type: ServiceType, domain: String = "") {
+        browse(type: type.description)
     }
 
-    public func browse(type: String, domain: String = "", serviceFoundHandler: @escaping (NetService) -> Void) {
-        if isSearching {
-            stop()
-        }
+    public func browse(type: String, domain: String = "") {
+        stop()
         netServiceBrowser.searchForServices(ofType: type, inDomain: domain)
-        self.serviceFoundHandler = serviceFoundHandler
     }
 
-    func resolve(service: NetService) {
-        Logger.debug("Resolving:", service)
-        Logger.debug("Current resolver:", resolver ?? "nil")
-        guard resolver == nil else { // put in a queue to resolve
-            servicesToBeResolved.insert(service)
-            return
-        }
-        resolver = service
-        resolver?.delegate = resolverDelegate
-        resolver?.stop()
-        resolver?.resolve(withTimeout: 0.0)
-    }
+    fileprivate func serviceFound(_ service: NetService) {
+        services.update(with: service)
+        serviceFoundHandler?(service)
 
-    func resolved(service: NetService) {
-        resolver = nil
-        services.insert(service)
-        serviceFoundHandler(service)
-        Logger.debug("Services to be resolved: \(servicesToBeResolved.count)")
-        resolveNext()
-    }
-
-    func resolverError(service: NetService) {
-        resolver?.delegate = nil
-        resolver = nil
-        dump(servicesToBeResolved)
-        servicesToBeResolved.remove(service)
-        resolveNext()
-    }
-
-    private func resolveNext() {
-        if let serviceToBeResolved = servicesToBeResolved.popFirst() {
-            resolve(service: serviceToBeResolved)
+        // resolve services if handler is registered
+        guard let serviceResolvedHandler = serviceResolvedHandler else { return }
+        var resolver: CiaoResolver? = CiaoResolver(service: service)
+        resolver?.resolve(withTimeout: 0) { result in
+            serviceResolvedHandler(result)
+            // retain resolver until resolution
+            resolver = nil
         }
     }
 
     public func stop() {
         netServiceBrowser.stop()
-        resolver?.stop()
     }
 
     deinit {
         stop()
-        resolver?.delegate = nil
-        resolver = nil
     }
-}
-
-class CiaoResolver: NSObject, NetServiceDelegate {
-    weak var browser: CiaoBrowser?
-
-    func netService(_ sender: NetService, didNotResolve errorDict: [String: NSNumber]) {
-        Logger.error("Service didn't resolve", sender, errorDict)
-        browser?.resolverError(service: sender)
-    }
-
-    func netServiceDidResolveAddress(_ sender: NetService) {
-        Logger.info("Service resolved", sender)
-        browser?.resolved(service: sender)
-    }
-
-    func netServiceWillResolve(_ sender: NetService) {
-        Logger.info("Service will resolve", sender)
-    }
-
 }
 
 class CiaoBrowserDelegate: NSObject, NetServiceBrowserDelegate {
     weak var browser: CiaoBrowser?
     func netServiceBrowser(_ browser: NetServiceBrowser, didFind service: NetService, moreComing: Bool) {
         Logger.info("Service found", service)
-        self.browser?.resolve(service: service)
+        self.browser?.serviceFound(service)
     }
 
     func netServiceBrowserWillSearch(_ browser: NetServiceBrowser) {
@@ -131,5 +81,4 @@ class CiaoBrowserDelegate: NSObject, NetServiceBrowserDelegate {
         Logger.debug("Browser didn't search", errorDict)
         self.browser?.isSearching = false
     }
-
 }

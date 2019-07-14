@@ -6,8 +6,8 @@
 //  Copyright © 2017 Tavares. All rights reserved.
 //
 
-import XCTest
 @testable import Ciao
+import XCTest
 
 class CiaoBrowserTests: TestWithExpectation {
     let serviceType = ServiceType.tcp("ciaoserver")
@@ -15,15 +15,23 @@ class CiaoBrowserTests: TestWithExpectation {
     func testIfBrowserCanFindServers() {
         createExpectation()
         let browser = CiaoBrowser()
-        var serversFound = 0
+        var servicesFound = 0
+        var servicesResolved = 0
         let server1 = CiaoServer(type: serviceType, name: "server1")
         let server2 = CiaoServer(type: serviceType, name: "server2", port: 3000)
         server1.txtRecord = ["server": "first"]
         server2.txtRecord = ["server": "second"]
         server1.start(options: .listenForConnections)
         server2.start()
-        browser.browse(type: serviceType) { netService in
-            serversFound += 1
+
+        browser.serviceFoundHandler = { netService in
+            servicesFound += 1
+            XCTAssertEqual(browser.services.count, servicesFound)
+        }
+
+        browser.serviceResolvedHandler = { result in
+            let netService = try! result.get()
+            servicesResolved += 1
             var expectedValue = ""
             switch netService.name {
             case "server1":
@@ -35,11 +43,13 @@ class CiaoBrowserTests: TestWithExpectation {
             }
             XCTAssertNotNil(netService.txtRecordDictionary)
             XCTAssertEqual(netService.txtRecordDictionary!["server"], expectedValue)
-            if serversFound == 2 {
+            if servicesResolved == 2 {
                 XCTAssertEqual(browser.services.count, 2)
                 self.done()
             }
         }
+
+        browser.browse(type: serviceType)
         waitUntilDone(timeout: 5)
     }
 
@@ -47,16 +57,12 @@ class CiaoBrowserTests: TestWithExpectation {
         var parent: CiaoBrowserParent? = CiaoBrowserParent(CiaoBrowser())
         weak var browser = parent?.browser
         weak var delegate = browser?.delegate
-        weak var resolverDelegate = browser?.resolverDelegate
         XCTAssertNotNil(browser)
         XCTAssertNotNil(delegate)
-        XCTAssertNotNil(resolverDelegate)
         parent = nil
         XCTAssertNil(browser)
         XCTAssertNil(delegate)
-        XCTAssertNil(resolverDelegate)
     }
-
 }
 
 private class CiaoBrowserParent {
