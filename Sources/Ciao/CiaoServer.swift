@@ -45,7 +45,7 @@ public class CiaoServer {
             return
         }
         successCallback = success
-        netService.schedule(in: RunLoop.current, forMode: RunLoopMode.commonModes)
+        netService.schedule(in: RunLoop.current, forMode: RunLoop.Mode.common)
         netService.publish(options: NetService.Options.listenForConnections)
     }
 
