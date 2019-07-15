@@ -13,8 +13,13 @@ public class CiaoBrowser {
     var delegate: CiaoBrowserDelegate
 
     public var services = Set<NetService>()
+
+    // Handlers
     public var serviceFoundHandler: ((NetService) -> Void)?
+    public var serviceRemovedHandler: ((NetService) -> Void)?
     public var serviceResolvedHandler: ((Result<NetService, ErrorDictionary>) -> Void)?
+
+
     public var isSearching = false {
         didSet {
             Logger.info(isSearching)
@@ -51,6 +56,11 @@ public class CiaoBrowser {
         }
     }
 
+    fileprivate func serviceRemoved(_ service: NetService) {
+        services.remove(service)
+        serviceRemovedHandler?(service)
+    }
+
     public func stop() {
         netServiceBrowser.stop()
     }
@@ -80,5 +90,10 @@ class CiaoBrowserDelegate: NSObject, NetServiceBrowserDelegate {
     func netServiceBrowser(_ browser: NetServiceBrowser, didNotSearch errorDict: [String: NSNumber]) {
         Logger.debug("Browser didn't search", errorDict)
         self.browser?.isSearching = false
+    }
+
+    func netServiceBrowser(_ browser: NetServiceBrowser, didRemove service: NetService, moreComing: Bool) {
+        Logger.info("Service removed", service)
+        self.browser?.serviceRemoved(service)
     }
 }

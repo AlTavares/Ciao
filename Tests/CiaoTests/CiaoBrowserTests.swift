@@ -53,6 +53,26 @@ class CiaoBrowserTests: TestWithExpectation {
         waitUntilDone(timeout: 5)
     }
 
+    func testRemovedService() {
+        createExpectation()
+        let browser = CiaoBrowser()
+        let server = CiaoServer(type: serviceType, name: "server1")
+        server.start(options: .listenForConnections)
+
+        browser.serviceResolvedHandler = { _ in
+            XCTAssertEqual(browser.services.count, 1)
+            server.stop()
+        }
+
+        browser.serviceRemovedHandler = { _ in
+            XCTAssertEqual(browser.services.count, 0)
+            self.done()
+        }
+
+        browser.browse(type: serviceType)
+        waitUntilDone(timeout: 5)
+    }
+
     func testRetain() {
         var parent: CiaoBrowserParent? = CiaoBrowserParent(CiaoBrowser())
         weak var browser = parent?.browser
