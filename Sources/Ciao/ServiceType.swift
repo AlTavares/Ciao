@@ -12,7 +12,7 @@ public enum ServiceType {
     case tcp(String)
     case udp(String)
 
-    var description: String {
+    public var description: String {
         switch self {
         case .tcp(let name):
             return "_\(name)._tcp"

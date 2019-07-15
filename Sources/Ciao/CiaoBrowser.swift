@@ -34,7 +34,7 @@ public class CiaoBrowser {
     }
 
     public func browse(type: ServiceType, domain: String = "") {
-        browse(type: type.description)
+        browse(type: type.description, domain: domain)
     }
 
     public func browse(type: String, domain: String = "") {
