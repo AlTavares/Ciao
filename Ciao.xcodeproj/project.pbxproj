@@ -1,0 +1,1016 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		03E6775221DF4B51B07C958C /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326618F3E98E577E32A5B3A1 /* Logger.swift */; };
+		053E6067E0C1D4E3E4D8B9FA /* DomainsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53740B19376702AEB17E4C95 /* DomainsViewController.swift */; };
+		08C9B99BDFC978564FCA00A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC8F0296630950AA9E64D137 /* Assets.xcassets */; };
+		1046AE3AECA88090F783AC7B /* CiaoServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6948DF23F0B70F84DA7C62B3 /* CiaoServer.swift */; };
+		1297EE174CB31A855F67302A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F505A1801F2FDF71741FF13C /* AppDelegate.swift */; };
+		177A4C81DF40CCFB6D63C2AB /* ServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4E9D973D4A7594B2DAD03C /* ServiceType.swift */; };
+		19F47421AA6FFE3D5829A36E /* CiaoBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3D353929554EF7A2AC35D1 /* CiaoBrowser.swift */; };
+		24B541D3D662E3E1D6F6D1C3 /* Ciao.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 41F100894D5AE3F4BC802DD5 /* Ciao.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		26E4A592BE05BE78B3D7F2D3 /* ServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4E9D973D4A7594B2DAD03C /* ServiceType.swift */; };
+		45B7D0A328067A40CED7AD4F /* CiaoBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3D353929554EF7A2AC35D1 /* CiaoBrowser.swift */; };
+		485255EAC59577B8BA208CB3 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326618F3E98E577E32A5B3A1 /* Logger.swift */; };
+		4AAC2262C8FF140DC82EEAA5 /* CiaoServerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E071023E42D299CA95319C /* CiaoServerTests.swift */; };
+		4B21C125893CEA9BCCE8C9E1 /* TestWithExpectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D755C71A74CD890721BA73D3 /* TestWithExpectation.swift */; };
+		4FF15C2FF0C48C018B449D6C /* TestWithExpectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D755C71A74CD890721BA73D3 /* TestWithExpectation.swift */; };
+		54D8469C5FFDEC0FBD5B59D7 /* NetServiceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0AD6B09DECAE203590D0BF /* NetServiceExtension.swift */; };
+		620E1422880F1368EFC7F8BD /* Ciao.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 06EA0870252D3332639F7A14 /* Ciao.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		64373D480026D420ABDE81CE /* CiaoResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BECE6078BA45FBC7D047082 /* CiaoResolver.swift */; };
+		6718269DA52487E881E57F32 /* CiaoResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BECE6078BA45FBC7D047082 /* CiaoResolver.swift */; };
+		6CBF7A5B771A1A09F9F1B8C6 /* TestWithExpectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D755C71A74CD890721BA73D3 /* TestWithExpectation.swift */; };
+		6F50DAFB2142E23B94D24991 /* CiaoServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6948DF23F0B70F84DA7C62B3 /* CiaoServer.swift */; };
+		72F3BA87F19B2811E6550529 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326618F3E98E577E32A5B3A1 /* Logger.swift */; };
+		7FA8D18EDB9E35C4B32077A5 /* ServiceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E68AC6A9071EB2965B7F055 /* ServiceDetailViewController.swift */; };
+		829FBDA478BC74E7357BDBDA /* Ciao.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 65346A103C8A2496133A4D7A /* Ciao.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		82BF2D8BE929C35684EFE0B6 /* CiaoServerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E071023E42D299CA95319C /* CiaoServerTests.swift */; };
+		8EE51F1559C565A8D0C77331 /* ServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4E9D973D4A7594B2DAD03C /* ServiceType.swift */; };
+		95252F567301100069AA71D7 /* CiaoServerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E071023E42D299CA95319C /* CiaoServerTests.swift */; };
+		9F7392F8C18C82AB4C3ECFEA /* ServicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31DFB2D7236D8433CB6F287 /* ServicesViewController.swift */; };
+		A0F7F90B92AF32A053D2E556 /* CiaoBrowserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3863FA8C1BABF89E6BFCAA39 /* CiaoBrowserTests.swift */; };
+		A45B7B6E9EAF0A8481EBDA99 /* CiaoBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3D353929554EF7A2AC35D1 /* CiaoBrowser.swift */; };
+		A5BFCA7411C42A1319D5D7CA /* CiaoServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6948DF23F0B70F84DA7C62B3 /* CiaoServer.swift */; };
+		A72DD28D3A4B1C568BE6FD78 /* Ciao.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65346A103C8A2496133A4D7A /* Ciao.framework */; };
+		ACF3540EDFC370D7C75345AF /* CiaoBrowserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3863FA8C1BABF89E6BFCAA39 /* CiaoBrowserTests.swift */; };
+		B45AD0B4CA169D3C9B1FC2B5 /* CiaoResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BECE6078BA45FBC7D047082 /* CiaoResolver.swift */; };
+		BD1E23687E2C736B2BDB5749 /* NetServiceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0AD6B09DECAE203590D0BF /* NetServiceExtension.swift */; };
+		BFD8CE842EFC69EA37C7F036 /* Ciao.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41F100894D5AE3F4BC802DD5 /* Ciao.framework */; };
+		C2CD81C166595ED0048AD40F /* Ciao.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 06EA0870252D3332639F7A14 /* Ciao.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C909FF14306727A154E9A9B8 /* Ciao.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06EA0870252D3332639F7A14 /* Ciao.framework */; };
+		CE9179F8E1DD953EF867720C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4CDB58CAD6947C880DCE082 /* LaunchScreen.storyboard */; };
+		D2EB1D129400C82612BC05A9 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF5619EB133BFBE4DBF5B6E /* TableView.swift */; };
+		D777655A9B8895F89922DDC4 /* NetServiceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0AD6B09DECAE203590D0BF /* NetServiceExtension.swift */; };
+		F710266A2435B10659571F38 /* CiaoBrowserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3863FA8C1BABF89E6BFCAA39 /* CiaoBrowserTests.swift */; };
+		F764DB7A1E6E2DE47A63861C /* Ciao.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06EA0870252D3332639F7A14 /* Ciao.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		04931346446C1096777A8D35 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D98943BAAD2A1383859516A5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 47D654956E4EC266F01A1BD3;
+			remoteInfo = Ciao_tvOS;
+		};
+		391019C52C8DB85580CA145D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D98943BAAD2A1383859516A5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 653811F28981316ADEAA52AF;
+			remoteInfo = Ciao_macOS;
+		};
+		8CC498B79394616E3E1ED9BD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D98943BAAD2A1383859516A5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F806FB2F83F930761F2F75D7;
+			remoteInfo = Ciao_iOS;
+		};
+		973740F2C44135E57BC619C2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D98943BAAD2A1383859516A5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F806FB2F83F930761F2F75D7;
+			remoteInfo = Ciao_iOS;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		36E29DDD2EB6D740CC166DFA /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				24B541D3D662E3E1D6F6D1C3 /* Ciao.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		40A51E0FF3B98713FF910EE0 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C2CD81C166595ED0048AD40F /* Ciao.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		68860400514394A2744E7DF4 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				829FBDA478BC74E7357BDBDA /* Ciao.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD2F0541A5233BAB686941A1 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				620E1422880F1368EFC7F8BD /* Ciao.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		06EA0870252D3332639F7A14 /* Ciao.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Ciao.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		14327FA22642D64AABCEF16C /* CiaoTests_macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CiaoTests_macOS.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		240A81CF0C80664C17AF5DE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		248A2B9FD919C39F534E7258 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2526A311801D93BEEFE8483B /* CiaoTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = CiaoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		326618F3E98E577E32A5B3A1 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		3863FA8C1BABF89E6BFCAA39 /* CiaoBrowserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CiaoBrowserTests.swift; sourceTree = "<group>"; };
+		38FA49FD37FBE4E5F3926050 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		41F100894D5AE3F4BC802DD5 /* Ciao.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Ciao.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		53740B19376702AEB17E4C95 /* DomainsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainsViewController.swift; sourceTree = "<group>"; };
+		5BECE6078BA45FBC7D047082 /* CiaoResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CiaoResolver.swift; sourceTree = "<group>"; };
+		61E071023E42D299CA95319C /* CiaoServerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CiaoServerTests.swift; sourceTree = "<group>"; };
+		65346A103C8A2496133A4D7A /* Ciao.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Ciao.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6948DF23F0B70F84DA7C62B3 /* CiaoServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CiaoServer.swift; sourceTree = "<group>"; };
+		6E68AC6A9071EB2965B7F055 /* ServiceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailViewController.swift; sourceTree = "<group>"; };
+		7C3D353929554EF7A2AC35D1 /* CiaoBrowser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CiaoBrowser.swift; sourceTree = "<group>"; };
+		9F0AD6B09DECAE203590D0BF /* NetServiceExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetServiceExtension.swift; sourceTree = "<group>"; };
+		CDF5619EB133BFBE4DBF5B6E /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
+		D755C71A74CD890721BA73D3 /* TestWithExpectation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestWithExpectation.swift; sourceTree = "<group>"; };
+		EC8F0296630950AA9E64D137 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EE0586021959FC55C71F29FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F31DFB2D7236D8433CB6F287 /* ServicesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesViewController.swift; sourceTree = "<group>"; };
+		F501C300416AC7BE07DD0D00 /* CiaoTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = CiaoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F505A1801F2FDF71741FF13C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FF4E9D973D4A7594B2DAD03C /* ServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceType.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9D9C50A8F01DDE29A9156EE0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A72DD28D3A4B1C568BE6FD78 /* Ciao.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF9F83BF8656B88AF722B048 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C909FF14306727A154E9A9B8 /* Ciao.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D973AE6BCBA7FF220BD1A837 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F764DB7A1E6E2DE47A63861C /* Ciao.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAF2C1BD19B6FFF6581D5BF2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFD8CE842EFC69EA37C7F036 /* Ciao.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		938B31BCEA4CB0FB52394203 = {
+			isa = PBXGroup;
+			children = (
+				CE99E2452C548A285208FFDF /* Ciao */,
+				D5A5FA83B73FE07B0836F012 /* CiaoTests */,
+				E18EEFFD3234030927C224EC /* Example */,
+				AFC1726104CA909D28C6DDB0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A77670F854968547FB199546 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				53740B19376702AEB17E4C95 /* DomainsViewController.swift */,
+				6E68AC6A9071EB2965B7F055 /* ServiceDetailViewController.swift */,
+				F31DFB2D7236D8433CB6F287 /* ServicesViewController.swift */,
+				CDF5619EB133BFBE4DBF5B6E /* TableView.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		AFC1726104CA909D28C6DDB0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				06EA0870252D3332639F7A14 /* Ciao.framework */,
+				65346A103C8A2496133A4D7A /* Ciao.framework */,
+				41F100894D5AE3F4BC802DD5 /* Ciao.framework */,
+				14327FA22642D64AABCEF16C /* CiaoTests_macOS.xctest */,
+				2526A311801D93BEEFE8483B /* CiaoTests.xctest */,
+				F501C300416AC7BE07DD0D00 /* CiaoTests.xctest */,
+				38FA49FD37FBE4E5F3926050 /* Example.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CE99E2452C548A285208FFDF /* Ciao */ = {
+			isa = PBXGroup;
+			children = (
+				7C3D353929554EF7A2AC35D1 /* CiaoBrowser.swift */,
+				5BECE6078BA45FBC7D047082 /* CiaoResolver.swift */,
+				6948DF23F0B70F84DA7C62B3 /* CiaoServer.swift */,
+				248A2B9FD919C39F534E7258 /* Info.plist */,
+				326618F3E98E577E32A5B3A1 /* Logger.swift */,
+				9F0AD6B09DECAE203590D0BF /* NetServiceExtension.swift */,
+				FF4E9D973D4A7594B2DAD03C /* ServiceType.swift */,
+			);
+			name = Ciao;
+			path = Sources/Ciao;
+			sourceTree = "<group>";
+		};
+		D5A5FA83B73FE07B0836F012 /* CiaoTests */ = {
+			isa = PBXGroup;
+			children = (
+				3863FA8C1BABF89E6BFCAA39 /* CiaoBrowserTests.swift */,
+				61E071023E42D299CA95319C /* CiaoServerTests.swift */,
+				D755C71A74CD890721BA73D3 /* TestWithExpectation.swift */,
+			);
+			name = CiaoTests;
+			path = Tests/CiaoTests;
+			sourceTree = "<group>";
+		};
+		E18EEFFD3234030927C224EC /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				F505A1801F2FDF71741FF13C /* AppDelegate.swift */,
+				EC8F0296630950AA9E64D137 /* Assets.xcassets */,
+				240A81CF0C80664C17AF5DE5 /* Info.plist */,
+				D4CDB58CAD6947C880DCE082 /* LaunchScreen.storyboard */,
+				A77670F854968547FB199546 /* ViewController */,
+			);
+			path = Example;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		47D654956E4EC266F01A1BD3 /* Ciao_tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 117F3FE3CF9923E9806732A1 /* Build configuration list for PBXNativeTarget "Ciao_tvOS" */;
+			buildPhases = (
+				8342962DFB34DE20B2095489 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Ciao_tvOS;
+			productName = Ciao_tvOS;
+			productReference = 41F100894D5AE3F4BC802DD5 /* Ciao.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		60903DD78188C85A0698E574 /* CiaoTests_tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 966E814FACB75AB0ADB363EA /* Build configuration list for PBXNativeTarget "CiaoTests_tvOS" */;
+			buildPhases = (
+				59A406FFAB852CC08C63D9F9 /* Sources */,
+				FAF2C1BD19B6FFF6581D5BF2 /* Frameworks */,
+				36E29DDD2EB6D740CC166DFA /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C463B26911BF89ACD00404E1 /* PBXTargetDependency */,
+			);
+			name = CiaoTests_tvOS;
+			productName = CiaoTests_tvOS;
+			productReference = F501C300416AC7BE07DD0D00 /* CiaoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		653811F28981316ADEAA52AF /* Ciao_macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AFEABCF17F65F06B90C1AA1F /* Build configuration list for PBXNativeTarget "Ciao_macOS" */;
+			buildPhases = (
+				569B822D1AC41718294AE63D /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Ciao_macOS;
+			productName = Ciao_macOS;
+			productReference = 65346A103C8A2496133A4D7A /* Ciao.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		6D3ED6185429251080B85CAE /* CiaoTests_iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9A46CC7A5EEC5B338E90FE4A /* Build configuration list for PBXNativeTarget "CiaoTests_iOS" */;
+			buildPhases = (
+				DEEA9410040BC807E38FD218 /* Sources */,
+				BF9F83BF8656B88AF722B048 /* Frameworks */,
+				DD2F0541A5233BAB686941A1 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				846EAD7B5F59977C7C94B32A /* PBXTargetDependency */,
+			);
+			name = CiaoTests_iOS;
+			productName = CiaoTests_iOS;
+			productReference = 2526A311801D93BEEFE8483B /* CiaoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C56CA008147F8A32602CC7FC /* CiaoTests_macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FBEE2B791A4920F0C6514AE1 /* Build configuration list for PBXNativeTarget "CiaoTests_macOS" */;
+			buildPhases = (
+				BFEBB7DF4576F2A7782B4A1D /* Sources */,
+				9D9C50A8F01DDE29A9156EE0 /* Frameworks */,
+				68860400514394A2744E7DF4 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				677659EF88842E3EC59AF13D /* PBXTargetDependency */,
+			);
+			name = CiaoTests_macOS;
+			productName = CiaoTests_macOS;
+			productReference = 14327FA22642D64AABCEF16C /* CiaoTests_macOS.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DE5C182743E4198DE3686B65 /* Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 631EEBC74CC0B3038FA45573 /* Build configuration list for PBXNativeTarget "Example" */;
+			buildPhases = (
+				98005CB570E3C432FF80D697 /* Sources */,
+				822F4D39475719EF71645426 /* Resources */,
+				D973AE6BCBA7FF220BD1A837 /* Frameworks */,
+				40A51E0FF3B98713FF910EE0 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A68963F8F5BFB72B50DEA68E /* PBXTargetDependency */,
+			);
+			name = Example;
+			productName = Example;
+			productReference = 38FA49FD37FBE4E5F3926050 /* Example.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F806FB2F83F930761F2F75D7 /* Ciao_iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84635954C80B8DE26991173A /* Build configuration list for PBXNativeTarget "Ciao_iOS" */;
+			buildPhases = (
+				A2A2EAE75A11EA2F91C821FF /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Ciao_iOS;
+			productName = Ciao_iOS;
+			productReference = 06EA0870252D3332639F7A14 /* Ciao.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D98943BAAD2A1383859516A5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1020;
+			};
+			buildConfigurationList = B8F932AA94A420B651E3CFAA /* Build configuration list for PBXProject "Ciao" */;
+			compatibilityVersion = "Xcode 10.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 938B31BCEA4CB0FB52394203;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6D3ED6185429251080B85CAE /* CiaoTests_iOS */,
+				C56CA008147F8A32602CC7FC /* CiaoTests_macOS */,
+				60903DD78188C85A0698E574 /* CiaoTests_tvOS */,
+				F806FB2F83F930761F2F75D7 /* Ciao_iOS */,
+				653811F28981316ADEAA52AF /* Ciao_macOS */,
+				47D654956E4EC266F01A1BD3 /* Ciao_tvOS */,
+				DE5C182743E4198DE3686B65 /* Example */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		822F4D39475719EF71645426 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				08C9B99BDFC978564FCA00A4 /* Assets.xcassets in Resources */,
+				CE9179F8E1DD953EF867720C /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		569B822D1AC41718294AE63D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				19F47421AA6FFE3D5829A36E /* CiaoBrowser.swift in Sources */,
+				64373D480026D420ABDE81CE /* CiaoResolver.swift in Sources */,
+				6F50DAFB2142E23B94D24991 /* CiaoServer.swift in Sources */,
+				485255EAC59577B8BA208CB3 /* Logger.swift in Sources */,
+				54D8469C5FFDEC0FBD5B59D7 /* NetServiceExtension.swift in Sources */,
+				8EE51F1559C565A8D0C77331 /* ServiceType.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		59A406FFAB852CC08C63D9F9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ACF3540EDFC370D7C75345AF /* CiaoBrowserTests.swift in Sources */,
+				4AAC2262C8FF140DC82EEAA5 /* CiaoServerTests.swift in Sources */,
+				4B21C125893CEA9BCCE8C9E1 /* TestWithExpectation.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8342962DFB34DE20B2095489 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A45B7B6E9EAF0A8481EBDA99 /* CiaoBrowser.swift in Sources */,
+				6718269DA52487E881E57F32 /* CiaoResolver.swift in Sources */,
+				A5BFCA7411C42A1319D5D7CA /* CiaoServer.swift in Sources */,
+				72F3BA87F19B2811E6550529 /* Logger.swift in Sources */,
+				D777655A9B8895F89922DDC4 /* NetServiceExtension.swift in Sources */,
+				177A4C81DF40CCFB6D63C2AB /* ServiceType.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		98005CB570E3C432FF80D697 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1297EE174CB31A855F67302A /* AppDelegate.swift in Sources */,
+				053E6067E0C1D4E3E4D8B9FA /* DomainsViewController.swift in Sources */,
+				7FA8D18EDB9E35C4B32077A5 /* ServiceDetailViewController.swift in Sources */,
+				9F7392F8C18C82AB4C3ECFEA /* ServicesViewController.swift in Sources */,
+				D2EB1D129400C82612BC05A9 /* TableView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A2A2EAE75A11EA2F91C821FF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45B7D0A328067A40CED7AD4F /* CiaoBrowser.swift in Sources */,
+				B45AD0B4CA169D3C9B1FC2B5 /* CiaoResolver.swift in Sources */,
+				1046AE3AECA88090F783AC7B /* CiaoServer.swift in Sources */,
+				03E6775221DF4B51B07C958C /* Logger.swift in Sources */,
+				BD1E23687E2C736B2BDB5749 /* NetServiceExtension.swift in Sources */,
+				26E4A592BE05BE78B3D7F2D3 /* ServiceType.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFEBB7DF4576F2A7782B4A1D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F710266A2435B10659571F38 /* CiaoBrowserTests.swift in Sources */,
+				95252F567301100069AA71D7 /* CiaoServerTests.swift in Sources */,
+				4FF15C2FF0C48C018B449D6C /* TestWithExpectation.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DEEA9410040BC807E38FD218 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0F7F90B92AF32A053D2E556 /* CiaoBrowserTests.swift in Sources */,
+				82BF2D8BE929C35684EFE0B6 /* CiaoServerTests.swift in Sources */,
+				6CBF7A5B771A1A09F9F1B8C6 /* TestWithExpectation.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		677659EF88842E3EC59AF13D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 653811F28981316ADEAA52AF /* Ciao_macOS */;
+			targetProxy = 391019C52C8DB85580CA145D /* PBXContainerItemProxy */;
+		};
+		846EAD7B5F59977C7C94B32A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F806FB2F83F930761F2F75D7 /* Ciao_iOS */;
+			targetProxy = 973740F2C44135E57BC619C2 /* PBXContainerItemProxy */;
+		};
+		A68963F8F5BFB72B50DEA68E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F806FB2F83F930761F2F75D7 /* Ciao_iOS */;
+			targetProxy = 8CC498B79394616E3E1ED9BD /* PBXContainerItemProxy */;
+		};
+		C463B26911BF89ACD00404E1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 47D654956E4EC266F01A1BD3 /* Ciao_tvOS */;
+			targetProxy = 04931346446C1096777A8D35 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D4CDB58CAD6947C880DCE082 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EE0586021959FC55C71F29FB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		10CAF282C5F3877092EF6D0D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "xyz.tavares.ciao.CiaoTests-tvOS";
+				PRODUCT_NAME = CiaoTests;
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+			};
+			name = Debug;
+		};
+		128DDFD5FCDCA3F69BD883A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Sources/Ciao/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = "xyz.tavares.ciao.Ciao-macOS";
+				PRODUCT_NAME = Ciao;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		131A61DE2D56CF1619890D58 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Sources/Ciao/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = "xyz.tavares.ciao.Ciao-tvOS";
+				PRODUCT_NAME = Ciao;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		2F0A45E8E9E3A5BAE2038087 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Sources/Ciao/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = "xyz.tavares.ciao.Ciao-macOS";
+				PRODUCT_NAME = Ciao;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		37243E55DD63C68C2F52BB7F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "xyz.tavares.ciao.CiaoTests-iOS";
+				PRODUCT_NAME = CiaoTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		38A515CFFE9B6B0077433226 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Sources/Ciao/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = "xyz.tavares.ciao.Ciao-iOS";
+				PRODUCT_NAME = Ciao;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		72964E79FDC7D235CDF6D8C1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Sources/Ciao/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = "xyz.tavares.ciao.Ciao-tvOS";
+				PRODUCT_NAME = Ciao;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		C3AE844E47ADCEF5B599ACF0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 5JWCMCRA4J;
+				INFOPLIST_FILE = Example/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = xyz.tavares.ciao.Example;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CF31455FE53AFAC52D0404A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "xyz.tavares.ciao.CiaoTests-macOS";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		D37B643E9663CD66C2249B30 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "xyz.tavares.ciao.CiaoTests-iOS";
+				PRODUCT_NAME = CiaoTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DAEBC5DE9306D96C6B04CEC4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 5JWCMCRA4J;
+				INFOPLIST_FILE = Example/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = xyz.tavares.ciao.Example;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DE9B8FA2AE58BD4E05B3E0E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "xyz.tavares.ciao.CiaoTests-tvOS";
+				PRODUCT_NAME = CiaoTests;
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+			};
+			name = Release;
+		};
+		ED748A4B64E53EFD52B1C17F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Sources/Ciao/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = "xyz.tavares.ciao.Ciao-iOS";
+				PRODUCT_NAME = Ciao;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		EDECA53C3E25C8F306970EB6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "xyz.tavares.ciao.CiaoTests-macOS";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		EEA0E852275C54C89E90140C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_VERSION = 5.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FAB00AFA82183A2C6BB37A08 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		117F3FE3CF9923E9806732A1 /* Build configuration list for PBXNativeTarget "Ciao_tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				72964E79FDC7D235CDF6D8C1 /* Debug */,
+				131A61DE2D56CF1619890D58 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "";
+		};
+		631EEBC74CC0B3038FA45573 /* Build configuration list for PBXNativeTarget "Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C3AE844E47ADCEF5B599ACF0 /* Debug */,
+				DAEBC5DE9306D96C6B04CEC4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "";
+		};
+		84635954C80B8DE26991173A /* Build configuration list for PBXNativeTarget "Ciao_iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				38A515CFFE9B6B0077433226 /* Debug */,
+				ED748A4B64E53EFD52B1C17F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "";
+		};
+		966E814FACB75AB0ADB363EA /* Build configuration list for PBXNativeTarget "CiaoTests_tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				10CAF282C5F3877092EF6D0D /* Debug */,
+				DE9B8FA2AE58BD4E05B3E0E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "";
+		};
+		9A46CC7A5EEC5B338E90FE4A /* Build configuration list for PBXNativeTarget "CiaoTests_iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D37B643E9663CD66C2249B30 /* Debug */,
+				37243E55DD63C68C2F52BB7F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "";
+		};
+		AFEABCF17F65F06B90C1AA1F /* Build configuration list for PBXNativeTarget "Ciao_macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F0A45E8E9E3A5BAE2038087 /* Debug */,
+				128DDFD5FCDCA3F69BD883A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "";
+		};
+		B8F932AA94A420B651E3CFAA /* Build configuration list for PBXProject "Ciao" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAB00AFA82183A2C6BB37A08 /* Debug */,
+				EEA0E852275C54C89E90140C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		FBEE2B791A4920F0C6514AE1 /* Build configuration list for PBXNativeTarget "CiaoTests_macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDECA53C3E25C8F306970EB6 /* Debug */,
+				CF31455FE53AFAC52D0404A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "";
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D98943BAAD2A1383859516A5 /* Project object */;
+}
