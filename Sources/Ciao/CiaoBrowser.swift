@@ -18,11 +18,17 @@ public class CiaoBrowser {
     public var serviceFoundHandler: ((NetService) -> Void)?
     public var serviceRemovedHandler: ((NetService) -> Void)?
     public var serviceResolvedHandler: ((Result<NetService, ErrorDictionary>) -> Void)?
-
+    public var startedSearchingHandler: (() -> Void)?
+    public var stoppedSearchingHandler: (() -> Void)?
 
     public var isSearching = false {
         didSet {
             Logger.info(isSearching)
+            if isSearching, let startedSearchingHandler {
+                startedSearchingHandler()
+            } else if !isSearching, let stoppedSearchingHandler {
+                stoppedSearchingHandler()
+            }
         }
     }
 
