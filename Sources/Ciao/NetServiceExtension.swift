@@ -28,7 +28,16 @@ extension NetService {
     }
 
     public var txtRecordDictionary: [String: String]? {
-        guard let data = self.txtRecordData() else { return nil }
-        return NetService.dictionary(fromTXTRecord: data)
+        guard let txtRecordData = self.txtRecordData() else { return nil }
+        var records = [String: String]()
+        let txtRecord = CFNetServiceCreateDictionaryWithTXTData(nil, txtRecordData as CFData)?.takeRetainedValue() as? Dictionary<String,Data> ?? ["": txtRecordData]
+        for (key, data) in txtRecord {
+            if let line = NSString(data: data, encoding: String.Encoding.utf8.rawValue) {
+                records[key] = line as String
+            } else {
+                records[key] = data.description
+            }
+        }
+        return records
     }
 }
