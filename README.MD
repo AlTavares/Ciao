@@ -1,5 +1,18 @@
 ## Ciao
 
+# Join the Ciao Project as a Contributor!
+
+🚀 **We're inviting open-source enthusiasts to contribute!** 🚀
+
+Despite a pause in updates, [Ciao](https://github.com/AlTavares/Ciao) is operational and ready for enhancements. Your contributions can breathe new life into it!
+
+**How You Can Help:**
+- **Code Enhancements:** From minor tweaks to major features, all contributions are welcome.
+- **Documentation Updates:** Help keep our documentation current and user-friendly.
+- **Community Engagement:** Support users and enrich discussions.
+
+Start by forking the repo, create your feature branch, and dive into our [issues](https://github.com/AlTavares/Ciao/issues). Every contribution is a step towards advancement!
+
 [![Platforms](https://img.shields.io/cocoapods/p/Ciao.svg)](https://cocoapods.org/pods/Ciao)
 [![License](https://img.shields.io/cocoapods/l/Ciao.svg)](https://raw.githubusercontent.com/AlTavares/Ciao/master/LICENSE)
 
@@ -7,7 +20,6 @@
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![CocoaPods compatible](https://img.shields.io/cocoapods/v/Ciao.svg)](https://cocoapods.org/pods/Ciao)
 
-[![Travis](https://img.shields.io/travis/AlTavares/Ciao/master.svg)](https://travis-ci.org/AlTavares/Ciao/branches)
 
 Lib to publish and find services using mDNS
 
