@@ -50,7 +50,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '8.0'
 use_frameworks!
 
-pod 'Ciao', '~> 2.1.1'
+pod 'Ciao', '~> 2.1.2'
 ```
 
 Then, run the following command:
@@ -73,7 +73,7 @@ $ brew install carthage
 To integrate Ciao into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "AlTavares/Ciao" ~> 2.1.1
+github "AlTavares/Ciao" ~> 2.1.2
 ```
 ### Swift Package Manager
 
@@ -81,7 +81,7 @@ To use Ciao as a [Swift Package Manager](https://swift.org/package-manager/) pac
 
 ``` swift
 dependencies: [
-    .package(url: "https://github.com/AlTavares/Ciao.git", from: "2.1.1")
+    .package(url: "https://github.com/AlTavares/Ciao.git", from: "2.1.2")
 ]
 ```
 
@@ -122,7 +122,7 @@ browser.serviceRemovedHandler = { service in
     print(service)
 }
 
-ciaoBrowser.browse(type: type) 
+ciaoBrowser.browse(type: type)
 ```
 
 ### Resolver
