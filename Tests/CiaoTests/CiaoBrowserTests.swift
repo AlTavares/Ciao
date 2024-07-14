@@ -66,24 +66,26 @@ class CiaoBrowserTests: XCTestCase {
     func testRemovedService() async {
         let browser = CiaoBrowser()
         let server = CiaoServer(type: serviceType, name: "server1")
+        server.start(options: .listenForConnections)
         
         for await event in browser.browse(type: serviceType) {
-            print(event)
             switch event {
             case .startedSearch:
-                break
+                print("Started Search")
                 
             case .stoppedSearch:
-                break
+                print("Stopped Search")
                 
             case .found:
-                break
+                print("Found Service")
                 
             case .removed:
+                print("Removed Service")
                 XCTAssertEqual(browser.services.count, 0)
                 browser.stop()
                 
             case .resolved:
+                print("Resolved Service")
                 XCTAssertEqual(browser.services.count, 1)
                 server.stop()
             }
