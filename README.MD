@@ -104,20 +104,20 @@ ciaoServer.txtRecord = ["someKey": "someValue"]
 let ciaoBrowser = CiaoBrowser()
 
 // get notified when a service is found
-browser.serviceFoundHandler = { service in
+ciaoBrowser.serviceFoundHandler = { service in
     print("Service found")
     print(service)
 }
 
 // register to automatically resolve a service
-browser.serviceResolvedHandler = { service in
+ciaoBrowser.serviceResolvedHandler = { service in
     print("Service resolved")
     print(service)
     print(service.hostName)
     print(service.txtRecordDictionary)
 }
 
-browser.serviceRemovedHandler = { service in
+ciaoBrowser.serviceRemovedHandler = { service in
     print("Service removed")
     print(service)
 }
