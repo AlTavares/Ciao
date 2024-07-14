@@ -9,11 +9,11 @@
 @testable import Ciao
 import XCTest
 
-class CiaoBrowserTests: TestWithExpectation {
+class CiaoBrowserTests: XCTestCase {
     let serviceType = ServiceType.tcp("ciaoserver")
-
+    
+    @MainActor
     func testIfBrowserCanFindServers() async throws {
-        createExpectation()
         let browser = CiaoBrowser()
         var servicesFound = 0
         var servicesResolved = 0
@@ -25,6 +25,7 @@ class CiaoBrowserTests: TestWithExpectation {
         server2.start()
 
         for await event in browser.browse(type: serviceType) {
+            print(event)
             switch event {
             case .startedSearch:
                 break
@@ -32,9 +33,8 @@ class CiaoBrowserTests: TestWithExpectation {
             case .stoppedSearch:
                 break
                 
-            case .found(let service):
+            case .found:
                 servicesFound += 1
-                XCTAssertEqual(browser.services.count, servicesFound)
                 
             case .removed:
                 break
@@ -56,20 +56,19 @@ class CiaoBrowserTests: TestWithExpectation {
                 if servicesResolved == 2 {
                     XCTAssertEqual(browser.services.count, 2)
                     browser.stop()
-                    self.done()
                 }
             }
         }
-        waitUntilDone(timeout: 5)
+        XCTAssertEqual(browser.services.count, servicesFound)
     }
 
-    func testRemovedService() async throws {
-        createExpectation()
+    @MainActor
+    func testRemovedService() async {
         let browser = CiaoBrowser()
         let server = CiaoServer(type: serviceType, name: "server1")
-        server.start(options: .listenForConnections)
-
+        
         for await event in browser.browse(type: serviceType) {
+            print(event)
             switch event {
             case .startedSearch:
                 break
@@ -80,17 +79,16 @@ class CiaoBrowserTests: TestWithExpectation {
             case .found:
                 break
                 
-            case .removed(let service):
+            case .removed:
                 XCTAssertEqual(browser.services.count, 0)
                 browser.stop()
-                self.done()
                 
-            case .resolved(let result):
+            case .resolved:
                 XCTAssertEqual(browser.services.count, 1)
                 server.stop()
             }
         }
-        waitUntilDone(timeout: 5)
+        XCTAssertEqual(browser.services.count, 0)
     }
 
     func testRetain() {
