@@ -62,17 +62,18 @@ public class CiaoBrowser {
     }
     
     fileprivate func serviceRemoved(_ service: NetService) {
-        services.remove(service)
-        discoveryContinuation?.yield(.removed(service))
+        self.services.remove(service)
+        self.discoveryContinuation?.yield(.removed(service))
     }
     
     public func stop() {
-        netServiceBrowser.stop()
-        discoveryContinuation?.finish()
+        self.netServiceBrowser.stop()
+        self.discoveryContinuation?.finish()
+        self.discoveryContinuation = nil
     }
     
     deinit {
-        stop()
+        self.stop()
     }
 }
 
