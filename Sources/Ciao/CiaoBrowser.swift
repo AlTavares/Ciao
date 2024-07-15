@@ -1,8 +1,9 @@
 //
-//  MDNSBrowser.swift
-//  PowerPetDoor
+//  CiaoBrowser.swift
+//  Ciao
 //
-//  Created by Josh Billions on 7/13/24.
+//  Created by Alexandre Tavares on 11/10/17.
+//  Copyright © 2017 Tavares. All rights reserved.
 //
 
 import Foundation
