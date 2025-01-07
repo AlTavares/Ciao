@@ -50,7 +50,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '8.0'
 use_frameworks!
 
-pod 'Ciao', '~> 2.1.1'
+pod 'Ciao', '~> 2.1.2'
 ```
 
 Then, run the following command:
@@ -73,7 +73,7 @@ $ brew install carthage
 To integrate Ciao into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "AlTavares/Ciao" ~> 2.1.1
+github "AlTavares/Ciao" ~> 2.1.2
 ```
 ### Swift Package Manager
 
@@ -81,7 +81,7 @@ To use Ciao as a [Swift Package Manager](https://swift.org/package-manager/) pac
 
 ``` swift
 dependencies: [
-    .package(url: "https://github.com/AlTavares/Ciao.git", from: "2.1.1")
+    .package(url: "https://github.com/AlTavares/Ciao.git", from: "2.1.2")
 ]
 ```
 
@@ -104,25 +104,25 @@ ciaoServer.txtRecord = ["someKey": "someValue"]
 let ciaoBrowser = CiaoBrowser()
 
 // get notified when a service is found
-browser.serviceFoundHandler = { service in
+ciaoBrowser.serviceFoundHandler = { service in
     print("Service found")
     print(service)
 }
 
 // register to automatically resolve a service
-browser.serviceResolvedHandler = { service in
+ciaoBrowser.serviceResolvedHandler = { service in
     print("Service resolved")
     print(service)
     print(service.hostName)
     print(service.txtRecordDictionary)
 }
 
-browser.serviceRemovedHandler = { service in
+ciaoBrowser.serviceRemovedHandler = { service in
     print("Service removed")
     print(service)
 }
 
-ciaoBrowser.browse(type: type) 
+ciaoBrowser.browse(type: type)
 ```
 
 ### Resolver
