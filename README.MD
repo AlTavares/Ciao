@@ -103,26 +103,28 @@ ciaoServer.txtRecord = ["someKey": "someValue"]
 ```swift
 let ciaoBrowser = CiaoBrowser()
 
-// get notified when a service is found
-ciaoBrowser.serviceFoundHandler = { service in
-    print("Service found")
-    print(service)
+Task {
+    for await event in browser.browse(type: type) {
+        case startedSearch:
+            print("Started search")
+        case stoppedSearch:
+            print("Stopped search")
+        
+        case found(let service):
+            print("Found a service: ", service)
+        
+        case removed(let service):
+            print("Removed a service: ", service)
+        
+        case resolved(let result):
+            switch result {
+                case .success(let service):
+                    print("Resolved service: ", service)
+                case .failure(let error):
+                    print("Failed to resolve service: ", error)
+            }
+    }
 }
-
-// register to automatically resolve a service
-ciaoBrowser.serviceResolvedHandler = { service in
-    print("Service resolved")
-    print(service)
-    print(service.hostName)
-    print(service.txtRecordDictionary)
-}
-
-ciaoBrowser.serviceRemovedHandler = { service in
-    print("Service removed")
-    print(service)
-}
-
-ciaoBrowser.browse(type: type)
 ```
 
 ### Resolver

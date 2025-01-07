@@ -5,10 +5,10 @@ targets:
   Ciao:
     type: framework
     platform: [iOS, tvOS, macOS]
-    deploymentTarget: "9.0"
+    deploymentTarget: "13.0"
     settings:
       # ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES: YES
-      MACOSX_DEPLOYMENT_TARGET: 10.13
+      MACOSX_DEPLOYMENT_TARGET: 10.15
     sources: Sources/Ciao
     scheme:
       testTargets:
@@ -16,7 +16,7 @@ targets:
   Example:
     type: application
     platform: iOS
-    deploymentTarget: "10.0"
+    deploymentTarget: "13.0"
     sources: Example
     dependencies:
       - target: Ciao_iOS
