@@ -1,0 +1,26 @@
+{
+  "configurations" : [
+    {
+      "id" : "99097CFE-D4C3-4D52-9D51-1A8C21133B30",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testRepetitionMode" : "retryOnFailure",
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "CiaoTests",
+        "name" : "CiaoTests"
+      }
+    }
+  ],
+  "version" : 1
+}

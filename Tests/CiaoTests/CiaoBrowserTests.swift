@@ -9,11 +9,11 @@
 @testable import Ciao
 import XCTest
 
-class CiaoBrowserTests: TestWithExpectation {
+class CiaoBrowserTests: XCTestCase {
     let serviceType = ServiceType.tcp("ciaoserver")
-
-    func testIfBrowserCanFindServers() {
-        createExpectation()
+    
+    @MainActor
+    func testIfBrowserCanFindServers() async throws {
         let browser = CiaoBrowser()
         var servicesFound = 0
         var servicesResolved = 0
@@ -24,53 +24,73 @@ class CiaoBrowserTests: TestWithExpectation {
         server1.start(options: .listenForConnections)
         server2.start()
 
-        browser.serviceFoundHandler = { netService in
-            servicesFound += 1
-            XCTAssertEqual(browser.services.count, servicesFound)
-        }
-
-        browser.serviceResolvedHandler = { result in
-            let netService = try! result.get()
-            servicesResolved += 1
-            var expectedValue = ""
-            switch netService.name {
-            case "server1":
-                expectedValue = "first"
-            case "server2":
-                expectedValue = "second"
-            default:
-                XCTFail("Unexpected server")
+        for await event in browser.browse(type: serviceType) {
+            print(event)
+            switch event {
+            case .startedSearch:
+                break
+                
+            case .stoppedSearch:
+                break
+                
+            case .found:
+                servicesFound += 1
+                
+            case .removed:
+                break
+                
+            case .resolved(let result):
+                let netService = try! result.get()
+                servicesResolved += 1
+                var expectedValue = ""
+                switch netService.name {
+                case "server1":
+                    expectedValue = "first"
+                case "server2":
+                    expectedValue = "second"
+                default:
+                    XCTFail("Unexpected server")
+                }
+                XCTAssertNotNil(netService.txtRecordDictionary)
+                XCTAssertEqual(netService.txtRecordDictionary!["server"], expectedValue)
+                if servicesResolved == 2 {
+                    XCTAssertEqual(browser.services.count, 2)
+                    browser.stop()
+                }
             }
-            XCTAssertNotNil(netService.txtRecordDictionary)
-            XCTAssertEqual(netService.txtRecordDictionary!["server"], expectedValue)
-            if servicesResolved == 2 {
-                XCTAssertEqual(browser.services.count, 2)
-                self.done()
-            }
         }
-
-        browser.browse(type: serviceType)
-        waitUntilDone(timeout: 5)
+        XCTAssertEqual(browser.services.count, servicesFound)
     }
 
-    func testRemovedService() {
-        createExpectation()
+    @MainActor
+    func testRemovedService() async {
         let browser = CiaoBrowser()
         let server = CiaoServer(type: serviceType, name: "server1")
         server.start(options: .listenForConnections)
-
-        browser.serviceResolvedHandler = { _ in
-            XCTAssertEqual(browser.services.count, 1)
-            server.stop()
+        
+        for await event in browser.browse(type: serviceType) {
+            switch event {
+            case .startedSearch:
+                print("Started Search")
+                
+            case .stoppedSearch:
+                print("Stopped Search")
+                
+            case .found:
+                print("Found Service")
+                
+            case .removed:
+                print("Removed Service")
+                XCTAssertEqual(browser.services.count, 0)
+                browser.stop()
+                
+            case .resolved:
+                print("Resolved Service")
+                XCTAssertEqual(browser.services.count, 1)
+                server.stop()
+            }
         }
-
-        browser.serviceRemovedHandler = { _ in
-            XCTAssertEqual(browser.services.count, 0)
-            self.done()
-        }
-
-        browser.browse(type: serviceType)
-        waitUntilDone(timeout: 5)
+        XCTAssertEqual(browser.services.count, 0)
     }
 
     func testRetain() {
