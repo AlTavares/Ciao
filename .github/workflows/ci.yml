@@ -1,0 +1,76 @@
+name: CI
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+  workflow_dispatch:
+    inputs:
+      integration:
+        description: Run Bonjour integration tests on the authorized network runner
+        type: boolean
+        default: false
+  workflow_call:
+    inputs:
+      integration:
+        type: boolean
+        default: false
+permissions:
+  contents: read
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+jobs:
+  validate:
+    # Persistent runners only execute changes from trusted repository branches.
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: [self-hosted, macOS, ARM64, xcode-27]
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Select and check Xcode 27
+        run: |
+          test -d /Applications/Xcode-27.0.0.app
+          echo 'DEVELOPER_DIR=/Applications/Xcode-27.0.0.app/Contents/Developer' >> "$GITHUB_ENV"
+          /Applications/Xcode-27.0.0.app/Contents/Developer/usr/bin/xcodebuild -version
+      - name: Package tests and complete concurrency checking
+        run: |
+          set -o pipefail
+          mkdir -p logs
+          swift test --skip CiaoIntegrationTests -Xswiftc -strict-concurrency=complete -Xswiftc -warnings-as-errors 2>&1 | tee logs/unit-tests.log
+      - name: Library and sample platform builds
+        run: |
+          set -o pipefail
+          xcodebuild -scheme Ciao -destination 'generic/platform=iOS' -derivedDataPath build/iOS build CODE_SIGNING_ALLOWED=NO 2>&1 | tee logs/library-iOS.log
+          xcodebuild -scheme Ciao -destination 'generic/platform=tvOS' -derivedDataPath build/tvOS build CODE_SIGNING_ALLOWED=NO 2>&1 | tee logs/library-tvOS.log
+          xcodebuild -project Sample/CiaoSample.xcodeproj -scheme CiaoSample_iOS -destination 'generic/platform=iOS' -derivedDataPath build/Sample-iOS build CODE_SIGNING_ALLOWED=NO 2>&1 | tee logs/sample-iOS.log
+          xcodebuild -project Sample/CiaoSample.xcodeproj -scheme CiaoSample_macOS -destination 'generic/platform=macOS' -derivedDataPath build/Sample-macOS build CODE_SIGNING_ALLOWED=NO 2>&1 | tee logs/sample-macOS.log
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: validation-logs
+          path: logs
+  bonjour:
+    if: inputs.integration == true
+    runs-on: [self-hosted, macOS, ARM64, xcode-27, bonjour]
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Run authorized Bonjour integration tests
+        env:
+          DEVELOPER_DIR: /Applications/Xcode-27.0.0.app/Contents/Developer
+          CIAO_INTEGRATION_TESTS: '1'
+        run: |
+          set -o pipefail
+          mkdir -p logs
+          xcodebuild -version
+          swift test --filter CiaoIntegrationTests 2>&1 | tee logs/bonjour.log
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: bonjour-logs
+          path: logs
