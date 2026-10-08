@@ -1,6 +1,6 @@
 # Validation record — 2026-10-08
 
-Validated locally using Xcode 27.0 (27A266a), Apple Swift 6.4, and macOS/iOS/tvOS 27.0 SDKs. Package minimums are iOS/tvOS 18 and macOS 15. Xcode agent integration tools were not exposed in this session, so checks used reproducible Swift/Xcode command-line tools and native sample UI inspection.
+Validated locally using Xcode 27.0 (27A266a), Apple Swift 6.4, and macOS/iOS/tvOS 27.0 SDKs. Package minimums are iOS/tvOS 18 and macOS 15. Xcode agent integration tools were not exposed in this session, so checks used reproducible Swift/Xcode command-line tools and native sample UI inspection. The initial results below precede the app-playground conversion; see the follow-up record for the current sample.
 
 ## Results
 
@@ -41,3 +41,19 @@ The native macOS sample was used to publish, browse, inspect independently resol
 Signed physical iOS/tvOS permission and multicast-entitlement behavior, cross-device discovery, and iOS/tvOS runtime checks require supported devices and provisioning. macOS self-discovery and generic platform builds do not establish those results. Broad enumeration was validated on macOS; the default iOS sample gates undeclared types.
 
 GitHub Actions requires a registered ARM64 macOS runner labelled xcode-27 (and bonjour for network tests) with Xcode at the documented path and permission granted. No remote workflow, release tag, push, or publication was performed. Local logs from this run are in /tmp/ciao-unit.log, /tmp/ciao-integration.log, /tmp/ciao-library-ios.log, /tmp/ciao-ios-build.log, /tmp/ciao-tvos-build.log, /tmp/ciao-macos-build.log, /tmp/ciao-docc.log, and /tmp/ciao-consumer.log.
+
+## App playground follow-up — 2026-10-08
+
+Replaced the sample's XcodeGen configuration and generated project with `Sample/CiaoSample.swiftpm`. The SwiftUI source files were moved without content changes. The new AppleProductTypes manifest resolves the local Ciao package and C target successfully. The Mac app now uses Mac Catalyst; native macOS library support is unchanged.
+
+- Xcode recognizes the `CiaoSample` scheme and iOS, simulator, and Mac Catalyst destinations.
+- Generic iOS build passed with signing disabled.
+- Mac Catalyst build passed with signing disabled; an additional build with local ad-hoc signing also passed.
+- Generated iOS and Mac app property lists contain both Bonjour types and the local-network purpose string. Minimum OS values remain iOS 18 and macOS 15.
+- Inspected the signed Mac app's entitlements: sandbox, network client, and network server are enabled.
+- Launched the unsigned Catalyst build and used its UI to publish, browse, inspect resolved host/port/IPv4/IPv6/TXT values, stop publication, observe removal, and stop browsing. The source retains its SwiftUI preview.
+- Updated GitHub Actions to build the app package from its own directory; workflow YAML parses and the diff passes whitespace checks.
+
+The library implementation and tests were unchanged, so its earlier test results were not rerun for this packaging change. Signed physical-device behavior, cross-device discovery, the standalone Swift Playgrounds app, and remote CI remain unverified. The playground uses Apple's manifest extension and builds through Xcode, not plain `swift build`. Keep it in the checkout because its dependency is relative.
+
+Local follow-up build logs: `/tmp/ciao-playground-ios.log`, `/tmp/ciao-playground-mac.log`, and `/tmp/ciao-playground-signing.log`.

@@ -84,7 +84,7 @@ Completion: all parity cases pass; advertising an already-bound external port su
 2. Keep one public library product named `Ciao`; add internal targets only where they improve backend ownership or testing.
 3. Remove `Ciao.podspec`, CocoaPods and Carthage release steps, `.travis.yml`, obsolete framework archives, and distribution badges/instructions.
 4. Remove the standalone library Xcode project and its XcodeGen framework configuration once the sample consumes the local package directly.
-5. Retain an Xcode project for the sample application; SPM-only distribution applies to the library and does not prevent an app project.
+5. Use a `.swiftpm` app playground for the sample, with AppleProductTypes application/capability settings in its manifest. Remove XcodeGen and the checked-in sample Xcode project after verifying the replacement. The Mac sample runs through Mac Catalyst; native macOS remains supported by the library.
 6. Remove obsolete scripts and packaging files after checking whether they still demonstrate a required capability.
 7. Add `.github/workflows/ci.yml` for pull requests and pushes to `master`: package unit tests, Swift 6 concurrency checking, supported-platform builds, and sample builds. Run Bonjour integration tests as a separate job on a runner with the required network access and permissions; support manual execution for device-dependent checks. Retain diagnostic logs and test results on failures.
 8. Add `.github/workflows/release.yml`, triggered by version tags, to validate the exact tagged commit and create a GitHub Release with release notes only after the required checks pass. SwiftPM consumers resolve the Git tag directly; no separate package upload is required. Keep historical releases available for existing consumers.
@@ -94,7 +94,7 @@ Completion: a fresh consumer can add the package using only its repository URL; 
 
 ## 5. Build a SwiftUI sample app
 
-Create an iOS and macOS sample that imports Ciao through a local package reference. Keep tvOS library coverage in the build/test matrix.
+Create an iOS and Mac Catalyst app playground that imports Ciao through a local package reference. Keep native macOS and tvOS library coverage in the build/test matrix. Build the app package through Xcode; standard command-line SwiftPM remains the library distribution/build interface.
 
 The app should allow users to:
 

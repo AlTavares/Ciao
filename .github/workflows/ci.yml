@@ -40,13 +40,17 @@ jobs:
           set -o pipefail
           mkdir -p logs
           swift test --skip CiaoIntegrationTests -Xswiftc -strict-concurrency=complete -Xswiftc -warnings-as-errors 2>&1 | tee logs/unit-tests.log
-      - name: Library and sample platform builds
+      - name: Library platform builds
         run: |
           set -o pipefail
           xcodebuild -scheme Ciao -destination 'generic/platform=iOS' -derivedDataPath build/iOS build CODE_SIGNING_ALLOWED=NO 2>&1 | tee logs/library-iOS.log
           xcodebuild -scheme Ciao -destination 'generic/platform=tvOS' -derivedDataPath build/tvOS build CODE_SIGNING_ALLOWED=NO 2>&1 | tee logs/library-tvOS.log
-          xcodebuild -project Sample/CiaoSample.xcodeproj -scheme CiaoSample_iOS -destination 'generic/platform=iOS' -derivedDataPath build/Sample-iOS build CODE_SIGNING_ALLOWED=NO 2>&1 | tee logs/sample-iOS.log
-          xcodebuild -project Sample/CiaoSample.xcodeproj -scheme CiaoSample_macOS -destination 'generic/platform=macOS' -derivedDataPath build/Sample-macOS build CODE_SIGNING_ALLOWED=NO 2>&1 | tee logs/sample-macOS.log
+      - name: App playground builds
+        working-directory: Sample/CiaoSample.swiftpm
+        run: |
+          set -o pipefail
+          xcodebuild -scheme CiaoSample -destination 'generic/platform=iOS' -derivedDataPath "$GITHUB_WORKSPACE/build/Sample-iOS" build CODE_SIGNING_ALLOWED=NO 2>&1 | tee "$GITHUB_WORKSPACE/logs/sample-iOS.log"
+          xcodebuild -scheme CiaoSample -destination 'platform=macOS,variant=Mac Catalyst' -derivedDataPath "$GITHUB_WORKSPACE/build/Sample-MacCatalyst" build CODE_SIGNING_ALLOWED=NO 2>&1 | tee "$GITHUB_WORKSPACE/logs/sample-MacCatalyst.log"
       - uses: actions/upload-artifact@v4
         if: failure()
         with:

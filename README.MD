@@ -79,7 +79,7 @@ Apps must supply `NSLocalNetworkUsageDescription` and declare their Bonjour type
 
 ## Sample and tests
 
-Open [Sample/CiaoSample.xcodeproj](Sample/CiaoSample.xcodeproj) and choose the iOS or macOS scheme. Run two instances/devices on the same network, publish, browse, inspect resolved details, update TXT, then stop and observe removal. The sample consumes the local package and supports cancellation and repeated use. See [sample instructions](Sample/README.md).
+Open [Sample/CiaoSample.swiftpm](Sample/CiaoSample.swiftpm) in Xcode 27 and choose the `CiaoSample` scheme with an iOS or My Mac (Mac Catalyst) destination. Run two instances/devices on the same network, publish, browse, inspect resolved details, update TXT, then stop and observe removal. This SwiftUI app playground consumes the local package and supports cancellation and repeated use. Its manifest declares app capabilities; no XcodeGen or checked-in Xcode project is required. See [sample instructions](Sample/README.md).
 
 ```sh
 swift test --skip CiaoIntegrationTests
