@@ -1,153 +1,91 @@
-## Ciao
+# Ciao
 
-# Join the Ciao Project as a Contributor!
+A Swift concurrency library for publishing, discovering, and resolving Bonjour services on iOS, macOS, and tvOS.
 
-🚀 **We're inviting open-source enthusiasts to contribute!** 🚀
+The next major version uses Network.framework and DNS-SD, immutable Sendable values, actor-owned lifetimes, and Swift Package Manager. It supports TCP/UDP types, domains, binary TXT records, automatic or standalone resolution, externally owned ports, listener-backed ephemeral ports, and service-type enumeration.
 
-Despite a pause in updates, [Ciao](https://github.com/AlTavares/Ciao) is operational and ready for enhancements. Your contributions can breathe new life into it!
+## Requirements and installation
 
-**How You Can Help:**
-- **Code Enhancements:** From minor tweaks to major features, all contributions are welcome.
-- **Documentation Updates:** Help keep our documentation current and user-friendly.
-- **Community Engagement:** Support users and enrich discussions.
-
-Start by forking the repo, create your feature branch, and dive into our [issues](https://github.com/AlTavares/Ciao/issues). Every contribution is a step towards advancement!
-
-[![Platforms](https://img.shields.io/cocoapods/p/Ciao.svg)](https://cocoapods.org/pods/Ciao)
-[![License](https://img.shields.io/cocoapods/l/Ciao.svg)](https://raw.githubusercontent.com/AlTavares/Ciao/master/LICENSE)
-
-[![Swift Package Manager](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
-[![CocoaPods compatible](https://img.shields.io/cocoapods/v/Ciao.svg)](https://cocoapods.org/pods/Ciao)
-
-
-Lib to publish and find services using mDNS
-
-- [Requirements](#requirements)
-- [Installation](#installation)
-- [Usage](#usage)
-- [License](#license)
-
-## Requirements
-
-- iOS 8.0+ / Mac OS X 10.10+ / tvOS 9.0+
-- Xcode 9.0+
-
-## Installation
-
-### CocoaPods
-
-[CocoaPods](http://cocoapods.org) is a dependency manager for Cocoa projects. You can install it with the following command:
-
-```bash
-$ gem install cocoapods
-```
-
-To integrate Ciao into your Xcode project using CocoaPods, specify it in your `Podfile`:
-
-```ruby
-source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '8.0'
-use_frameworks!
-
-pod 'Ciao', '~> 2.1.2'
-```
-
-Then, run the following command:
-
-```bash
-$ pod install
-```
-
-### Carthage
-
-[Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that automates the process of adding frameworks to your Cocoa application.
-
-You can install Carthage with [Homebrew](http://brew.sh/) using the following command:
-
-```bash
-$ brew update
-$ brew install carthage
-```
-
-To integrate Ciao into your Xcode project using Carthage, specify it in your `Cartfile`:
-
-```ogdl
-github "AlTavares/Ciao" ~> 2.1.2
-```
-### Swift Package Manager
-
-To use Ciao as a [Swift Package Manager](https://swift.org/package-manager/) package just add the following in your Package.swift file.
-
-``` swift
-dependencies: [
-    .package(url: "https://github.com/AlTavares/Ciao.git", from: "2.1.2")
-]
-```
-
-## Usage
-
-### Server
+Swift 6.0 or newer; iOS 18, macOS 15, or tvOS 18. Development and CI use Xcode 27.0. This modernization is unreleased; use a local checkout while reviewing it. Once `4.0.0` is released, add:
 
 ```swift
-let ciaoServer = CiaoServer(type: ServiceType.tcp("ciaoserver"))
-
-ciaoServer.start { (success) in
-    print("Server started:", success)
-}
-ciaoServer.txtRecord = ["someKey": "someValue"]
+.package(url: "https://github.com/AlTavares/Ciao.git", from: "4.0.0")
 ```
 
-### Browser
+Add `.product(name: "Ciao", package: "Ciao")` to your target dependencies. SwiftPM is the sole distribution method for this major version; older releases remain available.
+
+## Publish
 
 ```swift
-let ciaoBrowser = CiaoBrowser()
+import Ciao
 
-Task {
-    for await event in browser.browse(type: type) {
-        case startedSearch:
-            print("Started search")
-        case stoppedSearch:
-            print("Stopped search")
-        
-        case found(let service):
-            print("Found a service: ", service)
-        
-        case removed(let service):
-            print("Removed a service: ", service)
-        
-        case resolved(let result):
-            switch result {
-                case .success(let service):
-                    print("Resolved service: ", service)
-                case .failure(let error):
-                    print("Failed to resolve service: ", error)
-            }
+let server = CiaoServer()
+let type = try ServiceType.tcp("ciao-demo")
+let info = try await server.start(PublicationConfiguration(
+    type: type,
+    name: "My service",
+    txtRecord: try TXTRecord(strings: ["version": "1"])
+))
+print(info.service.name, info.port) // listener mode chooses an available port
+try await server.updateTXT(TXTRecord(strings: ["version": "2"]))
+try await server.updateTXT(.empty) // clear the TXT record
+await server.stop()
+```
+
+To advertise a server you already run, supply its nonzero port and `mode: .externalPort`. Ciao does not bind that port or open a connection. Set `allowsRenaming: false` to report name conflicts instead of allowing Bonjour to rename. Empty names/domains use Bonjour defaults; publication reports the selected name/domain/port.
+
+Listener mode owns a TCP/UDP listener and rejects incoming connections. Use external mode when your application needs to accept and handle them. Observe `server.events` for publication status and failures after startup. Stopping or cancelling startup releases resources. Starting again replaces the previous publication.
+
+## Browse and resolve
+
+```swift
+let browser = CiaoBrowser()
+let session = try await browser.browse(type: type) // automatic resolution enabled
+
+do {
+    for try await event in session.events {
+        switch event {
+        case .started: print("Searching")
+        case .found(let service): print("Found", service.name)
+        case .removed(let service): print("Removed", service.name)
+        case .resolved(let result): print(result.hostName, result.port, result.addresses)
+        case .resolutionFailed(let service, let error): print(service.name, error)
+        case .stopped: print("Stopped")
+        }
     }
+    await session.stop()
+} catch {
+    await session.stop()
+    throw error
 }
 ```
 
-### Resolver
+Always call `session.stop()` after an early `break`. Cancelling stream iteration stops the session; breaking alone does not. Each stream has one consumer and unbounded buffering so membership changes are never dropped. `await session.services` exposes current membership. Service identity includes its network interface; starting a new search clears old membership and cancels old resolvers.
 
-Optionally you can also use the resolver to any NetService instance
+Resolve an independently held service with a bounded operation:
 
 ```swift
-
-var resolver = CiaoResolver(service: service)
-resolver?.resolve(withTimeout: 0) { (result: Result<NetService, ErrorDictionary>) in
-    print(result)
-}
-
+let service = Service(name: "My service", type: type, domain: "local.")
+let result = try await CiaoResolver.resolve(service, timeout: .seconds(10))
 ```
 
-## Contributing
+Resolution queries SRV/TXT and addresses without connecting. The result is a snapshot of the first completed available address batch. `TXTRecord.values` preserves binary bytes, empty values, and flag entries; `record[text: "key"]` is an optional UTF-8 convenience. Discovery failures end the sequence; per-service resolution failures are events. `CiaoError` retains DNS-SD error codes.
 
-1. Fork it!
-2. Create your feature branch: `git checkout -b my-new-feature`
-3. Commit your changes: `git commit -am 'Add some feature'`
-4. Push to the branch: `git push origin my-new-feature`
-5. Submit a pull request :D
+## Local-network configuration
 
-## License
+Apps must supply `NSLocalNetworkUsageDescription` and declare their Bonjour types in `NSBonjourServices`, for example `_ciao-demo._tcp` and `_ciao-demo._udp`. macOS sandboxed apps need network client/server entitlements for the operations they perform. Local-network permission is granted by the user at runtime.
 
-Ciao is released under the MIT license. See [LICENSE](https://github.com/AlTavares/Ciao/blob/master/LICENSE) for details.
+`ServiceTypeSession` enumerates types through `_services._dns-sd._udp`. Stop it explicitly when finished. Broad enumeration/arbitrary browsing on iOS requires Apple's multicast entitlement approval; the sample defaults to its two declared types and gates other iOS types. Permission-dependent behavior must be checked on signed devices.
+
+## Sample and tests
+
+Open [Sample/CiaoSample.swiftpm](Sample/CiaoSample.swiftpm) in Xcode 27 and choose the `CiaoSample` scheme with an iOS or My Mac (Mac Catalyst) destination. Run two instances/devices on the same network, publish, browse, inspect resolved details, update TXT, then stop and observe removal. This SwiftUI app playground consumes the local package and supports cancellation and repeated use. Its manifest declares app capabilities; no XcodeGen or checked-in Xcode project is required. See [sample instructions](Sample/README.md).
+
+```sh
+swift test --skip CiaoIntegrationTests
+CIAO_INTEGRATION_TESTS=1 swift test --filter CiaoIntegrationTests
+```
+
+Fast Swift Testing tests drive fake backends without the network. Integration tests have unique service names and explicit deadlines; enable them only on a host with local-network permission. GitHub Actions validates the package/platforms/sample and validates tagged commits before releasing. CI uses GitHub-hosted Xcode 27 runners; see [CI details](Documentation/CI.md).
+
+Read the [migration guide](Documentation/Migration.md), [architecture decision](Documentation/Architecture.md), and [validation record](Documentation/Validation.md). DocC documentation ships in the package.

@@ -43,6 +43,9 @@ playground.xcworkspace
 # Package.pins
 .build/
 
+# Xcode-generated workspace and user state inside app playground packages
+Sample/CiaoSample.swiftpm/.swiftpm/
+
 Carthage/
 
 # fastlane
