@@ -86,6 +86,6 @@ swift test --skip CiaoIntegrationTests
 CIAO_INTEGRATION_TESTS=1 swift test --filter CiaoIntegrationTests
 ```
 
-Fast Swift Testing tests drive fake backends without the network. Integration tests have unique service names and explicit deadlines; enable them only on a host with local-network permission. GitHub Actions validates the package/platforms/sample and validates tagged commits before releasing. Configure the Xcode 27 runner described in [CI setup](Documentation/CI.md).
+Fast Swift Testing tests drive fake backends without the network. Integration tests have unique service names and explicit deadlines; enable them only on a host with local-network permission. GitHub Actions validates the package/platforms/sample and validates tagged commits before releasing. CI uses GitHub-hosted Xcode 27 runners; see [CI details](Documentation/CI.md).
 
 Read the [migration guide](Documentation/Migration.md), [architecture decision](Documentation/Architecture.md), and [validation record](Documentation/Validation.md). DocC documentation ships in the package.

@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
     inputs:
       integration:
-        description: Run Bonjour integration tests on the authorized network runner
+        description: Run Bonjour integration tests on a GitHub-hosted Mac
         type: boolean
         default: false
   workflow_call:
@@ -17,14 +17,14 @@ on:
         default: false
 permissions:
   contents: read
+env:
+  DEVELOPER_DIR: /Applications/Xcode_27.0.app/Contents/Developer
 concurrency:
   group: ci-${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 jobs:
   validate:
-    # Persistent runners only execute changes from trusted repository branches.
-    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
-    runs-on: [self-hosted, macOS, ARM64, xcode-27]
+    runs-on: xcode-27
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
@@ -32,9 +32,9 @@ jobs:
           persist-credentials: false
       - name: Select and check Xcode 27
         run: |
-          test -d /Applications/Xcode-27.0.0.app
-          echo 'DEVELOPER_DIR=/Applications/Xcode-27.0.0.app/Contents/Developer' >> "$GITHUB_ENV"
-          /Applications/Xcode-27.0.0.app/Contents/Developer/usr/bin/xcodebuild -version
+          test -d "$DEVELOPER_DIR"
+          xcodebuild -version
+          xcrun swift --version
       - name: Package tests and complete concurrency checking
         run: |
           set -o pipefail
@@ -58,15 +58,14 @@ jobs:
           path: logs
   bonjour:
     if: inputs.integration == true
-    runs-on: [self-hosted, macOS, ARM64, xcode-27, bonjour]
+    runs-on: xcode-27
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
-      - name: Run authorized Bonjour integration tests
+      - name: Run Bonjour integration tests
         env:
-          DEVELOPER_DIR: /Applications/Xcode-27.0.0.app/Contents/Developer
           CIAO_INTEGRATION_TESTS: '1'
         run: |
           set -o pipefail
