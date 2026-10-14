@@ -1,4 +1,4 @@
-# Ciao 4 — release notes
+# Ciao 4.0.0
 
 - Swift 6 concurrency API with Sendable service/TXT values, actor-owned browsers/publications, bounded async resolution, cancellation, and explicit discovery sessions.
 - Network.framework browsing/listeners and DNS-SD independent resolution, external-port registration, and service-type enumeration.
@@ -12,6 +12,6 @@ Breaking changes: the callback/NetService API is replaced. Minimum requirements 
 
 ## Known limitations
 
-- The new Bonjour Browser sample fails all-service-type enumeration with DNS-SD `-65555` on the development Mac, despite enabled Local Network access and Apple Development signing. This remains unresolved; compilation success does not establish working broad discovery.
+- The Bonjour Browser sample uses a sample-local `NetServiceBrowser` async adapter for service-type enumeration. The user confirmed it works in the iOS simulator. On Mac Catalyst, enumeration fails with Foundation error `-72008` (domain `10`); the DNS-SD implementation also failed with `-65555`, despite enabled Local Network access and Apple Development signing. This Mac Catalyst limitation remains unresolved.
 - Broad Bonjour browsing on physical iOS devices requires Apple's approved multicast entitlement and matching provisioning. The sample does not provide that entitlement.
 - Hosted Bonjour integration checks exercise same-host discovery; cross-device and physical-device permission behavior still require validation.

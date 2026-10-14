@@ -44,7 +44,7 @@ final class BrowserModel {
   /// The view owns this task. Restarting or closing it cancels every child browser.
   func scan(_ request: Request) async {
     guard self.request == request, !Task.isCancelled else { return }
-    let enumeration = ServiceTypeSession(domain: request.domain)
+    let enumeration = FoundationServiceTypeSession(domain: request.domain)
     defer { enumeration.stop() }
     await withTaskGroup(of: Void.self) { group in
       do {

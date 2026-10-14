@@ -2,11 +2,11 @@
 
 A Swift concurrency library for publishing, discovering, and resolving Bonjour services on iOS, macOS, and tvOS.
 
-The next major version uses Network.framework and DNS-SD, immutable Sendable values, actor-owned lifetimes, and Swift Package Manager. It supports TCP/UDP types, domains, binary TXT records, automatic or standalone resolution, externally owned ports, listener-backed ephemeral ports, and service-type enumeration.
+Ciao 4 uses Network.framework and DNS-SD, immutable Sendable values, actor-owned lifetimes, and Swift Package Manager. It supports TCP/UDP types, domains, binary TXT records, automatic or standalone resolution, externally owned ports, listener-backed ephemeral ports, and service-type enumeration.
 
 ## Requirements and installation
 
-Swift 6.0 or newer; iOS 18, macOS 15, or tvOS 18. Development and CI use Xcode 27.0. This modernization is unreleased; use a local checkout while reviewing it. Once `4.0.0` is released, add:
+Swift 6.0 or newer; iOS 18, macOS 15, or tvOS 18. Development and CI use Xcode 27.0. Install Ciao 4 with Swift Package Manager:
 
 ```swift
 .package(url: "https://github.com/AlTavares/Ciao.git", from: "4.0.0")
@@ -86,7 +86,7 @@ Both samples are SwiftUI app playgrounds distributed as `.swiftpm` packages. Ope
 | [CiaoSample](Sample/CiaoSample.swiftpm) | `CiaoSample` | Publish and browse TCP/UDP demo services, resolve details, update TXT records, and stop/restart operations. |
 | [Bonjour Browser](Sample/BonjourBrowser.swiftpm) | `BonjourBrowser` | Discover advertised service types dynamically, browse their services, search by name/type, and inspect hostname, port, addresses, and TXT records. Browsing only; no publication. |
 
-For `CiaoSample`, run two instances/devices on the same network to publish in one and browse in the other. For `BonjourBrowser`, press **Start browsing** to discover reachable services in the selected domain (default `local.`). Broad browsing on iOS requires Apple's approved multicast entitlement and matching provisioning; the sample does not include that entitlement. Known issue: the new browser returns DNS-SD `-65555` during all-type enumeration on the development Mac, even with Local Network access enabled. Its end-to-end discovery remains unresolved.
+For `CiaoSample`, run two instances/devices on the same network to publish in one and browse in the other. For `BonjourBrowser`, press **Start browsing** to discover reachable services in the selected domain (default `local.`). Broad browsing on iOS requires Apple's approved multicast entitlement and matching provisioning; the sample does not include that entitlement. The browser uses `NetServiceBrowser` for type enumeration and Ciao for per-type discovery. Enumeration works in the iOS simulator as reported by the user. Known issue: Mac Catalyst enumeration fails with Foundation error `-72008` (domain `10`) despite enabled Local Network access; the DNS-SD path also failed with `-65555`.
 
 Keep the samples inside the checkout: each consumes Ciao through `.package(path: "../..")`. Their manifests define app settings and capabilities. Build with Xcode or `xcodebuild`, not plain `swift build`; no XcodeGen or checked-in Xcode project is required. See [sample instructions and build commands](Sample/README.md).
 

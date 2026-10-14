@@ -38,7 +38,7 @@ struct BrowserView: View {
             }
             #if targetEnvironment(macCatalyst)
               Text(
-                "Check System Settings → Privacy & Security → Local Network. If BonjourBrowser is already enabled, no new prompt is expected. All-type enumeration can still fail with -65555; this is a known unresolved issue."
+                "Check System Settings → Privacy & Security → Local Network. If BonjourBrowser is already enabled, no new prompt is expected. All-type enumeration can still fail authorization even when access is enabled; this is a known unresolved issue."
               )
               .font(.caption)
             #else
