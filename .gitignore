@@ -45,6 +45,7 @@ playground.xcworkspace
 
 # Xcode-generated workspace and user state inside app playground packages
 Sample/CiaoSample.swiftpm/.swiftpm/
+Sample/BonjourBrowser.swiftpm/.swiftpm/
 
 Carthage/
 

@@ -33,5 +33,9 @@ jobs:
           if gh release view "$TAG" >/dev/null 2>&1; then
             echo "Release already exists for $TAG"
           else
-            gh release create "$TAG" --verify-tag --generate-notes --target "$GITHUB_SHA"
+            args=(--verify-tag --generate-notes --notes-file Documentation/Release-notes.md --target "$GITHUB_SHA")
+            if [[ "$TAG" == *-* ]]; then
+              args+=(--prerelease --latest=false)
+            fi
+            gh release create "$TAG" "${args[@]}"
           fi

@@ -1,4 +1,11 @@
-# Ciao sample
+# Ciao samples
+
+Both samples use SwiftUI app playgrounds with a local SwiftPM dependency on Ciao.
+
+- [CiaoSample](CiaoSample.swiftpm): publication, discovery, and resolution.
+- [Bonjour Browser](BonjourBrowser.swiftpm): dynamic service discovery and resolution only.
+
+## CiaoSample — publish and browse
 
 Open `CiaoSample.swiftpm` with Xcode 27, select the `CiaoSample` scheme, and run on an iPhone/iPad simulator, signed device, or My Mac (Mac Catalyst). This is a SwiftUI app playground. Its `Package.swift` imports Apple's `AppleProductTypes` to define the application and capabilities; use Xcode or `xcodebuild` for app builds, not plain `swift build`.
 
@@ -21,3 +28,21 @@ cd Sample/CiaoSample.swiftpm
 xcodebuild -scheme CiaoSample -destination 'generic/platform=iOS' build CODE_SIGNING_ALLOWED=NO
 xcodebuild -scheme CiaoSample -destination 'platform=macOS,variant=Mac Catalyst' build CODE_SIGNING_ALLOWED=NO
 ```
+
+## Bonjour Browser — discovery only
+
+Open `BonjourBrowser.swiftpm` in Xcode 27 and run the `BonjourBrowser` scheme on My Mac (Mac Catalyst). This separate app playground uses the local Ciao package and has no publisher or listener.
+
+Press **Start browsing** to enumerate advertised service types using DNS-SD, then continuously browse each discovered type. The default domain is `local.`; stop browsing to change it. Search by name or type and open a service to resolve its hostname, port, IP addresses, and TXT data. Binary TXT values fall back to hexadecimal. Refresh restarts enumeration and every browser; Stop clears results and cancels discovery. Closing a details sheet cancels its resolution.
+
+“All services” means currently advertised, reachable Bonjour services in the selected domain. Network isolation, permissions, and devices that do not advertise themselves can limit results. Services on different interfaces are shown separately. Types are discovered dynamically rather than taken from a fixed list, and endpoint resolution occurs only when a row is opened.
+
+On iOS/iPadOS, arbitrary-type Bonjour browsing requires Apple's approved `com.apple.developer.networking.multicast` entitlement and a matching provisioning profile. The checked-in manifest declares the enumeration type and local-network purpose text; it does not grant this restricted entitlement. The iOS build alone does not establish that broad browsing will work on a signed device. See [Apple's local network privacy guidance](https://developer.apple.com/documentation/technotes/tn3179-understanding-local-network-privacy). Allow local network access when prompted and refresh after permission changes. Known issue: on the development Mac, all-type enumeration returns DNS-SD `-65555` even with Local Network access enabled and an Apple Development signature. The browser sample is not yet validated end to end. Physical iOS discovery also remains unverified.
+
+```sh
+cd Sample/BonjourBrowser.swiftpm
+xcodebuild -scheme BonjourBrowser -destination 'platform=macOS,variant=Mac Catalyst' build CODE_SIGNING_ALLOWED=NO
+xcodebuild -scheme BonjourBrowser -destination 'generic/platform=iOS' build CODE_SIGNING_ALLOWED=NO
+```
+
+GitHub Actions builds both sample playgrounds for iOS and Mac Catalyst.

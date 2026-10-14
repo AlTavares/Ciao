@@ -75,17 +75,28 @@ Resolution queries SRV/TXT and addresses without connecting. The result is a sna
 
 Apps must supply `NSLocalNetworkUsageDescription` and declare their Bonjour types in `NSBonjourServices`, for example `_ciao-demo._tcp` and `_ciao-demo._udp`. macOS sandboxed apps need network client/server entitlements for the operations they perform. Local-network permission is granted by the user at runtime.
 
-`ServiceTypeSession` enumerates types through `_services._dns-sd._udp`. Stop it explicitly when finished. Broad enumeration/arbitrary browsing on iOS requires Apple's multicast entitlement approval; the sample defaults to its two declared types and gates other iOS types. Permission-dependent behavior must be checked on signed devices.
+`ServiceTypeSession` enumerates types through `_services._dns-sd._udp`. Stop it explicitly when finished. Broad enumeration/arbitrary browsing on iOS requires Apple's multicast entitlement approval; `CiaoSample` defaults to its two declared types and gates other iOS types; `BonjourBrowser` demonstrates dynamic type enumeration and browsing. Permission-dependent behavior must be checked on signed devices.
 
-## Sample and tests
+## Samples
 
-Open [Sample/CiaoSample.swiftpm](Sample/CiaoSample.swiftpm) in Xcode 27 and choose the `CiaoSample` scheme with an iOS or My Mac (Mac Catalyst) destination. Run two instances/devices on the same network, publish, browse, inspect resolved details, update TXT, then stop and observe removal. This SwiftUI app playground consumes the local package and supports cancellation and repeated use. Its manifest declares app capabilities; no XcodeGen or checked-in Xcode project is required. See [sample instructions](Sample/README.md).
+Both samples are SwiftUI app playgrounds distributed as `.swiftpm` packages. Open the package in **Xcode 27**, select its matching scheme, and choose an iOS or **My Mac (Mac Catalyst)** destination.
+
+| Sample | Scheme | Features |
+| --- | --- | --- |
+| [CiaoSample](Sample/CiaoSample.swiftpm) | `CiaoSample` | Publish and browse TCP/UDP demo services, resolve details, update TXT records, and stop/restart operations. |
+| [Bonjour Browser](Sample/BonjourBrowser.swiftpm) | `BonjourBrowser` | Discover advertised service types dynamically, browse their services, search by name/type, and inspect hostname, port, addresses, and TXT records. Browsing only; no publication. |
+
+For `CiaoSample`, run two instances/devices on the same network to publish in one and browse in the other. For `BonjourBrowser`, press **Start browsing** to discover reachable services in the selected domain (default `local.`). Broad browsing on iOS requires Apple's approved multicast entitlement and matching provisioning; the sample does not include that entitlement. Known issue: the new browser returns DNS-SD `-65555` during all-type enumeration on the development Mac, even with Local Network access enabled. Its end-to-end discovery remains unresolved.
+
+Keep the samples inside the checkout: each consumes Ciao through `.package(path: "../..")`. Their manifests define app settings and capabilities. Build with Xcode or `xcodebuild`, not plain `swift build`; no XcodeGen or checked-in Xcode project is required. See [sample instructions and build commands](Sample/README.md).
+
+## Tests and CI
 
 ```sh
 swift test --skip CiaoIntegrationTests
 CIAO_INTEGRATION_TESTS=1 swift test --filter CiaoIntegrationTests
 ```
 
-Fast Swift Testing tests drive fake backends without the network. Integration tests have unique service names and explicit deadlines; enable them only on a host with local-network permission. GitHub Actions validates the package/platforms/sample and validates tagged commits before releasing. CI uses GitHub-hosted Xcode 27 runners; see [CI details](Documentation/CI.md).
+Fast Swift Testing tests drive fake backends without the network. Integration tests have unique service names and explicit deadlines; enable them only on a host with local-network permission. GitHub Actions validates the package, library platforms, and both samples for iOS and Mac Catalyst and validates tagged commits before releasing. CI uses GitHub-hosted Xcode 27 runners; see [CI details](Documentation/CI.md).
 
 Read the [migration guide](Documentation/Migration.md), [architecture decision](Documentation/Architecture.md), and [validation record](Documentation/Validation.md). DocC documentation ships in the package.

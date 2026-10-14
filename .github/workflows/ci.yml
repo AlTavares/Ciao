@@ -51,6 +51,12 @@ jobs:
           set -o pipefail
           xcodebuild -scheme CiaoSample -destination 'generic/platform=iOS' -derivedDataPath "$GITHUB_WORKSPACE/build/Sample-iOS" build CODE_SIGNING_ALLOWED=NO 2>&1 | tee "$GITHUB_WORKSPACE/logs/sample-iOS.log"
           xcodebuild -scheme CiaoSample -destination 'platform=macOS,variant=Mac Catalyst' -derivedDataPath "$GITHUB_WORKSPACE/build/Sample-MacCatalyst" build CODE_SIGNING_ALLOWED=NO 2>&1 | tee "$GITHUB_WORKSPACE/logs/sample-MacCatalyst.log"
+      - name: Bonjour browser playground builds
+        working-directory: Sample/BonjourBrowser.swiftpm
+        run: |
+          set -o pipefail
+          xcodebuild -scheme BonjourBrowser -destination 'generic/platform=iOS' -derivedDataPath "$GITHUB_WORKSPACE/build/Browser-iOS" build CODE_SIGNING_ALLOWED=NO 2>&1 | tee "$GITHUB_WORKSPACE/logs/browser-iOS.log"
+          xcodebuild -scheme BonjourBrowser -destination 'platform=macOS,variant=Mac Catalyst' -derivedDataPath "$GITHUB_WORKSPACE/build/Browser-MacCatalyst" build CODE_SIGNING_ALLOWED=NO 2>&1 | tee "$GITHUB_WORKSPACE/logs/browser-MacCatalyst.log"
       - uses: actions/upload-artifact@v4
         if: failure()
         with:
